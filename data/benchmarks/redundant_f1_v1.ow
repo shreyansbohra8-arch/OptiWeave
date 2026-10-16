@@ -1,0 +1,14 @@
+// redundant_f1_v1 | category: redundant-expression-heavy | family: redundant_f1
+int x = 1;
+int y = 2;
+int i = 0;
+int out = 0;
+while (i < 30) {
+    int p = x + y;
+    int q = x + y;
+    out = out + p * q + (x + y) * 4;
+    x = x + 1;
+    y = y + 2;
+    i = i + 1;
+}
+print(out);

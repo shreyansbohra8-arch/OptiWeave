@@ -1,0 +1,11 @@
+// loop_f4_v2 | category: loop-heavy | family: loop_f4
+int a = 0;
+int b = 1;
+int k = 0;
+while (k < 19) {
+    int next = a + b;
+    a = b;
+    b = next;
+    k = k + 1;
+}
+print(a);

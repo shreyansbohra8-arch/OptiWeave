@@ -1,0 +1,12 @@
+// branch_f2_v1 | category: branch-heavy | family: branch_f2
+bool debug = false;
+int mode = 5;
+if (debug) {
+    print(477);
+} else {
+    if (mode > 1) {
+        print(mode * 4);
+    } else {
+        print(mode + 4);
+    }
+}

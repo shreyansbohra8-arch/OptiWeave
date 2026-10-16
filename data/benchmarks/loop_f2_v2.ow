@@ -1,0 +1,12 @@
+// loop_f2_v2 | category: loop-heavy | family: loop_f2
+int total = 0;
+int i = 0;
+while (i < 14) {
+    int j = 0;
+    while (j < 11) {
+        total = total + i * j;
+        j = j + 1;
+    }
+    i = i + 1;
+}
+print(total);

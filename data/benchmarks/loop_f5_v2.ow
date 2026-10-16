@@ -1,0 +1,10 @@
+// loop_f5_v2 | category: loop-heavy | family: loop_f5
+int k = 9;
+int i = 0;
+int s = 0;
+while (i < 72) {
+    int w = k * 4;
+    s = s + w;
+    i = i + 1;
+}
+print(s);

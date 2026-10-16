@@ -1,0 +1,18 @@
+// mixed_f3_v2 | category: mixed | family: mixed_f3
+int i = 2;
+int count = 0;
+while (i < 21) {
+    int j = 2;
+    bool prime = true;
+    while (j * j <= i) {
+        if (i % j == 0) {
+            prime = false;
+        }
+        j = j + 1;
+    }
+    if (prime) {
+        count = count + 1;
+    }
+    i = i + 1;
+}
+print(count);

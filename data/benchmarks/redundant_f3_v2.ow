@@ -1,0 +1,14 @@
+// redundant_f3_v2 | category: redundant-expression-heavy | family: redundant_f3
+int x = 2;
+int y = 3;
+int i = 0;
+int s = 0;
+while (i < 19) {
+    int a = x * y;
+    int b = x * y;
+    x = x + 1;
+    int c = x * y;
+    s = s + a + b + c;
+    i = i + 1;
+}
+print(s);

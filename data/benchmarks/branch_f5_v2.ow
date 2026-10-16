@@ -1,0 +1,14 @@
+// branch_f5_v2 | category: branch-heavy | family: branch_f5
+int i = 0;
+int even = 0;
+while (i < 26) {
+    int tag = 0;
+    if (i % 2 == 0) {
+        even = even + 1;
+        tag = i * 2;
+    } else {
+        tag = i + 2;
+    }
+    i = i + 1;
+}
+print(even);

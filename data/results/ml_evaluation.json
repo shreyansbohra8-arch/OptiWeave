@@ -1,0 +1,161 @@
+{
+  "evaluation": "GroupKFold(n_splits=5) grouped by program family (30 families, 60 programs); out-of-fold predictions",
+  "n_programs": 60,
+  "n_families": 30,
+  "n_splits": 5,
+  "accuracy": 0.6666666666666666,
+  "balanced_accuracy": 0.4866666666666667,
+  "macro_f1": 0.44259740259740266,
+  "weighted_f1": 0.6261471861471861,
+  "majority_baseline_accuracy": 0.4,
+  "fixed_s6_label_accuracy": 0.13333333333333333,
+  "labels": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "S6"
+  ],
+  "confusion_matrix": [
+    [
+      20,
+      0,
+      2,
+      2,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      3,
+      0,
+      0,
+      1,
+      0,
+      2
+    ],
+    [
+      8,
+      0,
+      0,
+      12,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      8
+    ]
+  ],
+  "classification_report": {
+    "S1": {
+      "precision": 0.6451612903225806,
+      "recall": 0.8333333333333334,
+      "f1-score": 0.7272727272727273,
+      "support": 24.0
+    },
+    "S3": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 6.0
+    },
+    "S4": {
+      "precision": 0.8,
+      "recall": 0.6,
+      "f1-score": 0.6857142857142857,
+      "support": 20.0
+    },
+    "S5": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 2.0
+    },
+    "S6": {
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1-score": 0.8,
+      "support": 8.0
+    },
+    "accuracy": 0.6666666666666666,
+    "macro avg": {
+      "precision": 0.42236559139784946,
+      "recall": 0.4866666666666667,
+      "f1-score": 0.44259740259740266,
+      "support": 60.0
+    },
+    "weighted avg": {
+      "precision": 0.6136200716845879,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.6261471861471861,
+      "support": 60.0
+    }
+  },
+  "label_distribution": {
+    "S1": 24,
+    "S3": 6,
+    "S4": 20,
+    "S5": 2,
+    "S6": 8
+  },
+  "optimization_performance": {
+    "oracle_best": {
+      "mean_reduction_pct": 26.929916666666664,
+      "median_reduction_pct": 8.3333
+    },
+    "ml_selected_heldout": {
+      "mean_reduction_pct": 21.596151666666668,
+      "median_reduction_pct": 0.0
+    },
+    "fixed_s6": {
+      "mean_reduction_pct": 26.929916666666664,
+      "median_reduction_pct": 8.3333
+    },
+    "majority_class": {
+      "mean_reduction_pct": 0.0,
+      "median_reduction_pct": 0.0
+    },
+    "fixed_s1": {
+      "mean_reduction_pct": 0.0,
+      "median_reduction_pct": 0.0
+    },
+    "ml_beats_s6_programs": 0,
+    "ml_ties_s6_programs": 49,
+    "ml_loses_to_s6_programs": 11
+  },
+  "final_model_training_accuracy_in_sample": 1.0,
+  "feature_importance": {
+    "loop_count": 0.16263746731975373,
+    "arithmetic_op_count": 0.13893711053221527,
+    "distinct_variable_count": 0.13777514279871103,
+    "duplicate_expression_count": 0.12419868768455072,
+    "assignment_count": 0.11591250200369153,
+    "instruction_count": 0.09946482197078038,
+    "constant_expression_count": 0.06940355511618808,
+    "cfg_edge_count": 0.05434361051052944,
+    "basic_block_count": 0.04964321291715724,
+    "branch_count": 0.047683889146422624
+  },
+  "note": "Reported accuracy / confusion matrix come from group-held-out cross-validation. The in-sample training accuracy is NOT evidence of generalisation."
+}

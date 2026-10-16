@@ -1,0 +1,12 @@
+// arith_f4_v2 | category: arithmetic-heavy | family: arith_f4
+int i = 0;
+int acc = 0;
+while (i < 17) {
+    int junk0 = i * 9 + 4;
+    int junk1 = i * 3 + 4;
+    int junk2 = i * 6 + 9;
+    int junk3 = i * 3 + 1;
+    acc = acc + i * 5;
+    i = i + 1;
+}
+print(acc);

@@ -1,0 +1,13 @@
+// Timing workload: enough iterations for a measurable run time at gcc -O0.
+int i = 0;
+int acc = 0;
+int limit = 40000000;
+int scale = 3;
+while (i < limit) {
+    int a = i * scale + 7;
+    int b = i * scale + 7;
+    int junk = i - 11;
+    acc = acc + (a - b) + i % 5;
+    i = i + 1;
+}
+print(acc);

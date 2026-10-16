@@ -1,0 +1,9 @@
+// Constant folding / propagation demo
+int x = 10 + 20;
+int y = x * 2 - 5;
+bool big = y > 50;
+if (big) {
+    print(y);
+} else {
+    print(0);
+}

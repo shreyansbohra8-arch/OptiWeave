@@ -1,0 +1,9 @@
+// arith_f2_v1 | category: arithmetic-heavy | family: arith_f2
+int n = 53;
+int i = 0;
+int acc = 0;
+while (i < 53) {
+    acc = acc + i * 3 + 6 * i - 2;
+    i = i + 1;
+}
+print(acc);

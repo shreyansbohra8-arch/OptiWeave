@@ -1,0 +1,16 @@
+// mixed_f1_v2 | category: mixed | family: mixed_f1
+int i = 0;
+int s = 0;
+int scale = 6;
+while (i < 37) {
+    int p = i * scale + 1;
+    int q = i * scale + 1;
+    int unused = i - 7;
+    if (p % 3 == 0) {
+        s = s + p;
+    } else {
+        s = s + q * 2;
+    }
+    i = i + 1;
+}
+print(s);

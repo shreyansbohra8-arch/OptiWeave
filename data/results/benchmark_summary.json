@@ -1,0 +1,69 @@
+{
+  "programs_total": 61,
+  "programs_ok": 61,
+  "programs_failed": [],
+  "mean_reduction_pct": {
+    "unoptimized": 0.0,
+    "fixed_s6": 26.916099230958586,
+    "ml_selected": 21.669770925959014
+  },
+  "median_reduction_pct": {
+    "unoptimized": 0.0,
+    "fixed_s6": 8.333333333333332,
+    "ml_selected": 0.0
+  },
+  "ml_vs_s6": {
+    "ml_better": 0,
+    "equal": 50,
+    "ml_worse": 11
+  },
+  "ir_equivalence_failures": [],
+  "ir_equivalence_not_checked": [
+    "timing_heavy_loop"
+  ],
+  "gcc_compiled_programs": 61,
+  "gcc_output_mismatches": [],
+  "predicted_strategy_counts": {
+    "S4": 15,
+    "S1": 31,
+    "S6": 13,
+    "S3": 2
+  },
+  "by_category": {
+    "arithmetic-heavy": {
+      "fixed_s6": 28.235737201058914,
+      "ml_selected": 27.569070534392246
+    },
+    "branch-heavy": {
+      "fixed_s6": 41.553884711779446,
+      "ml_selected": 17.5
+    },
+    "constant-heavy": {
+      "fixed_s6": 72.95833333333334,
+      "ml_selected": 71.29166666666666
+    },
+    "loop-heavy": {
+      "fixed_s6": 4.615384615384615,
+      "ml_selected": 0.0
+    },
+    "mixed": {
+      "fixed_s6": 4.846153846153847,
+      "ml_selected": 3.8461538461538467
+    },
+    "redundant-expression-heavy": {
+      "fixed_s6": 9.370015948963317,
+      "ml_selected": 9.370015948963317
+    },
+    "timing-workload": {
+      "fixed_s6": 26.08695652173913,
+      "ml_selected": 26.08695652173913
+    }
+  },
+  "timing": {
+    "programs_with_reliable_timing": 1,
+    "programs_without_reliable_timing": 60,
+    "median_speedup_fixed_s6_vs_unoptimized": 1.2709934168259138,
+    "median_speedup_ml_vs_unoptimized": 1.2901331781633167,
+    "note": "Speed-up = unoptimized median time / variant median time. Runs shorter than the reliability threshold are excluded (dominated by process start-up noise)."
+  }
+}

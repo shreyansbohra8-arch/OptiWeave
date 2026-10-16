@@ -1,0 +1,8 @@
+// Arithmetic with mixed int/float values
+int a = 12;
+int b = 5;
+int sum = a + b * 2;
+float ratio = a / 4.0;
+print(sum);
+print(sum % 7);
+print(ratio);

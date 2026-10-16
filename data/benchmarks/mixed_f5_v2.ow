@@ -1,0 +1,14 @@
+// mixed_f5_v2 | category: mixed | family: mixed_f5
+float total = 0.0;
+int i = 0;
+float rate = 2.5;
+while (i < 27) {
+    float part = rate * i + 1.0;
+    if (part > 10.0) {
+        total = total + part / 2.0;
+    } else {
+        total = total + part;
+    }
+    i = i + 1;
+}
+print(total);

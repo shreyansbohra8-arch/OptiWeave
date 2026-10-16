@@ -1,0 +1,13 @@
+// Common subexpression elimination demo (values change inside the loop)
+int x = 1;
+int y = 2;
+int i = 0;
+int out = 0;
+while (i < 10) {
+    int p = x + y;
+    int q = x + y;
+    out = out + p * q;
+    x = x + 1;
+    i = i + 1;
+}
+print(out);

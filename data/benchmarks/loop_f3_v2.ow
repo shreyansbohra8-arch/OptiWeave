@@ -1,0 +1,8 @@
+// loop_f3_v2 | category: loop-heavy | family: loop_f3
+int n = 148;
+int acc = 0;
+while (n > 0) {
+    acc = acc + n;
+    n = n - 3;
+}
+print(acc);

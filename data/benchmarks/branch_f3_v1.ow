@@ -1,0 +1,17 @@
+// branch_f3_v1 | category: branch-heavy | family: branch_f3
+int a = 72;
+int b = 40;
+int c = 19;
+int m = a;
+if (b > m) {
+    m = b;
+}
+if (c > m) {
+    m = c;
+}
+print(m);
+if (a == b) {
+    print(1);
+} else {
+    print(0);
+}

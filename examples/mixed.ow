@@ -1,0 +1,16 @@
+// Mixed: loop + branch + redundancy + dead code
+int i = 0;
+int s = 0;
+int scale = 3;
+while (i < 30) {
+    int p = i * scale + 1;
+    int q = i * scale + 1;
+    int unused = i - 7;
+    if (p % 2 == 0) {
+        s = s + p;
+    } else {
+        s = s + q * 2;
+    }
+    i = i + 1;
+}
+print(s);

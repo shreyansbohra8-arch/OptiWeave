@@ -1,0 +1,14 @@
+// Branches with short-circuit logic
+int i = 0;
+int hits = 0;
+while (i < 20) {
+    if (i % 3 == 0 && i > 5) {
+        hits = hits + 1;
+    } else {
+        if (i == 4 || i == 7) {
+            hits = hits + 10;
+        }
+    }
+    i = i + 1;
+}
+print(hits);

@@ -1,0 +1,6 @@
+// const_f4_v2 | category: constant-heavy | family: const_f4
+int x1 = 6;
+int x2 = x1 + 4;
+int x3 = x2 + 3;
+int x4 = x3 * 5;
+print(x4);

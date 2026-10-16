@@ -1,0 +1,8 @@
+// const_f5_v2 | category: constant-heavy | family: const_f5
+int i = 0;
+int acc = 0;
+while (i < 30) {
+    acc = acc + 5 * 4 + 7;
+    i = i + 1;
+}
+print(acc);

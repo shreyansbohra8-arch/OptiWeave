@@ -1,0 +1,9 @@
+// arith_f1_v1 | category: arithmetic-heavy | family: arith_f1
+int v0 = 6;
+int v1 = 14;
+int v2 = v1 + v0 + 5;
+int v3 = v0 + v2 + 4;
+int v4 = v1 * v2 + 1;
+print(v4);
+print(v3 % 4);
+print(v3 / 2);

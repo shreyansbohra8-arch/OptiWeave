@@ -1,0 +1,13 @@
+// redundant_f4_v2 | category: redundant-expression-heavy | family: redundant_f4
+int a = 1;
+int b = 2;
+int i = 0;
+int s = 0;
+while (i < 35) {
+    int u = a * b + i;
+    int v = b * a + i;
+    s = s + u - v + u;
+    a = a + 1;
+    i = i + 1;
+}
+print(s);
