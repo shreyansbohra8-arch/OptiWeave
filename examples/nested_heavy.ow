@@ -1,0 +1,12 @@
+// Timing workload: nested loop with arithmetic for reliable run-time measurement.
+int i = 0;
+int total = 0;
+while (i < 5000) {
+    int j = 0;
+    while (j < 5000) {
+        total = total + i * j + j;
+        j = j + 1;
+    }
+    i = i + 1;
+}
+print(total);

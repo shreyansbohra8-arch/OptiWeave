@@ -1,69 +1,95 @@
 {
-  "programs_total": 61,
-  "programs_ok": 61,
+  "programs_total": 141,
+  "programs_ok": 141,
   "programs_failed": [],
   "mean_reduction_pct": {
     "unoptimized": 0.0,
-    "fixed_s6": 26.916099230958586,
-    "ml_selected": 21.669770925959014
+    "fixed_s10": 38.89089034977017,
+    "ml_selected": 34.00799639912706
   },
   "median_reduction_pct": {
     "unoptimized": 0.0,
-    "fixed_s6": 8.333333333333332,
-    "ml_selected": 0.0
+    "fixed_s10": 23.076923076923077,
+    "ml_selected": 18.75
   },
-  "ml_vs_s6": {
-    "ml_better": 0,
-    "equal": 50,
-    "ml_worse": 11
+  "mean_cost_aware_score": {
+    "unoptimized": 0.0,
+    "fixed_s10": 33.14089034977017,
+    "ml_selected": 31.199485760829187
+  },
+  "ml_vs_s10": {
+    "ml_better_score": 96,
+    "equal_score": 18,
+    "ml_worse_score": 27,
+    "ml_better_reduction": 0,
+    "equal_reduction": 111,
+    "ml_worse_reduction": 30
   },
   "ir_equivalence_failures": [],
   "ir_equivalence_not_checked": [
-    "timing_heavy_loop"
+    "timing_heavy_loop",
+    "timing_nested_heavy",
+    "timing_iterative_power",
+    "timing_large_accumulator",
+    "timing_redundant_heavy",
+    "timing_strength_heavy"
   ],
-  "gcc_compiled_programs": 61,
+  "gcc_compiled_programs": 141,
   "gcc_output_mismatches": [],
   "predicted_strategy_counts": {
-    "S4": 15,
-    "S1": 31,
-    "S6": 13,
-    "S3": 2
+    "S9": 12,
+    "S4": 59,
+    "S1": 46,
+    "S10": 18,
+    "S3": 6
   },
   "by_category": {
+    "algebraic-heavy": {
+      "fixed_s10": 56.3359010270775,
+      "ml_selected": 51.16923436041083
+    },
     "arithmetic-heavy": {
-      "fixed_s6": 28.235737201058914,
-      "ml_selected": 27.569070534392246
+      "fixed_s10": 28.75272206518,
+      "ml_selected": 28.75272206518
     },
     "branch-heavy": {
-      "fixed_s6": 41.553884711779446,
-      "ml_selected": 17.5
+      "fixed_s10": 41.97957013746487,
+      "ml_selected": 29.94949494949495
     },
     "constant-heavy": {
-      "fixed_s6": 72.95833333333334,
-      "ml_selected": 71.29166666666666
+      "fixed_s10": 72.91666666666667,
+      "ml_selected": 53.25
+    },
+    "copy-heavy": {
+      "fixed_s10": 55.327206906154274,
+      "ml_selected": 52.16931216931217
     },
     "loop-heavy": {
-      "fixed_s6": 4.615384615384615,
-      "ml_selected": 0.0
+      "fixed_s10": 6.709401709401709,
+      "ml_selected": 4.615384615384615
     },
     "mixed": {
-      "fixed_s6": 4.846153846153847,
-      "ml_selected": 3.8461538461538467
+      "fixed_s10": 4.846153846153848,
+      "ml_selected": 1.5384615384615385
+    },
+    "propagation-only": {
+      "fixed_s10": 71.55946502273339,
+      "ml_selected": 71.55946502273339
     },
     "redundant-expression-heavy": {
-      "fixed_s6": 9.370015948963317,
-      "ml_selected": 9.370015948963317
+      "fixed_s10": 17.687400318979265,
+      "ml_selected": 17.687400318979265
     },
     "timing-workload": {
-      "fixed_s6": 26.08695652173913,
-      "ml_selected": 26.08695652173913
+      "fixed_s10": 23.649703970070103,
+      "ml_selected": 22.459227779593913
     }
   },
   "timing": {
-    "programs_with_reliable_timing": 1,
-    "programs_without_reliable_timing": 60,
-    "median_speedup_fixed_s6_vs_unoptimized": 1.2709934168259138,
-    "median_speedup_ml_vs_unoptimized": 1.2901331781633167,
+    "programs_with_reliable_timing": 7,
+    "programs_without_reliable_timing": 134,
+    "median_speedup_fixed_s10_vs_unoptimized": 1.084993237910113,
+    "median_speedup_ml_vs_unoptimized": 1.0629309491371122,
     "note": "Speed-up = unoptimized median time / variant median time. Runs shorter than the reliability threshold are excluded (dominated by process start-up noise)."
   }
 }

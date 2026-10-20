@@ -1,0 +1,14 @@
+// mixed_f2_v3 | category: mixed | family: mixed_f2
+int i = 0;
+int hits = 0;
+while (i < 10) {
+    int j = 0;
+    while (j < 4) {
+        if (i < j) {
+            hits = hits + i + j;
+        }
+        j = j + 1;
+    }
+    i = i + 1;
+}
+print(hits);

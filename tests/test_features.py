@@ -3,9 +3,9 @@ from ml.feature_extractor import FEATURE_NAMES, extract_features, feature_vector
 from tests.conftest import compile_ir
 
 
-def test_exactly_ten_features_in_order():
-    assert len(FEATURE_NAMES) == 10
-    assert FEATURE_NAMES[0] == "instruction_count" and FEATURE_NAMES[-1] == "cfg_edge_count"
+def test_exactly_fourteen_features_in_order():
+    assert len(FEATURE_NAMES) == 14
+    assert FEATURE_NAMES[0] == "instruction_count" and FEATURE_NAMES[-1] == "branch_ratio"
     f = extract_features(compile_ir("int a = 1; print(a);"))
     assert list(f) == FEATURE_NAMES
 
@@ -26,6 +26,18 @@ def test_values_for_known_program():
     assert f["basic_block_count"] == len(CFG.build(ir).blocks)
     assert f["cfg_edge_count"] == CFG.build(ir).edge_count
     assert f["instruction_count"] == ir.instruction_count
+
+
+def test_ratio_features():
+    ir = compile_ir("int a = 1; int b = 2; int c = a + b; int d = a + b; int e = 2 * 3; "
+                    "int i = 0; while (i < 2) { i = i + 1; }")
+    f = extract_features(ir)
+    ic = f["instruction_count"]
+    if ic > 0:
+        assert f["constant_expression_ratio"] == round(f["constant_expression_count"] / ic, 6)
+        assert f["duplicate_expression_ratio"] == round(f["duplicate_expression_count"] / ic, 6)
+        assert f["assignment_ratio"] == round(f["assignment_count"] / ic, 6)
+        assert f["branch_ratio"] == round(f["branch_count"] / ic, 6)
 
 
 def test_redefinition_prevents_duplicate_count():

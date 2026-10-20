@@ -1,4 +1,4 @@
-"""Extraction of exactly ten numeric features from the *original* IR and CFG.
+"""Extraction of numeric features from the *original* IR and CFG.
 
 Feature definitions (computed before any optimisation, so no label leakage):
  1. instruction_count        non-label IR instructions
@@ -13,6 +13,10 @@ Feature definitions (computed before any optimisation, so no label leakage):
  8. assignment_count         plain copy/assignment instructions (dst = src)
  9. distinct_variable_count  distinct user (non-temporary) variables referenced
 10. cfg_edge_count           edges in the control-flow graph
+11. constant_expression_ratio  constant_expression_count / instruction_count
+12. duplicate_expression_ratio duplicate_expression_count / instruction_count
+13. assignment_ratio           assignment_count / instruction_count
+14. branch_ratio               branch_count / instruction_count
 """
 from __future__ import annotations
 
@@ -31,6 +35,10 @@ FEATURE_NAMES: list[str] = [
     "assignment_count",
     "distinct_variable_count",
     "cfg_edge_count",
+    "constant_expression_ratio",
+    "duplicate_expression_ratio",
+    "assignment_ratio",
+    "branch_ratio",
 ]
 
 
@@ -53,8 +61,13 @@ def _duplicate_expressions(cfg: CFG) -> int:
     return dups
 
 
-def extract_features(ir: IRProgram, cfg: CFG | None = None) -> dict[str, int]:
-    """Return the ten features as an ordered ``{name: value}`` dict."""
+def _safe_ratio(numerator: int, denominator: int) -> float:
+    """Return numerator / denominator, or 0.0 when denominator is zero."""
+    return round(numerator / denominator, 6) if denominator > 0 else 0.0
+
+
+def extract_features(ir: IRProgram, cfg: CFG | None = None) -> dict[str, float]:
+    """Return the features as an ordered ``{name: value}`` dict."""
     cfg = cfg or CFG.build(ir)
     real = [i for i in ir.instructions if not isinstance(i, Label)]
     names = set()
@@ -63,22 +76,33 @@ def extract_features(ir: IRProgram, cfg: CFG | None = None) -> dict[str, int]:
         if d is not None:
             names.add(d)
         names.update(o.name for o in operands(ins) if not isinstance(o, Const))
+
+    ic = len(real)
+    const_expr = sum(
+        1 for i in real
+        if isinstance(i, (BinOp, UnOp)) and all(isinstance(o, Const) for o in operands(i)))
+    dup_expr = _duplicate_expressions(cfg)
+    assign_ct = sum(1 for i in real if isinstance(i, Assign))
+    branch_ct = sum(1 for i in real if isinstance(i, CondJump))
+
     values = {
-        "instruction_count": len(real),
+        "instruction_count": ic,
         "arithmetic_op_count": sum(1 for i in real if isinstance(i, BinOp) and i.op in ARITH_OPS),
-        "branch_count": sum(1 for i in real if isinstance(i, CondJump)),
+        "branch_count": branch_ct,
         "loop_count": len(cfg.back_edges()),
         "basic_block_count": len(cfg.blocks),
-        "constant_expression_count": sum(
-            1 for i in real
-            if isinstance(i, (BinOp, UnOp)) and all(isinstance(o, Const) for o in operands(i))),
-        "duplicate_expression_count": _duplicate_expressions(cfg),
-        "assignment_count": sum(1 for i in real if isinstance(i, Assign)),
+        "constant_expression_count": const_expr,
+        "duplicate_expression_count": dup_expr,
+        "assignment_count": assign_ct,
         "distinct_variable_count": len([n for n in names if n not in ir.temps]),
         "cfg_edge_count": cfg.edge_count,
+        "constant_expression_ratio": _safe_ratio(const_expr, ic),
+        "duplicate_expression_ratio": _safe_ratio(dup_expr, ic),
+        "assignment_ratio": _safe_ratio(assign_ct, ic),
+        "branch_ratio": _safe_ratio(branch_ct, ic),
     }
-    return {name: int(values[name]) for name in FEATURE_NAMES}
+    return {name: values[name] for name in FEATURE_NAMES}
 
 
-def feature_vector(features: dict[str, int]) -> list[int]:
+def feature_vector(features: dict[str, float]) -> list[float]:
     return [features[name] for name in FEATURE_NAMES]

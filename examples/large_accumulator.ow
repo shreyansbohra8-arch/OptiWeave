@@ -1,0 +1,14 @@
+// Timing workload: large accumulator with branching inside the loop.
+int i = 0;
+int even_sum = 0;
+int odd_sum = 0;
+while (i < 25000000) {
+    if (i % 2 == 0) {
+        even_sum = even_sum + i * 3 + 7;
+    } else {
+        odd_sum = odd_sum + i * 5 - 3;
+    }
+    i = i + 1;
+}
+print(even_sum);
+print(odd_sum);

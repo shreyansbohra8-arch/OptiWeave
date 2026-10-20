@@ -1,4 +1,4 @@
-"""Command-line driver: python -m compiler.cli examples/mixed.ow [--strategy auto|S1..S6] [--gcc]"""
+"""Command-line driver: python -m compiler.cli examples/mixed.ow [--strategy auto|S1..S10] [--gcc]"""
 from __future__ import annotations
 
 import argparse
@@ -74,7 +74,10 @@ def main(argv: list[str] | None = None) -> int:
                 print("GCC failed:\n" + (comp.stderr or comp.message))
                 return 4
             print("GCC compilation OK. Program output:")
-            print(run.stdout if run.ok else run.stderr)
+            if run is not None and run.ok:
+                print(run.stdout)
+            elif run is not None:
+                print(run.stderr)
     return 0
 
 

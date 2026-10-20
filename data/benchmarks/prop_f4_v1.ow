@@ -1,0 +1,21 @@
+// prop_f4_v1 | category: propagation-only | family: prop_f4
+int v0 = 6;
+int v1 = v0 * 3;
+int v2 = v1 * 4;
+int v3 = v2 * 1;
+int v4 = v3 * 3;
+int v5 = v4 * 1;
+int v6 = v5 * 2;
+int v7 = v6 + 3;
+int v8 = v7 + 4;
+int v9 = v8 + 3;
+print(v0);
+print(v1);
+print(v2);
+print(v3);
+print(v4);
+print(v5);
+print(v6);
+print(v7);
+print(v8);
+print(v9);

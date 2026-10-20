@@ -1,0 +1,12 @@
+// mixed_f4_v3 | category: mixed | family: mixed_f4
+int n = 21;
+int steps = 0;
+while (n != 1 && steps < 200) {
+    if (n % 2 == 0) {
+        n = n / 2;
+    } else {
+        n = 3 * n + 1;
+    }
+    steps = steps + 1;
+}
+print(steps);

@@ -1,0 +1,12 @@
+// const_f3_v3 | category: constant-heavy | family: const_f3
+bool p = 7 < 6;
+bool q = p && !(9 > 12);
+if (q) {
+    print(1);
+} else {
+    print(0);
+}
+bool w = (p == q) || 7 == 3;
+if (w) {
+    print(2);
+}

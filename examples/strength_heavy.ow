@@ -1,0 +1,12 @@
+// Timing workload: strength-reduction opportunities in a heavy loop.
+int i = 0;
+int acc = 0;
+while (i < 30000000) {
+    int a = i * 2;
+    int b = i * 1;
+    int c = i + 0;
+    int d = i - 0;
+    acc = acc + a + b + c + d;
+    i = i + 1;
+}
+print(acc);

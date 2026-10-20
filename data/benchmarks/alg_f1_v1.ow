@@ -1,0 +1,11 @@
+// alg_f1_v1 | category: algebraic-heavy | family: alg_f1
+int i = 0;
+int acc = 0;
+while (i < 35) {
+    int a = i * 2;
+    int b = a + 0;
+    int c = b * 1;
+    acc = acc + c;
+    i = i + 1;
+}
+print(acc);

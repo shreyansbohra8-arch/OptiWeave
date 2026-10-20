@@ -2,6 +2,7 @@
 
 Usage:  python -m ml.train_model            (regenerate corpus + dataset, then train)
         python -m ml.train_model --reuse-dataset
+        python -m ml.train_model --search    (also run hyperparameter comparison)
 """
 from __future__ import annotations
 
@@ -18,7 +19,8 @@ import sklearn
 
 from config import settings
 from ml.dataset_generator import build_dataset, generate_programs, load_dataset
-from ml.evaluation import RF_PARAMS, feature_importance, group_cross_validate, make_model
+from ml.evaluation import (RF_PARAMS, feature_importance, group_cross_validate,
+                           hyperparameter_search, make_model)
 from ml.feature_extractor import FEATURE_NAMES
 from ml.model_metadata import ModelMetadata
 from utils.file_utils import atomic_write_text
@@ -31,7 +33,8 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def train_and_save(regenerate: bool = True, seed: int = settings.RANDOM_SEED) -> dict:
+def train_and_save(regenerate: bool = True, seed: int = settings.RANDOM_SEED,
+                   run_search: bool = False) -> dict:
     """Full workflow; returns the evaluation dict that was written to disk."""
     settings.ensure_directories()
     if regenerate or not settings.DATASET_CSV.exists():
@@ -47,6 +50,10 @@ def train_and_save(regenerate: bool = True, seed: int = settings.RANDOM_SEED) ->
     metrics["feature_importance"] = feature_importance(model)
     metrics["note"] = ("Reported accuracy / confusion matrix come from group-held-out cross-validation. "
                        "The in-sample training accuracy is NOT evidence of generalisation.")
+
+    # Optional hyperparameter comparison
+    if run_search:
+        metrics["hyperparameter_search"] = hyperparameter_search(df)
 
     settings.MODEL_DIR.mkdir(parents=True, exist_ok=True)
     fd, tmp = tempfile.mkstemp(dir=settings.MODEL_DIR, suffix=".joblib")
@@ -73,14 +80,18 @@ def _print_summary(m: dict) -> None:
     print(f"Held-out accuracy: {m['accuracy']:.3f}   macro-F1: {m['macro_f1']:.3f}   "
           f"majority-baseline accuracy: {m['majority_baseline_accuracy']:.3f}")
     print(f"(in-sample training accuracy of final model: {m['final_model_training_accuracy_in_sample']:.3f} - not a generalisation measure)")
-    print("Mean instruction reduction %:")
-    for k in ("oracle_best", "ml_selected_heldout", "fixed_s6", "majority_class"):
-        print(f"  {k:22s} {op[k]['mean_reduction_pct']:.2f}")
-    print(f"ML vs S6 per program: better {op['ml_beats_s6_programs']}, equal {op['ml_ties_s6_programs']}, "
-          f"worse {op['ml_loses_to_s6_programs']}")
+    print("Mean instruction reduction % / cost-aware score:")
+    for k in ("oracle_best", "ml_selected_heldout", "fixed_s10", "majority_class"):
+        print(f"  {k:22s} reduction={op[k]['mean_reduction_pct']:.2f}  score={op[k]['mean_cost_aware_score']:.2f}")
+    print(f"ML vs S10 per program (cost-aware): better {op['ml_beats_s10_programs']}, "
+          f"equal {op['ml_ties_s10_programs']}, worse {op['ml_loses_to_s10_programs']}")
     print("Feature importance:")
     for k, v in m["feature_importance"].items():
-        print(f"  {k:28s} {v:.3f}")
+        print(f"  {k:30s} {v:.3f}")
+    if "hyperparameter_search" in m:
+        print("\nHyperparameter search results:")
+        for cfg_name, res in m["hyperparameter_search"].items():
+            print(f"  {cfg_name:20s} accuracy={res['accuracy']:.3f}  macro_f1={res['macro_f1']:.3f}")
     print(f"Model saved to {settings.MODEL_FILE}")
 
 
@@ -88,8 +99,10 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Train the OptiWeave strategy classifier")
     parser.add_argument("--reuse-dataset", action="store_true", help="do not regenerate corpus/dataset")
     parser.add_argument("--seed", type=int, default=settings.RANDOM_SEED)
+    parser.add_argument("--search", action="store_true", help="run hyperparameter comparison")
     args = parser.parse_args()
-    _print_summary(train_and_save(regenerate=not args.reuse_dataset, seed=args.seed))
+    _print_summary(train_and_save(regenerate=not args.reuse_dataset, seed=args.seed,
+                                   run_search=args.search))
 
 
 if __name__ == "__main__":

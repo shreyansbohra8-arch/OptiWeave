@@ -1,0 +1,10 @@
+// prop_f3_v2 | category: propagation-only | family: prop_f3
+int a = 18;
+int b = a * 5;
+int c = b + 3;
+if (c > 35) {
+    print(c);
+} else {
+    print(b);
+}
+print(a);

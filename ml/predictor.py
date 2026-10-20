@@ -1,11 +1,13 @@
 """Inference: load the trained Random Forest and predict an optimisation strategy."""
 from __future__ import annotations
 
+import warnings
 from dataclasses import dataclass
 from pathlib import Path
 
 import joblib
 import pandas as pd
+import sklearn
 
 from config import settings
 from ml.feature_extractor import FEATURE_NAMES
@@ -21,6 +23,23 @@ class Prediction:
     probabilities: dict
 
 
+def _check_sklearn_version(metadata: ModelMetadata) -> None:
+    """Warn if the current scikit-learn version differs from what the model was trained with."""
+    current = sklearn.__version__
+    trained = metadata.sklearn_version
+    if current != trained:
+        current_major_minor = ".".join(current.split(".")[:2])
+        trained_major_minor = ".".join(trained.split(".")[:2])
+        if current_major_minor != trained_major_minor:
+            warnings.warn(
+                f"scikit-learn version mismatch: model was trained with {trained}, "
+                f"but current version is {current}. The model may fail to load or "
+                f"produce different results. Retrain with: python -m ml.train_model",
+                UserWarning,
+                stacklevel=3,
+            )
+
+
 class StrategyPredictor:
     def __init__(self, model, metadata: ModelMetadata) -> None:
         self.model = model
@@ -34,6 +53,7 @@ class StrategyPredictor:
                 f"No trained model at {model_path}. Train it with: python -m ml.train_model")
         metadata = ModelMetadata.load(metadata_path)
         metadata.validate()
+        _check_sklearn_version(metadata)
         try:
             model = joblib.load(model_path)
         except Exception as exc:  # corrupt / incompatible pickle

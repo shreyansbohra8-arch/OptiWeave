@@ -1,0 +1,6 @@
+// const_f1_v3 | category: constant-heavy | family: const_f1
+int a0 = 1 * 5 + (9 - 1) * 2;
+int a1 = 1 * 4 + (13 - 3) * 3;
+int a2 = 9 * 3 + (16 - 2) * 1;
+int a3 = 9 * 8 + (20 - 3) * 1;
+print(a0 + a1 + a2 + a3);

@@ -1,0 +1,12 @@
+// redundant_f5_v3 | category: redundant-expression-heavy | family: redundant_f5
+int i = 0;
+int s = 0;
+while (i < 34) {
+    if (i % 2 == 0) {
+        s = s + (i * 4 + 1);
+    } else {
+        s = s - (i * 3 + 1);
+    }
+    i = i + 1;
+}
+print(s);

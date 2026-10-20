@@ -1,0 +1,11 @@
+// copy_f3_v1 | category: copy-heavy | family: copy_f3
+int x = 3;
+int y = 34;
+int cx = x;
+int cy = y;
+int sum1 = cx + cy;
+int dx = cx;
+int dy = cy;
+int sum2 = dx + dy;
+print(sum1);
+print(sum2);

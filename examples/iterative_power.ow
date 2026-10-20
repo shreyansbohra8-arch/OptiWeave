@@ -1,0 +1,10 @@
+// Timing workload: iterative power computation with large iteration count.
+int base = 3;
+int result = 1;
+int exp = 0;
+while (exp < 30000000) {
+    result = result * base + 1;
+    result = result % 1000000007;
+    exp = exp + 1;
+}
+print(result);

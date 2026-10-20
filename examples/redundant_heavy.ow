@@ -1,0 +1,12 @@
+// Timing workload: repeated redundant computation inside a loop.
+int i = 0;
+int x = 7;
+int y = 13;
+int total = 0;
+while (i < 20000000) {
+    int p = x * y + 5;
+    int q = x * y + 5;
+    total = total + p + q;
+    i = i + 1;
+}
+print(total);

@@ -1,0 +1,9 @@
+// prop_f1_v3 | category: propagation-only | family: prop_f1
+int a = 6;
+int b = a + 2;
+int c = b * 3;
+int d = c - a;
+print(a);
+print(b);
+print(c);
+print(d);

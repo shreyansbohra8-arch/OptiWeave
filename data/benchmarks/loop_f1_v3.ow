@@ -1,0 +1,8 @@
+// loop_f1_v3 | category: loop-heavy | family: loop_f1
+int s = 0;
+int i = 1;
+while (i <= 107) {
+    s = s + i;
+    i = i + 1;
+}
+print(s);

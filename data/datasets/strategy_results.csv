@@ -1,361 +1,1351 @@
-program_id,strategy,passes,original_instructions,optimized_instructions,instruction_reduction_pct,equivalent
-arith_f1_v1,S1,CF,16,16,0.0,True
-arith_f1_v1,S2,CF + CP,16,16,0.0,True
-arith_f1_v1,S3,CF + DCE,16,16,0.0,True
-arith_f1_v1,S4,CF + CP + DCE,16,3,81.25,True
-arith_f1_v1,S5,CF + CSE + CP,16,16,0.0,True
-arith_f1_v1,S6,CF + CSE + CP + DCE,16,3,81.25,True
-arith_f1_v2,S1,CF,19,19,0.0,True
-arith_f1_v2,S2,CF + CP,19,19,0.0,True
-arith_f1_v2,S3,CF + DCE,19,19,0.0,True
-arith_f1_v2,S4,CF + CP + DCE,19,3,84.2105,True
-arith_f1_v2,S5,CF + CSE + CP,19,19,0.0,True
-arith_f1_v2,S6,CF + CSE + CP + DCE,19,3,84.2105,True
-arith_f2_v1,S1,CF,15,15,0.0,True
-arith_f2_v1,S2,CF + CP,15,15,0.0,True
-arith_f2_v1,S3,CF + DCE,15,14,6.6667,True
-arith_f2_v1,S4,CF + CP + DCE,15,14,6.6667,True
-arith_f2_v1,S5,CF + CSE + CP,15,15,0.0,True
-arith_f2_v1,S6,CF + CSE + CP + DCE,15,14,6.6667,True
-arith_f2_v2,S1,CF,17,17,0.0,True
-arith_f2_v2,S2,CF + CP,17,17,0.0,True
-arith_f2_v2,S3,CF + DCE,17,16,5.8824,True
-arith_f2_v2,S4,CF + CP + DCE,17,16,5.8824,True
-arith_f2_v2,S5,CF + CSE + CP,17,17,0.0,True
-arith_f2_v2,S6,CF + CSE + CP + DCE,17,16,5.8824,True
-arith_f3_v1,S1,CF,14,14,0.0,True
-arith_f3_v1,S2,CF + CP,14,14,0.0,True
-arith_f3_v1,S3,CF + DCE,14,14,0.0,True
-arith_f3_v1,S4,CF + CP + DCE,14,14,0.0,True
-arith_f3_v1,S5,CF + CSE + CP,14,14,0.0,True
-arith_f3_v1,S6,CF + CSE + CP + DCE,14,14,0.0,True
-arith_f3_v2,S1,CF,12,12,0.0,True
-arith_f3_v2,S2,CF + CP,12,12,0.0,True
-arith_f3_v2,S3,CF + DCE,12,12,0.0,True
-arith_f3_v2,S4,CF + CP + DCE,12,12,0.0,True
-arith_f3_v2,S5,CF + CSE + CP,12,12,0.0,True
-arith_f3_v2,S6,CF + CSE + CP + DCE,12,12,0.0,True
-arith_f4_v1,S1,CF,23,23,0.0,True
-arith_f4_v1,S2,CF + CP,23,23,0.0,True
-arith_f4_v1,S3,CF + DCE,23,11,52.1739,True
-arith_f4_v1,S4,CF + CP + DCE,23,11,52.1739,True
-arith_f4_v1,S5,CF + CSE + CP,23,22,4.3478,True
-arith_f4_v1,S6,CF + CSE + CP + DCE,23,11,52.1739,True
-arith_f4_v2,S1,CF,23,23,0.0,True
-arith_f4_v2,S2,CF + CP,23,23,0.0,True
-arith_f4_v2,S3,CF + DCE,23,11,52.1739,True
-arith_f4_v2,S4,CF + CP + DCE,23,11,52.1739,True
-arith_f4_v2,S5,CF + CSE + CP,23,22,4.3478,True
-arith_f4_v2,S6,CF + CSE + CP + DCE,23,11,52.1739,True
-arith_f5_v1,S1,CF,14,14,0.0,True
-arith_f5_v1,S2,CF + CP,14,14,0.0,True
-arith_f5_v1,S3,CF + DCE,14,14,0.0,True
-arith_f5_v1,S4,CF + CP + DCE,14,14,0.0,True
-arith_f5_v1,S5,CF + CSE + CP,14,14,0.0,True
-arith_f5_v1,S6,CF + CSE + CP + DCE,14,14,0.0,True
-arith_f5_v2,S1,CF,11,11,0.0,True
-arith_f5_v2,S2,CF + CP,11,11,0.0,True
-arith_f5_v2,S3,CF + DCE,11,11,0.0,True
-arith_f5_v2,S4,CF + CP + DCE,11,11,0.0,True
-arith_f5_v2,S5,CF + CSE + CP,11,11,0.0,True
-arith_f5_v2,S6,CF + CSE + CP + DCE,11,11,0.0,True
-loop_f1_v1,S1,CF,12,12,0.0,True
-loop_f1_v1,S2,CF + CP,12,12,0.0,True
-loop_f1_v1,S3,CF + DCE,12,12,0.0,True
-loop_f1_v1,S4,CF + CP + DCE,12,12,0.0,True
-loop_f1_v1,S5,CF + CSE + CP,12,12,0.0,True
-loop_f1_v1,S6,CF + CSE + CP + DCE,12,12,0.0,True
-loop_f1_v2,S1,CF,10,10,0.0,True
-loop_f1_v2,S2,CF + CP,10,10,0.0,True
-loop_f1_v2,S3,CF + DCE,10,10,0.0,True
-loop_f1_v2,S4,CF + CP + DCE,10,10,0.0,True
-loop_f1_v2,S5,CF + CSE + CP,10,10,0.0,True
-loop_f1_v2,S6,CF + CSE + CP + DCE,10,10,0.0,True
-loop_f2_v1,S1,CF,17,17,0.0,True
-loop_f2_v1,S2,CF + CP,17,17,0.0,True
-loop_f2_v1,S3,CF + DCE,17,17,0.0,True
-loop_f2_v1,S4,CF + CP + DCE,17,17,0.0,True
-loop_f2_v1,S5,CF + CSE + CP,17,17,0.0,True
-loop_f2_v1,S6,CF + CSE + CP + DCE,17,17,0.0,True
-loop_f2_v2,S1,CF,17,17,0.0,True
-loop_f2_v2,S2,CF + CP,17,17,0.0,True
-loop_f2_v2,S3,CF + DCE,17,17,0.0,True
-loop_f2_v2,S4,CF + CP + DCE,17,17,0.0,True
-loop_f2_v2,S5,CF + CSE + CP,17,17,0.0,True
-loop_f2_v2,S6,CF + CSE + CP + DCE,17,17,0.0,True
-loop_f3_v1,S1,CF,10,10,0.0,True
-loop_f3_v1,S2,CF + CP,10,10,0.0,True
-loop_f3_v1,S3,CF + DCE,10,10,0.0,True
-loop_f3_v1,S4,CF + CP + DCE,10,10,0.0,True
-loop_f3_v1,S5,CF + CSE + CP,10,10,0.0,True
-loop_f3_v1,S6,CF + CSE + CP + DCE,10,10,0.0,True
-loop_f3_v2,S1,CF,10,10,0.0,True
-loop_f3_v2,S2,CF + CP,10,10,0.0,True
-loop_f3_v2,S3,CF + DCE,10,10,0.0,True
-loop_f3_v2,S4,CF + CP + DCE,10,10,0.0,True
-loop_f3_v2,S5,CF + CSE + CP,10,10,0.0,True
-loop_f3_v2,S6,CF + CSE + CP + DCE,10,10,0.0,True
-loop_f4_v1,S1,CF,13,13,0.0,True
-loop_f4_v1,S2,CF + CP,13,13,0.0,True
-loop_f4_v1,S3,CF + DCE,13,13,0.0,True
-loop_f4_v1,S4,CF + CP + DCE,13,13,0.0,True
-loop_f4_v1,S5,CF + CSE + CP,13,13,0.0,True
-loop_f4_v1,S6,CF + CSE + CP + DCE,13,13,0.0,True
-loop_f4_v2,S1,CF,13,13,0.0,True
-loop_f4_v2,S2,CF + CP,13,13,0.0,True
-loop_f4_v2,S3,CF + DCE,13,13,0.0,True
-loop_f4_v2,S4,CF + CP + DCE,13,13,0.0,True
-loop_f4_v2,S5,CF + CSE + CP,13,13,0.0,True
-loop_f4_v2,S6,CF + CSE + CP + DCE,13,13,0.0,True
-loop_f5_v1,S1,CF,13,13,0.0,True
-loop_f5_v1,S2,CF + CP,13,13,0.0,True
-loop_f5_v1,S3,CF + DCE,13,13,0.0,True
-loop_f5_v1,S4,CF + CP + DCE,13,10,23.0769,True
-loop_f5_v1,S5,CF + CSE + CP,13,13,0.0,True
-loop_f5_v1,S6,CF + CSE + CP + DCE,13,10,23.0769,True
-loop_f5_v2,S1,CF,13,13,0.0,True
-loop_f5_v2,S2,CF + CP,13,13,0.0,True
-loop_f5_v2,S3,CF + DCE,13,13,0.0,True
-loop_f5_v2,S4,CF + CP + DCE,13,10,23.0769,True
-loop_f5_v2,S5,CF + CSE + CP,13,13,0.0,True
-loop_f5_v2,S6,CF + CSE + CP + DCE,13,10,23.0769,True
-branch_f1_v1,S1,CF,26,26,0.0,True
-branch_f1_v1,S2,CF + CP,26,26,0.0,True
-branch_f1_v1,S3,CF + DCE,26,26,0.0,True
-branch_f1_v1,S4,CF + CP + DCE,26,26,0.0,True
-branch_f1_v1,S5,CF + CSE + CP,26,26,0.0,True
-branch_f1_v1,S6,CF + CSE + CP + DCE,26,26,0.0,True
-branch_f1_v2,S1,CF,26,26,0.0,True
-branch_f1_v2,S2,CF + CP,26,26,0.0,True
-branch_f1_v2,S3,CF + DCE,26,26,0.0,True
-branch_f1_v2,S4,CF + CP + DCE,26,26,0.0,True
-branch_f1_v2,S5,CF + CSE + CP,26,26,0.0,True
-branch_f1_v2,S6,CF + CSE + CP + DCE,26,26,0.0,True
-branch_f2_v1,S1,CF,12,12,0.0,True
-branch_f2_v1,S2,CF + CP,12,12,0.0,True
-branch_f2_v1,S3,CF + DCE,12,12,0.0,True
-branch_f2_v1,S4,CF + CP + DCE,12,1,91.6667,True
-branch_f2_v1,S5,CF + CSE + CP,12,12,0.0,True
-branch_f2_v1,S6,CF + CSE + CP + DCE,12,1,91.6667,True
-branch_f2_v2,S1,CF,14,14,0.0,True
-branch_f2_v2,S2,CF + CP,14,14,0.0,True
-branch_f2_v2,S3,CF + DCE,14,13,7.1429,True
-branch_f2_v2,S4,CF + CP + DCE,14,2,85.7143,True
-branch_f2_v2,S5,CF + CSE + CP,14,14,0.0,True
-branch_f2_v2,S6,CF + CSE + CP + DCE,14,2,85.7143,True
-branch_f3_v1,S1,CF,16,16,0.0,True
-branch_f3_v1,S2,CF + CP,16,16,0.0,True
-branch_f3_v1,S3,CF + DCE,16,16,0.0,True
-branch_f3_v1,S4,CF + CP + DCE,16,2,87.5,True
-branch_f3_v1,S5,CF + CSE + CP,16,16,0.0,True
-branch_f3_v1,S6,CF + CSE + CP + DCE,16,2,87.5,True
-branch_f3_v2,S1,CF,16,16,0.0,True
-branch_f3_v2,S2,CF + CP,16,16,0.0,True
-branch_f3_v2,S3,CF + DCE,16,16,0.0,True
-branch_f3_v2,S4,CF + CP + DCE,16,2,87.5,True
-branch_f3_v2,S5,CF + CSE + CP,16,16,0.0,True
-branch_f3_v2,S6,CF + CSE + CP + DCE,16,2,87.5,True
-branch_f4_v1,S1,CF,20,20,0.0,True
-branch_f4_v1,S2,CF + CP,20,20,0.0,True
-branch_f4_v1,S3,CF + DCE,20,20,0.0,True
-branch_f4_v1,S4,CF + CP + DCE,20,20,0.0,True
-branch_f4_v1,S5,CF + CSE + CP,20,20,0.0,True
-branch_f4_v1,S6,CF + CSE + CP + DCE,20,20,0.0,True
-branch_f4_v2,S1,CF,20,20,0.0,True
-branch_f4_v2,S2,CF + CP,20,20,0.0,True
-branch_f4_v2,S3,CF + DCE,20,20,0.0,True
-branch_f4_v2,S4,CF + CP + DCE,20,20,0.0,True
-branch_f4_v2,S5,CF + CSE + CP,20,20,0.0,True
-branch_f4_v2,S6,CF + CSE + CP + DCE,20,20,0.0,True
-branch_f5_v1,S1,CF,19,19,0.0,True
-branch_f5_v1,S2,CF + CP,19,19,0.0,True
-branch_f5_v1,S3,CF + DCE,19,13,31.5789,True
-branch_f5_v1,S4,CF + CP + DCE,19,13,31.5789,True
-branch_f5_v1,S5,CF + CSE + CP,19,19,0.0,True
-branch_f5_v1,S6,CF + CSE + CP + DCE,19,13,31.5789,True
-branch_f5_v2,S1,CF,19,19,0.0,True
-branch_f5_v2,S2,CF + CP,19,19,0.0,True
-branch_f5_v2,S3,CF + DCE,19,13,31.5789,True
-branch_f5_v2,S4,CF + CP + DCE,19,13,31.5789,True
-branch_f5_v2,S5,CF + CSE + CP,19,19,0.0,True
-branch_f5_v2,S6,CF + CSE + CP + DCE,19,13,31.5789,True
-const_f1_v1,S1,CF,18,18,0.0,True
-const_f1_v1,S2,CF + CP,18,18,0.0,True
-const_f1_v1,S3,CF + DCE,18,18,0.0,True
-const_f1_v1,S4,CF + CP + DCE,18,1,94.4444,True
-const_f1_v1,S5,CF + CSE + CP,18,18,0.0,True
-const_f1_v1,S6,CF + CSE + CP + DCE,18,1,94.4444,True
-const_f1_v2,S1,CF,36,36,0.0,True
-const_f1_v2,S2,CF + CP,36,36,0.0,True
-const_f1_v2,S3,CF + DCE,36,36,0.0,True
-const_f1_v2,S4,CF + CP + DCE,36,1,97.2222,True
-const_f1_v2,S5,CF + CSE + CP,36,36,0.0,True
-const_f1_v2,S6,CF + CSE + CP + DCE,36,1,97.2222,True
-const_f2_v1,S1,CF,10,10,0.0,True
-const_f2_v1,S2,CF + CP,10,10,0.0,True
-const_f2_v1,S3,CF + DCE,10,10,0.0,True
-const_f2_v1,S4,CF + CP + DCE,10,2,80.0,True
-const_f2_v1,S5,CF + CSE + CP,10,10,0.0,True
-const_f2_v1,S6,CF + CSE + CP + DCE,10,2,80.0,True
-const_f2_v2,S1,CF,10,10,0.0,True
-const_f2_v2,S2,CF + CP,10,10,0.0,True
-const_f2_v2,S3,CF + DCE,10,10,0.0,True
-const_f2_v2,S4,CF + CP + DCE,10,2,80.0,True
-const_f2_v2,S5,CF + CSE + CP,10,10,0.0,True
-const_f2_v2,S6,CF + CSE + CP + DCE,10,2,80.0,True
-const_f3_v1,S1,CF,20,20,0.0,True
-const_f3_v1,S2,CF + CP,20,20,0.0,True
-const_f3_v1,S3,CF + DCE,20,20,0.0,True
-const_f3_v1,S4,CF + CP + DCE,20,2,90.0,True
-const_f3_v1,S5,CF + CSE + CP,20,20,0.0,True
-const_f3_v1,S6,CF + CSE + CP + DCE,20,2,90.0,True
-const_f3_v2,S1,CF,20,20,0.0,True
-const_f3_v2,S2,CF + CP,20,20,0.0,True
-const_f3_v2,S3,CF + DCE,20,20,0.0,True
-const_f3_v2,S4,CF + CP + DCE,20,2,90.0,True
-const_f3_v2,S5,CF + CSE + CP,20,20,0.0,True
-const_f3_v2,S6,CF + CSE + CP + DCE,20,2,90.0,True
-const_f4_v1,S1,CF,16,16,0.0,True
-const_f4_v1,S2,CF + CP,16,16,0.0,True
-const_f4_v1,S3,CF + DCE,16,16,0.0,True
-const_f4_v1,S4,CF + CP + DCE,16,1,93.75,True
-const_f4_v1,S5,CF + CSE + CP,16,16,0.0,True
-const_f4_v1,S6,CF + CSE + CP + DCE,16,1,93.75,True
-const_f4_v2,S1,CF,8,8,0.0,True
-const_f4_v2,S2,CF + CP,8,8,0.0,True
-const_f4_v2,S3,CF + DCE,8,8,0.0,True
-const_f4_v2,S4,CF + CP + DCE,8,1,87.5,True
-const_f4_v2,S5,CF + CSE + CP,8,8,0.0,True
-const_f4_v2,S6,CF + CSE + CP + DCE,8,1,87.5,True
-const_f5_v1,S1,CF,12,12,0.0,True
-const_f5_v1,S2,CF + CP,12,12,0.0,True
-const_f5_v1,S3,CF + DCE,12,12,0.0,True
-const_f5_v1,S4,CF + CP + DCE,12,11,8.3333,True
-const_f5_v1,S5,CF + CSE + CP,12,12,0.0,True
-const_f5_v1,S6,CF + CSE + CP + DCE,12,11,8.3333,True
-const_f5_v2,S1,CF,12,12,0.0,True
-const_f5_v2,S2,CF + CP,12,12,0.0,True
-const_f5_v2,S3,CF + DCE,12,12,0.0,True
-const_f5_v2,S4,CF + CP + DCE,12,11,8.3333,True
-const_f5_v2,S5,CF + CSE + CP,12,12,0.0,True
-const_f5_v2,S6,CF + CSE + CP + DCE,12,11,8.3333,True
-redundant_f1_v1,S1,CF,24,24,0.0,True
-redundant_f1_v1,S2,CF + CP,24,24,0.0,True
-redundant_f1_v1,S3,CF + DCE,24,24,0.0,True
-redundant_f1_v1,S4,CF + CP + DCE,24,24,0.0,True
-redundant_f1_v1,S5,CF + CSE + CP,24,22,8.3333,True
-redundant_f1_v1,S6,CF + CSE + CP + DCE,24,22,8.3333,True
-redundant_f1_v2,S1,CF,24,24,0.0,True
-redundant_f1_v2,S2,CF + CP,24,24,0.0,True
-redundant_f1_v2,S3,CF + DCE,24,24,0.0,True
-redundant_f1_v2,S4,CF + CP + DCE,24,24,0.0,True
-redundant_f1_v2,S5,CF + CSE + CP,24,22,8.3333,True
-redundant_f1_v2,S6,CF + CSE + CP + DCE,24,22,8.3333,True
-redundant_f2_v1,S1,CF,19,19,0.0,True
-redundant_f2_v1,S2,CF + CP,19,19,0.0,True
-redundant_f2_v1,S3,CF + DCE,19,19,0.0,True
-redundant_f2_v1,S4,CF + CP + DCE,19,17,10.5263,True
-redundant_f2_v1,S5,CF + CSE + CP,19,18,5.2632,True
-redundant_f2_v1,S6,CF + CSE + CP + DCE,19,16,15.7895,True
-redundant_f2_v2,S1,CF,19,19,0.0,True
-redundant_f2_v2,S2,CF + CP,19,19,0.0,True
-redundant_f2_v2,S3,CF + DCE,19,19,0.0,True
-redundant_f2_v2,S4,CF + CP + DCE,19,17,10.5263,True
-redundant_f2_v2,S5,CF + CSE + CP,19,18,5.2632,True
-redundant_f2_v2,S6,CF + CSE + CP + DCE,19,16,15.7895,True
-redundant_f3_v1,S1,CF,22,22,0.0,True
-redundant_f3_v1,S2,CF + CP,22,22,0.0,True
-redundant_f3_v1,S3,CF + DCE,22,22,0.0,True
-redundant_f3_v1,S4,CF + CP + DCE,22,21,4.5455,True
-redundant_f3_v1,S5,CF + CSE + CP,22,21,4.5455,True
-redundant_f3_v1,S6,CF + CSE + CP + DCE,22,20,9.0909,True
-redundant_f3_v2,S1,CF,22,22,0.0,True
-redundant_f3_v2,S2,CF + CP,22,22,0.0,True
-redundant_f3_v2,S3,CF + DCE,22,22,0.0,True
-redundant_f3_v2,S4,CF + CP + DCE,22,21,4.5455,True
-redundant_f3_v2,S5,CF + CSE + CP,22,21,4.5455,True
-redundant_f3_v2,S6,CF + CSE + CP + DCE,22,20,9.0909,True
-redundant_f4_v1,S1,CF,22,22,0.0,True
-redundant_f4_v1,S2,CF + CP,22,22,0.0,True
-redundant_f4_v1,S3,CF + DCE,22,22,0.0,True
-redundant_f4_v1,S4,CF + CP + DCE,22,21,4.5455,True
-redundant_f4_v1,S5,CF + CSE + CP,22,20,9.0909,True
-redundant_f4_v1,S6,CF + CSE + CP + DCE,22,19,13.6364,True
-redundant_f4_v2,S1,CF,22,22,0.0,True
-redundant_f4_v2,S2,CF + CP,22,22,0.0,True
-redundant_f4_v2,S3,CF + DCE,22,22,0.0,True
-redundant_f4_v2,S4,CF + CP + DCE,22,21,4.5455,True
-redundant_f4_v2,S5,CF + CSE + CP,22,20,9.0909,True
-redundant_f4_v2,S6,CF + CSE + CP + DCE,22,19,13.6364,True
-redundant_f5_v1,S1,CF,20,20,0.0,True
-redundant_f5_v1,S2,CF + CP,20,20,0.0,True
-redundant_f5_v1,S3,CF + DCE,20,20,0.0,True
-redundant_f5_v1,S4,CF + CP + DCE,20,20,0.0,True
-redundant_f5_v1,S5,CF + CSE + CP,20,20,0.0,True
-redundant_f5_v1,S6,CF + CSE + CP + DCE,20,20,0.0,True
-redundant_f5_v2,S1,CF,20,20,0.0,True
-redundant_f5_v2,S2,CF + CP,20,20,0.0,True
-redundant_f5_v2,S3,CF + DCE,20,20,0.0,True
-redundant_f5_v2,S4,CF + CP + DCE,20,20,0.0,True
-redundant_f5_v2,S5,CF + CSE + CP,20,20,0.0,True
-redundant_f5_v2,S6,CF + CSE + CP + DCE,20,20,0.0,True
-mixed_f1_v1,S1,CF,26,26,0.0,True
-mixed_f1_v1,S2,CF + CP,26,26,0.0,True
-mixed_f1_v1,S3,CF + DCE,26,24,7.6923,True
-mixed_f1_v1,S4,CF + CP + DCE,26,23,11.5385,True
-mixed_f1_v1,S5,CF + CSE + CP,26,24,7.6923,True
-mixed_f1_v1,S6,CF + CSE + CP + DCE,26,21,19.2308,True
-mixed_f1_v2,S1,CF,26,26,0.0,True
-mixed_f1_v2,S2,CF + CP,26,26,0.0,True
-mixed_f1_v2,S3,CF + DCE,26,24,7.6923,True
-mixed_f1_v2,S4,CF + CP + DCE,26,23,11.5385,True
-mixed_f1_v2,S5,CF + CSE + CP,26,24,7.6923,True
-mixed_f1_v2,S6,CF + CSE + CP + DCE,26,21,19.2308,True
-mixed_f2_v1,S1,CF,19,19,0.0,True
-mixed_f2_v1,S2,CF + CP,19,19,0.0,True
-mixed_f2_v1,S3,CF + DCE,19,19,0.0,True
-mixed_f2_v1,S4,CF + CP + DCE,19,19,0.0,True
-mixed_f2_v1,S5,CF + CSE + CP,19,19,0.0,True
-mixed_f2_v1,S6,CF + CSE + CP + DCE,19,19,0.0,True
-mixed_f2_v2,S1,CF,19,19,0.0,True
-mixed_f2_v2,S2,CF + CP,19,19,0.0,True
-mixed_f2_v2,S3,CF + DCE,19,19,0.0,True
-mixed_f2_v2,S4,CF + CP + DCE,19,19,0.0,True
-mixed_f2_v2,S5,CF + CSE + CP,19,19,0.0,True
-mixed_f2_v2,S6,CF + CSE + CP + DCE,19,19,0.0,True
-mixed_f3_v1,S1,CF,23,23,0.0,True
-mixed_f3_v1,S2,CF + CP,23,23,0.0,True
-mixed_f3_v1,S3,CF + DCE,23,23,0.0,True
-mixed_f3_v1,S4,CF + CP + DCE,23,23,0.0,True
-mixed_f3_v1,S5,CF + CSE + CP,23,23,0.0,True
-mixed_f3_v1,S6,CF + CSE + CP + DCE,23,23,0.0,True
-mixed_f3_v2,S1,CF,23,23,0.0,True
-mixed_f3_v2,S2,CF + CP,23,23,0.0,True
-mixed_f3_v2,S3,CF + DCE,23,23,0.0,True
-mixed_f3_v2,S4,CF + CP + DCE,23,23,0.0,True
-mixed_f3_v2,S5,CF + CSE + CP,23,23,0.0,True
-mixed_f3_v2,S6,CF + CSE + CP + DCE,23,23,0.0,True
-mixed_f4_v1,S1,CF,21,21,0.0,True
-mixed_f4_v1,S2,CF + CP,21,21,0.0,True
-mixed_f4_v1,S3,CF + DCE,21,21,0.0,True
-mixed_f4_v1,S4,CF + CP + DCE,21,21,0.0,True
-mixed_f4_v1,S5,CF + CSE + CP,21,21,0.0,True
-mixed_f4_v1,S6,CF + CSE + CP + DCE,21,21,0.0,True
-mixed_f4_v2,S1,CF,21,21,0.0,True
-mixed_f4_v2,S2,CF + CP,21,21,0.0,True
-mixed_f4_v2,S3,CF + DCE,21,21,0.0,True
-mixed_f4_v2,S4,CF + CP + DCE,21,21,0.0,True
-mixed_f4_v2,S5,CF + CSE + CP,21,21,0.0,True
-mixed_f4_v2,S6,CF + CSE + CP + DCE,21,21,0.0,True
-mixed_f5_v1,S1,CF,20,20,0.0,True
-mixed_f5_v1,S2,CF + CP,20,20,0.0,True
-mixed_f5_v1,S3,CF + DCE,20,20,0.0,True
-mixed_f5_v1,S4,CF + CP + DCE,20,19,5.0,True
-mixed_f5_v1,S5,CF + CSE + CP,20,20,0.0,True
-mixed_f5_v1,S6,CF + CSE + CP + DCE,20,19,5.0,True
-mixed_f5_v2,S1,CF,20,20,0.0,True
-mixed_f5_v2,S2,CF + CP,20,20,0.0,True
-mixed_f5_v2,S3,CF + DCE,20,20,0.0,True
-mixed_f5_v2,S4,CF + CP + DCE,20,19,5.0,True
-mixed_f5_v2,S5,CF + CSE + CP,20,20,0.0,True
-mixed_f5_v2,S6,CF + CSE + CP + DCE,20,19,5.0,True
+program_id,strategy,passes,original_instructions,optimized_instructions,instruction_reduction_pct,cost_aware_score,equivalent
+arith_f1_v1,S1,CF,16,16,0.0,-0.5,True
+arith_f1_v1,S2,CF + CP,16,16,0.0,-2.0,True
+arith_f1_v1,S3,CF + DCE,16,16,0.0,-2.0,True
+arith_f1_v1,S4,CF + CP + DCE,16,3,81.25,77.75,True
+arith_f1_v1,S5,CF + CSE + CP,16,16,0.0,-3.0,True
+arith_f1_v1,S6,CF + CSE + CP + DCE,16,3,81.25,76.75,True
+arith_f1_v1,S7,CF + SR,16,16,0.0,-1.0,True
+arith_f1_v1,S8,CF + SR + DCE,16,16,0.0,-2.5,True
+arith_f1_v1,S9,CF + COP + CP + DCE,16,3,81.25,77.0,True
+arith_f1_v1,S10,CF + SR + COP + CSE + CP + DCE,16,3,81.25,75.5,True
+arith_f1_v2,S1,CF,19,19,0.0,-0.5,True
+arith_f1_v2,S2,CF + CP,19,19,0.0,-2.0,True
+arith_f1_v2,S3,CF + DCE,19,19,0.0,-2.0,True
+arith_f1_v2,S4,CF + CP + DCE,19,3,84.2105,80.7105,True
+arith_f1_v2,S5,CF + CSE + CP,19,19,0.0,-3.0,True
+arith_f1_v2,S6,CF + CSE + CP + DCE,19,3,84.2105,79.7105,True
+arith_f1_v2,S7,CF + SR,19,19,0.0,-1.0,True
+arith_f1_v2,S8,CF + SR + DCE,19,19,0.0,-2.5,True
+arith_f1_v2,S9,CF + COP + CP + DCE,19,3,84.2105,79.9605,True
+arith_f1_v2,S10,CF + SR + COP + CSE + CP + DCE,19,3,84.2105,78.4605,True
+arith_f1_v3,S1,CF,19,19,0.0,-0.5,True
+arith_f1_v3,S2,CF + CP,19,19,0.0,-2.0,True
+arith_f1_v3,S3,CF + DCE,19,16,15.7895,13.7895,True
+arith_f1_v3,S4,CF + CP + DCE,19,3,84.2105,80.7105,True
+arith_f1_v3,S5,CF + CSE + CP,19,19,0.0,-3.0,True
+arith_f1_v3,S6,CF + CSE + CP + DCE,19,3,84.2105,79.7105,True
+arith_f1_v3,S7,CF + SR,19,19,0.0,-1.0,True
+arith_f1_v3,S8,CF + SR + DCE,19,16,15.7895,13.2895,True
+arith_f1_v3,S9,CF + COP + CP + DCE,19,3,84.2105,79.9605,True
+arith_f1_v3,S10,CF + SR + COP + CSE + CP + DCE,19,3,84.2105,78.4605,True
+arith_f2_v1,S1,CF,15,15,0.0,-0.5,True
+arith_f2_v1,S2,CF + CP,15,15,0.0,-2.0,True
+arith_f2_v1,S3,CF + DCE,15,14,6.6667,4.6667,True
+arith_f2_v1,S4,CF + CP + DCE,15,14,6.6667,3.1667,True
+arith_f2_v1,S5,CF + CSE + CP,15,15,0.0,-3.0,True
+arith_f2_v1,S6,CF + CSE + CP + DCE,15,14,6.6667,2.1667,True
+arith_f2_v1,S7,CF + SR,15,15,0.0,-1.0,True
+arith_f2_v1,S8,CF + SR + DCE,15,14,6.6667,4.1667,True
+arith_f2_v1,S9,CF + COP + CP + DCE,15,14,6.6667,2.4167,True
+arith_f2_v1,S10,CF + SR + COP + CSE + CP + DCE,15,14,6.6667,0.9167,True
+arith_f2_v2,S1,CF,17,17,0.0,-0.5,True
+arith_f2_v2,S2,CF + CP,17,17,0.0,-2.0,True
+arith_f2_v2,S3,CF + DCE,17,16,5.8824,3.8824,True
+arith_f2_v2,S4,CF + CP + DCE,17,16,5.8824,2.3824,True
+arith_f2_v2,S5,CF + CSE + CP,17,17,0.0,-3.0,True
+arith_f2_v2,S6,CF + CSE + CP + DCE,17,16,5.8824,1.3824,True
+arith_f2_v2,S7,CF + SR,17,17,0.0,-1.0,True
+arith_f2_v2,S8,CF + SR + DCE,17,16,5.8824,3.3824,True
+arith_f2_v2,S9,CF + COP + CP + DCE,17,15,11.7647,7.5147,True
+arith_f2_v2,S10,CF + SR + COP + CSE + CP + DCE,17,15,11.7647,6.0147,True
+arith_f2_v3,S1,CF,15,15,0.0,-0.5,True
+arith_f2_v3,S2,CF + CP,15,15,0.0,-2.0,True
+arith_f2_v3,S3,CF + DCE,15,15,0.0,-2.0,True
+arith_f2_v3,S4,CF + CP + DCE,15,14,6.6667,3.1667,True
+arith_f2_v3,S5,CF + CSE + CP,15,15,0.0,-3.0,True
+arith_f2_v3,S6,CF + CSE + CP + DCE,15,14,6.6667,2.1667,True
+arith_f2_v3,S7,CF + SR,15,15,0.0,-1.0,True
+arith_f2_v3,S8,CF + SR + DCE,15,15,0.0,-2.5,True
+arith_f2_v3,S9,CF + COP + CP + DCE,15,14,6.6667,2.4167,True
+arith_f2_v3,S10,CF + SR + COP + CSE + CP + DCE,15,14,6.6667,0.9167,True
+arith_f3_v1,S1,CF,14,14,0.0,-0.5,True
+arith_f3_v1,S2,CF + CP,14,14,0.0,-2.0,True
+arith_f3_v1,S3,CF + DCE,14,14,0.0,-2.0,True
+arith_f3_v1,S4,CF + CP + DCE,14,14,0.0,-3.5,True
+arith_f3_v1,S5,CF + CSE + CP,14,14,0.0,-3.0,True
+arith_f3_v1,S6,CF + CSE + CP + DCE,14,14,0.0,-4.5,True
+arith_f3_v1,S7,CF + SR,14,14,0.0,-1.0,True
+arith_f3_v1,S8,CF + SR + DCE,14,14,0.0,-2.5,True
+arith_f3_v1,S9,CF + COP + CP + DCE,14,14,0.0,-4.25,True
+arith_f3_v1,S10,CF + SR + COP + CSE + CP + DCE,14,14,0.0,-5.75,True
+arith_f3_v2,S1,CF,12,12,0.0,-0.5,True
+arith_f3_v2,S2,CF + CP,12,12,0.0,-2.0,True
+arith_f3_v2,S3,CF + DCE,12,12,0.0,-2.0,True
+arith_f3_v2,S4,CF + CP + DCE,12,12,0.0,-3.5,True
+arith_f3_v2,S5,CF + CSE + CP,12,12,0.0,-3.0,True
+arith_f3_v2,S6,CF + CSE + CP + DCE,12,12,0.0,-4.5,True
+arith_f3_v2,S7,CF + SR,12,12,0.0,-1.0,True
+arith_f3_v2,S8,CF + SR + DCE,12,12,0.0,-2.5,True
+arith_f3_v2,S9,CF + COP + CP + DCE,12,12,0.0,-4.25,True
+arith_f3_v2,S10,CF + SR + COP + CSE + CP + DCE,12,12,0.0,-5.75,True
+arith_f3_v3,S1,CF,12,12,0.0,-0.5,True
+arith_f3_v3,S2,CF + CP,12,12,0.0,-2.0,True
+arith_f3_v3,S3,CF + DCE,12,12,0.0,-2.0,True
+arith_f3_v3,S4,CF + CP + DCE,12,12,0.0,-3.5,True
+arith_f3_v3,S5,CF + CSE + CP,12,12,0.0,-3.0,True
+arith_f3_v3,S6,CF + CSE + CP + DCE,12,12,0.0,-4.5,True
+arith_f3_v3,S7,CF + SR,12,12,0.0,-1.0,True
+arith_f3_v3,S8,CF + SR + DCE,12,12,0.0,-2.5,True
+arith_f3_v3,S9,CF + COP + CP + DCE,12,12,0.0,-4.25,True
+arith_f3_v3,S10,CF + SR + COP + CSE + CP + DCE,12,12,0.0,-5.75,True
+arith_f4_v1,S1,CF,23,23,0.0,-0.5,True
+arith_f4_v1,S2,CF + CP,23,23,0.0,-2.0,True
+arith_f4_v1,S3,CF + DCE,23,11,52.1739,50.1739,True
+arith_f4_v1,S4,CF + CP + DCE,23,11,52.1739,48.6739,True
+arith_f4_v1,S5,CF + CSE + CP,23,22,4.3478,1.3478,True
+arith_f4_v1,S6,CF + CSE + CP + DCE,23,11,52.1739,47.6739,True
+arith_f4_v1,S7,CF + SR,23,23,0.0,-1.0,True
+arith_f4_v1,S8,CF + SR + DCE,23,11,52.1739,49.6739,True
+arith_f4_v1,S9,CF + COP + CP + DCE,23,11,52.1739,47.9239,True
+arith_f4_v1,S10,CF + SR + COP + CSE + CP + DCE,23,11,52.1739,46.4239,True
+arith_f4_v2,S1,CF,23,23,0.0,-0.5,True
+arith_f4_v2,S2,CF + CP,23,23,0.0,-2.0,True
+arith_f4_v2,S3,CF + DCE,23,11,52.1739,50.1739,True
+arith_f4_v2,S4,CF + CP + DCE,23,11,52.1739,48.6739,True
+arith_f4_v2,S5,CF + CSE + CP,23,22,4.3478,1.3478,True
+arith_f4_v2,S6,CF + CSE + CP + DCE,23,11,52.1739,47.6739,True
+arith_f4_v2,S7,CF + SR,23,23,0.0,-1.0,True
+arith_f4_v2,S8,CF + SR + DCE,23,11,52.1739,49.6739,True
+arith_f4_v2,S9,CF + COP + CP + DCE,23,11,52.1739,47.9239,True
+arith_f4_v2,S10,CF + SR + COP + CSE + CP + DCE,23,11,52.1739,46.4239,True
+arith_f4_v3,S1,CF,23,23,0.0,-0.5,True
+arith_f4_v3,S2,CF + CP,23,23,0.0,-2.0,True
+arith_f4_v3,S3,CF + DCE,23,11,52.1739,50.1739,True
+arith_f4_v3,S4,CF + CP + DCE,23,11,52.1739,48.6739,True
+arith_f4_v3,S5,CF + CSE + CP,23,21,8.6957,5.6957,True
+arith_f4_v3,S6,CF + CSE + CP + DCE,23,11,52.1739,47.6739,True
+arith_f4_v3,S7,CF + SR,23,23,0.0,-1.0,True
+arith_f4_v3,S8,CF + SR + DCE,23,11,52.1739,49.6739,True
+arith_f4_v3,S9,CF + COP + CP + DCE,23,11,52.1739,47.9239,True
+arith_f4_v3,S10,CF + SR + COP + CSE + CP + DCE,23,11,52.1739,46.4239,True
+arith_f5_v1,S1,CF,14,14,0.0,-0.5,True
+arith_f5_v1,S2,CF + CP,14,14,0.0,-2.0,True
+arith_f5_v1,S3,CF + DCE,14,14,0.0,-2.0,True
+arith_f5_v1,S4,CF + CP + DCE,14,14,0.0,-3.5,True
+arith_f5_v1,S5,CF + CSE + CP,14,14,0.0,-3.0,True
+arith_f5_v1,S6,CF + CSE + CP + DCE,14,14,0.0,-4.5,True
+arith_f5_v1,S7,CF + SR,14,14,0.0,-1.0,True
+arith_f5_v1,S8,CF + SR + DCE,14,14,0.0,-2.5,True
+arith_f5_v1,S9,CF + COP + CP + DCE,14,14,0.0,-4.25,True
+arith_f5_v1,S10,CF + SR + COP + CSE + CP + DCE,14,14,0.0,-5.75,True
+arith_f5_v2,S1,CF,11,11,0.0,-0.5,True
+arith_f5_v2,S2,CF + CP,11,11,0.0,-2.0,True
+arith_f5_v2,S3,CF + DCE,11,11,0.0,-2.0,True
+arith_f5_v2,S4,CF + CP + DCE,11,11,0.0,-3.5,True
+arith_f5_v2,S5,CF + CSE + CP,11,11,0.0,-3.0,True
+arith_f5_v2,S6,CF + CSE + CP + DCE,11,11,0.0,-4.5,True
+arith_f5_v2,S7,CF + SR,11,11,0.0,-1.0,True
+arith_f5_v2,S8,CF + SR + DCE,11,11,0.0,-2.5,True
+arith_f5_v2,S9,CF + COP + CP + DCE,11,11,0.0,-4.25,True
+arith_f5_v2,S10,CF + SR + COP + CSE + CP + DCE,11,11,0.0,-5.75,True
+arith_f5_v3,S1,CF,14,14,0.0,-0.5,True
+arith_f5_v3,S2,CF + CP,14,14,0.0,-2.0,True
+arith_f5_v3,S3,CF + DCE,14,14,0.0,-2.0,True
+arith_f5_v3,S4,CF + CP + DCE,14,14,0.0,-3.5,True
+arith_f5_v3,S5,CF + CSE + CP,14,14,0.0,-3.0,True
+arith_f5_v3,S6,CF + CSE + CP + DCE,14,14,0.0,-4.5,True
+arith_f5_v3,S7,CF + SR,14,14,0.0,-1.0,True
+arith_f5_v3,S8,CF + SR + DCE,14,14,0.0,-2.5,True
+arith_f5_v3,S9,CF + COP + CP + DCE,14,14,0.0,-4.25,True
+arith_f5_v3,S10,CF + SR + COP + CSE + CP + DCE,14,14,0.0,-5.75,True
+loop_f1_v1,S1,CF,12,12,0.0,-0.5,True
+loop_f1_v1,S2,CF + CP,12,12,0.0,-2.0,True
+loop_f1_v1,S3,CF + DCE,12,12,0.0,-2.0,True
+loop_f1_v1,S4,CF + CP + DCE,12,12,0.0,-3.5,True
+loop_f1_v1,S5,CF + CSE + CP,12,12,0.0,-3.0,True
+loop_f1_v1,S6,CF + CSE + CP + DCE,12,12,0.0,-4.5,True
+loop_f1_v1,S7,CF + SR,12,12,0.0,-1.0,True
+loop_f1_v1,S8,CF + SR + DCE,12,12,0.0,-2.5,True
+loop_f1_v1,S9,CF + COP + CP + DCE,12,11,8.3333,4.0833,True
+loop_f1_v1,S10,CF + SR + COP + CSE + CP + DCE,12,11,8.3333,2.5833,True
+loop_f1_v2,S1,CF,10,10,0.0,-0.5,True
+loop_f1_v2,S2,CF + CP,10,10,0.0,-2.0,True
+loop_f1_v2,S3,CF + DCE,10,10,0.0,-2.0,True
+loop_f1_v2,S4,CF + CP + DCE,10,10,0.0,-3.5,True
+loop_f1_v2,S5,CF + CSE + CP,10,10,0.0,-3.0,True
+loop_f1_v2,S6,CF + CSE + CP + DCE,10,10,0.0,-4.5,True
+loop_f1_v2,S7,CF + SR,10,10,0.0,-1.0,True
+loop_f1_v2,S8,CF + SR + DCE,10,10,0.0,-2.5,True
+loop_f1_v2,S9,CF + COP + CP + DCE,10,10,0.0,-4.25,True
+loop_f1_v2,S10,CF + SR + COP + CSE + CP + DCE,10,10,0.0,-5.75,True
+loop_f1_v3,S1,CF,10,10,0.0,-0.5,True
+loop_f1_v3,S2,CF + CP,10,10,0.0,-2.0,True
+loop_f1_v3,S3,CF + DCE,10,10,0.0,-2.0,True
+loop_f1_v3,S4,CF + CP + DCE,10,10,0.0,-3.5,True
+loop_f1_v3,S5,CF + CSE + CP,10,10,0.0,-3.0,True
+loop_f1_v3,S6,CF + CSE + CP + DCE,10,10,0.0,-4.5,True
+loop_f1_v3,S7,CF + SR,10,10,0.0,-1.0,True
+loop_f1_v3,S8,CF + SR + DCE,10,10,0.0,-2.5,True
+loop_f1_v3,S9,CF + COP + CP + DCE,10,10,0.0,-4.25,True
+loop_f1_v3,S10,CF + SR + COP + CSE + CP + DCE,10,10,0.0,-5.75,True
+loop_f2_v1,S1,CF,17,17,0.0,-0.5,True
+loop_f2_v1,S2,CF + CP,17,17,0.0,-2.0,True
+loop_f2_v1,S3,CF + DCE,17,17,0.0,-2.0,True
+loop_f2_v1,S4,CF + CP + DCE,17,17,0.0,-3.5,True
+loop_f2_v1,S5,CF + CSE + CP,17,17,0.0,-3.0,True
+loop_f2_v1,S6,CF + CSE + CP + DCE,17,17,0.0,-4.5,True
+loop_f2_v1,S7,CF + SR,17,17,0.0,-1.0,True
+loop_f2_v1,S8,CF + SR + DCE,17,17,0.0,-2.5,True
+loop_f2_v1,S9,CF + COP + CP + DCE,17,17,0.0,-4.25,True
+loop_f2_v1,S10,CF + SR + COP + CSE + CP + DCE,17,17,0.0,-5.75,True
+loop_f2_v2,S1,CF,17,17,0.0,-0.5,True
+loop_f2_v2,S2,CF + CP,17,17,0.0,-2.0,True
+loop_f2_v2,S3,CF + DCE,17,17,0.0,-2.0,True
+loop_f2_v2,S4,CF + CP + DCE,17,17,0.0,-3.5,True
+loop_f2_v2,S5,CF + CSE + CP,17,17,0.0,-3.0,True
+loop_f2_v2,S6,CF + CSE + CP + DCE,17,17,0.0,-4.5,True
+loop_f2_v2,S7,CF + SR,17,17,0.0,-1.0,True
+loop_f2_v2,S8,CF + SR + DCE,17,17,0.0,-2.5,True
+loop_f2_v2,S9,CF + COP + CP + DCE,17,17,0.0,-4.25,True
+loop_f2_v2,S10,CF + SR + COP + CSE + CP + DCE,17,17,0.0,-5.75,True
+loop_f2_v3,S1,CF,17,17,0.0,-0.5,True
+loop_f2_v3,S2,CF + CP,17,17,0.0,-2.0,True
+loop_f2_v3,S3,CF + DCE,17,17,0.0,-2.0,True
+loop_f2_v3,S4,CF + CP + DCE,17,17,0.0,-3.5,True
+loop_f2_v3,S5,CF + CSE + CP,17,17,0.0,-3.0,True
+loop_f2_v3,S6,CF + CSE + CP + DCE,17,17,0.0,-4.5,True
+loop_f2_v3,S7,CF + SR,17,17,0.0,-1.0,True
+loop_f2_v3,S8,CF + SR + DCE,17,17,0.0,-2.5,True
+loop_f2_v3,S9,CF + COP + CP + DCE,17,17,0.0,-4.25,True
+loop_f2_v3,S10,CF + SR + COP + CSE + CP + DCE,17,17,0.0,-5.75,True
+loop_f3_v1,S1,CF,10,10,0.0,-0.5,True
+loop_f3_v1,S2,CF + CP,10,10,0.0,-2.0,True
+loop_f3_v1,S3,CF + DCE,10,10,0.0,-2.0,True
+loop_f3_v1,S4,CF + CP + DCE,10,10,0.0,-3.5,True
+loop_f3_v1,S5,CF + CSE + CP,10,10,0.0,-3.0,True
+loop_f3_v1,S6,CF + CSE + CP + DCE,10,10,0.0,-4.5,True
+loop_f3_v1,S7,CF + SR,10,10,0.0,-1.0,True
+loop_f3_v1,S8,CF + SR + DCE,10,10,0.0,-2.5,True
+loop_f3_v1,S9,CF + COP + CP + DCE,10,10,0.0,-4.25,True
+loop_f3_v1,S10,CF + SR + COP + CSE + CP + DCE,10,10,0.0,-5.75,True
+loop_f3_v2,S1,CF,10,10,0.0,-0.5,True
+loop_f3_v2,S2,CF + CP,10,10,0.0,-2.0,True
+loop_f3_v2,S3,CF + DCE,10,10,0.0,-2.0,True
+loop_f3_v2,S4,CF + CP + DCE,10,10,0.0,-3.5,True
+loop_f3_v2,S5,CF + CSE + CP,10,10,0.0,-3.0,True
+loop_f3_v2,S6,CF + CSE + CP + DCE,10,10,0.0,-4.5,True
+loop_f3_v2,S7,CF + SR,10,10,0.0,-1.0,True
+loop_f3_v2,S8,CF + SR + DCE,10,10,0.0,-2.5,True
+loop_f3_v2,S9,CF + COP + CP + DCE,10,10,0.0,-4.25,True
+loop_f3_v2,S10,CF + SR + COP + CSE + CP + DCE,10,10,0.0,-5.75,True
+loop_f3_v3,S1,CF,10,10,0.0,-0.5,True
+loop_f3_v3,S2,CF + CP,10,10,0.0,-2.0,True
+loop_f3_v3,S3,CF + DCE,10,10,0.0,-2.0,True
+loop_f3_v3,S4,CF + CP + DCE,10,10,0.0,-3.5,True
+loop_f3_v3,S5,CF + CSE + CP,10,10,0.0,-3.0,True
+loop_f3_v3,S6,CF + CSE + CP + DCE,10,10,0.0,-4.5,True
+loop_f3_v3,S7,CF + SR,10,10,0.0,-1.0,True
+loop_f3_v3,S8,CF + SR + DCE,10,10,0.0,-2.5,True
+loop_f3_v3,S9,CF + COP + CP + DCE,10,10,0.0,-4.25,True
+loop_f3_v3,S10,CF + SR + COP + CSE + CP + DCE,10,10,0.0,-5.75,True
+loop_f4_v1,S1,CF,13,13,0.0,-0.5,True
+loop_f4_v1,S2,CF + CP,13,13,0.0,-2.0,True
+loop_f4_v1,S3,CF + DCE,13,13,0.0,-2.0,True
+loop_f4_v1,S4,CF + CP + DCE,13,13,0.0,-3.5,True
+loop_f4_v1,S5,CF + CSE + CP,13,13,0.0,-3.0,True
+loop_f4_v1,S6,CF + CSE + CP + DCE,13,13,0.0,-4.5,True
+loop_f4_v1,S7,CF + SR,13,13,0.0,-1.0,True
+loop_f4_v1,S8,CF + SR + DCE,13,13,0.0,-2.5,True
+loop_f4_v1,S9,CF + COP + CP + DCE,13,12,7.6923,3.4423,True
+loop_f4_v1,S10,CF + SR + COP + CSE + CP + DCE,13,12,7.6923,1.9423,True
+loop_f4_v2,S1,CF,13,13,0.0,-0.5,True
+loop_f4_v2,S2,CF + CP,13,13,0.0,-2.0,True
+loop_f4_v2,S3,CF + DCE,13,13,0.0,-2.0,True
+loop_f4_v2,S4,CF + CP + DCE,13,13,0.0,-3.5,True
+loop_f4_v2,S5,CF + CSE + CP,13,13,0.0,-3.0,True
+loop_f4_v2,S6,CF + CSE + CP + DCE,13,13,0.0,-4.5,True
+loop_f4_v2,S7,CF + SR,13,13,0.0,-1.0,True
+loop_f4_v2,S8,CF + SR + DCE,13,13,0.0,-2.5,True
+loop_f4_v2,S9,CF + COP + CP + DCE,13,12,7.6923,3.4423,True
+loop_f4_v2,S10,CF + SR + COP + CSE + CP + DCE,13,12,7.6923,1.9423,True
+loop_f4_v3,S1,CF,13,13,0.0,-0.5,True
+loop_f4_v3,S2,CF + CP,13,13,0.0,-2.0,True
+loop_f4_v3,S3,CF + DCE,13,13,0.0,-2.0,True
+loop_f4_v3,S4,CF + CP + DCE,13,13,0.0,-3.5,True
+loop_f4_v3,S5,CF + CSE + CP,13,13,0.0,-3.0,True
+loop_f4_v3,S6,CF + CSE + CP + DCE,13,13,0.0,-4.5,True
+loop_f4_v3,S7,CF + SR,13,13,0.0,-1.0,True
+loop_f4_v3,S8,CF + SR + DCE,13,13,0.0,-2.5,True
+loop_f4_v3,S9,CF + COP + CP + DCE,13,12,7.6923,3.4423,True
+loop_f4_v3,S10,CF + SR + COP + CSE + CP + DCE,13,12,7.6923,1.9423,True
+loop_f5_v1,S1,CF,13,13,0.0,-0.5,True
+loop_f5_v1,S2,CF + CP,13,13,0.0,-2.0,True
+loop_f5_v1,S3,CF + DCE,13,13,0.0,-2.0,True
+loop_f5_v1,S4,CF + CP + DCE,13,10,23.0769,19.5769,True
+loop_f5_v1,S5,CF + CSE + CP,13,13,0.0,-3.0,True
+loop_f5_v1,S6,CF + CSE + CP + DCE,13,10,23.0769,18.5769,True
+loop_f5_v1,S7,CF + SR,13,13,0.0,-1.0,True
+loop_f5_v1,S8,CF + SR + DCE,13,13,0.0,-2.5,True
+loop_f5_v1,S9,CF + COP + CP + DCE,13,10,23.0769,18.8269,True
+loop_f5_v1,S10,CF + SR + COP + CSE + CP + DCE,13,10,23.0769,17.3269,True
+loop_f5_v2,S1,CF,13,13,0.0,-0.5,True
+loop_f5_v2,S2,CF + CP,13,13,0.0,-2.0,True
+loop_f5_v2,S3,CF + DCE,13,13,0.0,-2.0,True
+loop_f5_v2,S4,CF + CP + DCE,13,10,23.0769,19.5769,True
+loop_f5_v2,S5,CF + CSE + CP,13,13,0.0,-3.0,True
+loop_f5_v2,S6,CF + CSE + CP + DCE,13,10,23.0769,18.5769,True
+loop_f5_v2,S7,CF + SR,13,13,0.0,-1.0,True
+loop_f5_v2,S8,CF + SR + DCE,13,13,0.0,-2.5,True
+loop_f5_v2,S9,CF + COP + CP + DCE,13,10,23.0769,18.8269,True
+loop_f5_v2,S10,CF + SR + COP + CSE + CP + DCE,13,10,23.0769,17.3269,True
+loop_f5_v3,S1,CF,13,13,0.0,-0.5,True
+loop_f5_v3,S2,CF + CP,13,13,0.0,-2.0,True
+loop_f5_v3,S3,CF + DCE,13,13,0.0,-2.0,True
+loop_f5_v3,S4,CF + CP + DCE,13,10,23.0769,19.5769,True
+loop_f5_v3,S5,CF + CSE + CP,13,13,0.0,-3.0,True
+loop_f5_v3,S6,CF + CSE + CP + DCE,13,10,23.0769,18.5769,True
+loop_f5_v3,S7,CF + SR,13,13,0.0,-1.0,True
+loop_f5_v3,S8,CF + SR + DCE,13,13,0.0,-2.5,True
+loop_f5_v3,S9,CF + COP + CP + DCE,13,10,23.0769,18.8269,True
+loop_f5_v3,S10,CF + SR + COP + CSE + CP + DCE,13,10,23.0769,17.3269,True
+branch_f1_v1,S1,CF,26,26,0.0,-0.5,True
+branch_f1_v1,S2,CF + CP,26,26,0.0,-2.0,True
+branch_f1_v1,S3,CF + DCE,26,26,0.0,-2.0,True
+branch_f1_v1,S4,CF + CP + DCE,26,26,0.0,-3.5,True
+branch_f1_v1,S5,CF + CSE + CP,26,26,0.0,-3.0,True
+branch_f1_v1,S6,CF + CSE + CP + DCE,26,26,0.0,-4.5,True
+branch_f1_v1,S7,CF + SR,26,26,0.0,-1.0,True
+branch_f1_v1,S8,CF + SR + DCE,26,26,0.0,-2.5,True
+branch_f1_v1,S9,CF + COP + CP + DCE,26,26,0.0,-4.25,True
+branch_f1_v1,S10,CF + SR + COP + CSE + CP + DCE,26,26,0.0,-5.75,True
+branch_f1_v2,S1,CF,26,26,0.0,-0.5,True
+branch_f1_v2,S2,CF + CP,26,26,0.0,-2.0,True
+branch_f1_v2,S3,CF + DCE,26,26,0.0,-2.0,True
+branch_f1_v2,S4,CF + CP + DCE,26,26,0.0,-3.5,True
+branch_f1_v2,S5,CF + CSE + CP,26,26,0.0,-3.0,True
+branch_f1_v2,S6,CF + CSE + CP + DCE,26,26,0.0,-4.5,True
+branch_f1_v2,S7,CF + SR,26,26,0.0,-1.0,True
+branch_f1_v2,S8,CF + SR + DCE,26,26,0.0,-2.5,True
+branch_f1_v2,S9,CF + COP + CP + DCE,26,26,0.0,-4.25,True
+branch_f1_v2,S10,CF + SR + COP + CSE + CP + DCE,26,26,0.0,-5.75,True
+branch_f1_v3,S1,CF,26,26,0.0,-0.5,True
+branch_f1_v3,S2,CF + CP,26,26,0.0,-2.0,True
+branch_f1_v3,S3,CF + DCE,26,26,0.0,-2.0,True
+branch_f1_v3,S4,CF + CP + DCE,26,26,0.0,-3.5,True
+branch_f1_v3,S5,CF + CSE + CP,26,26,0.0,-3.0,True
+branch_f1_v3,S6,CF + CSE + CP + DCE,26,26,0.0,-4.5,True
+branch_f1_v3,S7,CF + SR,26,26,0.0,-1.0,True
+branch_f1_v3,S8,CF + SR + DCE,26,26,0.0,-2.5,True
+branch_f1_v3,S9,CF + COP + CP + DCE,26,26,0.0,-4.25,True
+branch_f1_v3,S10,CF + SR + COP + CSE + CP + DCE,26,26,0.0,-5.75,True
+branch_f2_v1,S1,CF,12,12,0.0,-0.5,True
+branch_f2_v1,S2,CF + CP,12,12,0.0,-2.0,True
+branch_f2_v1,S3,CF + DCE,12,12,0.0,-2.0,True
+branch_f2_v1,S4,CF + CP + DCE,12,1,91.6667,88.1667,True
+branch_f2_v1,S5,CF + CSE + CP,12,12,0.0,-3.0,True
+branch_f2_v1,S6,CF + CSE + CP + DCE,12,1,91.6667,87.1667,True
+branch_f2_v1,S7,CF + SR,12,12,0.0,-1.0,True
+branch_f2_v1,S8,CF + SR + DCE,12,12,0.0,-2.5,True
+branch_f2_v1,S9,CF + COP + CP + DCE,12,1,91.6667,87.4167,True
+branch_f2_v1,S10,CF + SR + COP + CSE + CP + DCE,12,1,91.6667,85.9167,True
+branch_f2_v2,S1,CF,14,14,0.0,-0.5,True
+branch_f2_v2,S2,CF + CP,14,14,0.0,-2.0,True
+branch_f2_v2,S3,CF + DCE,14,13,7.1429,5.1429,True
+branch_f2_v2,S4,CF + CP + DCE,14,2,85.7143,82.2143,True
+branch_f2_v2,S5,CF + CSE + CP,14,14,0.0,-3.0,True
+branch_f2_v2,S6,CF + CSE + CP + DCE,14,2,85.7143,81.2143,True
+branch_f2_v2,S7,CF + SR,14,14,0.0,-1.0,True
+branch_f2_v2,S8,CF + SR + DCE,14,13,7.1429,4.6429,True
+branch_f2_v2,S9,CF + COP + CP + DCE,14,2,85.7143,81.4643,True
+branch_f2_v2,S10,CF + SR + COP + CSE + CP + DCE,14,2,85.7143,79.9643,True
+branch_f2_v3,S1,CF,12,12,0.0,-0.5,True
+branch_f2_v3,S2,CF + CP,12,12,0.0,-2.0,True
+branch_f2_v3,S3,CF + DCE,12,12,0.0,-2.0,True
+branch_f2_v3,S4,CF + CP + DCE,12,1,91.6667,88.1667,True
+branch_f2_v3,S5,CF + CSE + CP,12,12,0.0,-3.0,True
+branch_f2_v3,S6,CF + CSE + CP + DCE,12,1,91.6667,87.1667,True
+branch_f2_v3,S7,CF + SR,12,12,0.0,-1.0,True
+branch_f2_v3,S8,CF + SR + DCE,12,12,0.0,-2.5,True
+branch_f2_v3,S9,CF + COP + CP + DCE,12,1,91.6667,87.4167,True
+branch_f2_v3,S10,CF + SR + COP + CSE + CP + DCE,12,1,91.6667,85.9167,True
+branch_f3_v1,S1,CF,16,16,0.0,-0.5,True
+branch_f3_v1,S2,CF + CP,16,16,0.0,-2.0,True
+branch_f3_v1,S3,CF + DCE,16,16,0.0,-2.0,True
+branch_f3_v1,S4,CF + CP + DCE,16,2,87.5,84.0,True
+branch_f3_v1,S5,CF + CSE + CP,16,16,0.0,-3.0,True
+branch_f3_v1,S6,CF + CSE + CP + DCE,16,2,87.5,83.0,True
+branch_f3_v1,S7,CF + SR,16,16,0.0,-1.0,True
+branch_f3_v1,S8,CF + SR + DCE,16,16,0.0,-2.5,True
+branch_f3_v1,S9,CF + COP + CP + DCE,16,2,87.5,83.25,True
+branch_f3_v1,S10,CF + SR + COP + CSE + CP + DCE,16,2,87.5,81.75,True
+branch_f3_v2,S1,CF,16,16,0.0,-0.5,True
+branch_f3_v2,S2,CF + CP,16,16,0.0,-2.0,True
+branch_f3_v2,S3,CF + DCE,16,16,0.0,-2.0,True
+branch_f3_v2,S4,CF + CP + DCE,16,2,87.5,84.0,True
+branch_f3_v2,S5,CF + CSE + CP,16,16,0.0,-3.0,True
+branch_f3_v2,S6,CF + CSE + CP + DCE,16,2,87.5,83.0,True
+branch_f3_v2,S7,CF + SR,16,16,0.0,-1.0,True
+branch_f3_v2,S8,CF + SR + DCE,16,16,0.0,-2.5,True
+branch_f3_v2,S9,CF + COP + CP + DCE,16,2,87.5,83.25,True
+branch_f3_v2,S10,CF + SR + COP + CSE + CP + DCE,16,2,87.5,81.75,True
+branch_f3_v3,S1,CF,11,11,0.0,-0.5,True
+branch_f3_v3,S2,CF + CP,11,11,0.0,-2.0,True
+branch_f3_v3,S3,CF + DCE,11,11,0.0,-2.0,True
+branch_f3_v3,S4,CF + CP + DCE,11,1,90.9091,87.4091,True
+branch_f3_v3,S5,CF + CSE + CP,11,11,0.0,-3.0,True
+branch_f3_v3,S6,CF + CSE + CP + DCE,11,1,90.9091,86.4091,True
+branch_f3_v3,S7,CF + SR,11,11,0.0,-1.0,True
+branch_f3_v3,S8,CF + SR + DCE,11,11,0.0,-2.5,True
+branch_f3_v3,S9,CF + COP + CP + DCE,11,1,90.9091,86.6591,True
+branch_f3_v3,S10,CF + SR + COP + CSE + CP + DCE,11,1,90.9091,85.1591,True
+branch_f4_v1,S1,CF,20,20,0.0,-0.5,True
+branch_f4_v1,S2,CF + CP,20,20,0.0,-2.0,True
+branch_f4_v1,S3,CF + DCE,20,20,0.0,-2.0,True
+branch_f4_v1,S4,CF + CP + DCE,20,20,0.0,-3.5,True
+branch_f4_v1,S5,CF + CSE + CP,20,20,0.0,-3.0,True
+branch_f4_v1,S6,CF + CSE + CP + DCE,20,20,0.0,-4.5,True
+branch_f4_v1,S7,CF + SR,20,20,0.0,-1.0,True
+branch_f4_v1,S8,CF + SR + DCE,20,20,0.0,-2.5,True
+branch_f4_v1,S9,CF + COP + CP + DCE,20,20,0.0,-4.25,True
+branch_f4_v1,S10,CF + SR + COP + CSE + CP + DCE,20,20,0.0,-5.75,True
+branch_f4_v2,S1,CF,20,20,0.0,-0.5,True
+branch_f4_v2,S2,CF + CP,20,20,0.0,-2.0,True
+branch_f4_v2,S3,CF + DCE,20,20,0.0,-2.0,True
+branch_f4_v2,S4,CF + CP + DCE,20,20,0.0,-3.5,True
+branch_f4_v2,S5,CF + CSE + CP,20,20,0.0,-3.0,True
+branch_f4_v2,S6,CF + CSE + CP + DCE,20,20,0.0,-4.5,True
+branch_f4_v2,S7,CF + SR,20,20,0.0,-1.0,True
+branch_f4_v2,S8,CF + SR + DCE,20,20,0.0,-2.5,True
+branch_f4_v2,S9,CF + COP + CP + DCE,20,20,0.0,-4.25,True
+branch_f4_v2,S10,CF + SR + COP + CSE + CP + DCE,20,20,0.0,-5.75,True
+branch_f4_v3,S1,CF,20,20,0.0,-0.5,True
+branch_f4_v3,S2,CF + CP,20,20,0.0,-2.0,True
+branch_f4_v3,S3,CF + DCE,20,20,0.0,-2.0,True
+branch_f4_v3,S4,CF + CP + DCE,20,20,0.0,-3.5,True
+branch_f4_v3,S5,CF + CSE + CP,20,20,0.0,-3.0,True
+branch_f4_v3,S6,CF + CSE + CP + DCE,20,20,0.0,-4.5,True
+branch_f4_v3,S7,CF + SR,20,20,0.0,-1.0,True
+branch_f4_v3,S8,CF + SR + DCE,20,20,0.0,-2.5,True
+branch_f4_v3,S9,CF + COP + CP + DCE,20,20,0.0,-4.25,True
+branch_f4_v3,S10,CF + SR + COP + CSE + CP + DCE,20,20,0.0,-5.75,True
+branch_f5_v1,S1,CF,19,19,0.0,-0.5,True
+branch_f5_v1,S2,CF + CP,19,19,0.0,-2.0,True
+branch_f5_v1,S3,CF + DCE,19,13,31.5789,29.5789,True
+branch_f5_v1,S4,CF + CP + DCE,19,13,31.5789,28.0789,True
+branch_f5_v1,S5,CF + CSE + CP,19,19,0.0,-3.0,True
+branch_f5_v1,S6,CF + CSE + CP + DCE,19,13,31.5789,27.0789,True
+branch_f5_v1,S7,CF + SR,19,19,0.0,-1.0,True
+branch_f5_v1,S8,CF + SR + DCE,19,13,31.5789,29.0789,True
+branch_f5_v1,S9,CF + COP + CP + DCE,19,13,31.5789,27.3289,True
+branch_f5_v1,S10,CF + SR + COP + CSE + CP + DCE,19,13,31.5789,25.8289,True
+branch_f5_v2,S1,CF,19,19,0.0,-0.5,True
+branch_f5_v2,S2,CF + CP,19,19,0.0,-2.0,True
+branch_f5_v2,S3,CF + DCE,19,13,31.5789,29.5789,True
+branch_f5_v2,S4,CF + CP + DCE,19,13,31.5789,28.0789,True
+branch_f5_v2,S5,CF + CSE + CP,19,19,0.0,-3.0,True
+branch_f5_v2,S6,CF + CSE + CP + DCE,19,13,31.5789,27.0789,True
+branch_f5_v2,S7,CF + SR,19,19,0.0,-1.0,True
+branch_f5_v2,S8,CF + SR + DCE,19,13,31.5789,29.0789,True
+branch_f5_v2,S9,CF + COP + CP + DCE,19,13,31.5789,27.3289,True
+branch_f5_v2,S10,CF + SR + COP + CSE + CP + DCE,19,13,31.5789,25.8289,True
+branch_f5_v3,S1,CF,19,19,0.0,-0.5,True
+branch_f5_v3,S2,CF + CP,19,19,0.0,-2.0,True
+branch_f5_v3,S3,CF + DCE,19,13,31.5789,29.5789,True
+branch_f5_v3,S4,CF + CP + DCE,19,13,31.5789,28.0789,True
+branch_f5_v3,S5,CF + CSE + CP,19,19,0.0,-3.0,True
+branch_f5_v3,S6,CF + CSE + CP + DCE,19,13,31.5789,27.0789,True
+branch_f5_v3,S7,CF + SR,19,19,0.0,-1.0,True
+branch_f5_v3,S8,CF + SR + DCE,19,13,31.5789,29.0789,True
+branch_f5_v3,S9,CF + COP + CP + DCE,19,13,31.5789,27.3289,True
+branch_f5_v3,S10,CF + SR + COP + CSE + CP + DCE,19,13,31.5789,25.8289,True
+const_f1_v1,S1,CF,18,18,0.0,-0.5,True
+const_f1_v1,S2,CF + CP,18,18,0.0,-2.0,True
+const_f1_v1,S3,CF + DCE,18,18,0.0,-2.0,True
+const_f1_v1,S4,CF + CP + DCE,18,1,94.4444,90.9444,True
+const_f1_v1,S5,CF + CSE + CP,18,18,0.0,-3.0,True
+const_f1_v1,S6,CF + CSE + CP + DCE,18,1,94.4444,89.9444,True
+const_f1_v1,S7,CF + SR,18,18,0.0,-1.0,True
+const_f1_v1,S8,CF + SR + DCE,18,18,0.0,-2.5,True
+const_f1_v1,S9,CF + COP + CP + DCE,18,1,94.4444,90.1944,True
+const_f1_v1,S10,CF + SR + COP + CSE + CP + DCE,18,1,94.4444,88.6944,True
+const_f1_v2,S1,CF,36,36,0.0,-0.5,True
+const_f1_v2,S2,CF + CP,36,36,0.0,-2.0,True
+const_f1_v2,S3,CF + DCE,36,36,0.0,-2.0,True
+const_f1_v2,S4,CF + CP + DCE,36,1,97.2222,93.7222,True
+const_f1_v2,S5,CF + CSE + CP,36,36,0.0,-3.0,True
+const_f1_v2,S6,CF + CSE + CP + DCE,36,1,97.2222,92.7222,True
+const_f1_v2,S7,CF + SR,36,36,0.0,-1.0,True
+const_f1_v2,S8,CF + SR + DCE,36,36,0.0,-2.5,True
+const_f1_v2,S9,CF + COP + CP + DCE,36,1,97.2222,92.9722,True
+const_f1_v2,S10,CF + SR + COP + CSE + CP + DCE,36,1,97.2222,91.4722,True
+const_f1_v3,S1,CF,24,24,0.0,-0.5,True
+const_f1_v3,S2,CF + CP,24,24,0.0,-2.0,True
+const_f1_v3,S3,CF + DCE,24,24,0.0,-2.0,True
+const_f1_v3,S4,CF + CP + DCE,24,1,95.8333,92.3333,True
+const_f1_v3,S5,CF + CSE + CP,24,24,0.0,-3.0,True
+const_f1_v3,S6,CF + CSE + CP + DCE,24,1,95.8333,91.3333,True
+const_f1_v3,S7,CF + SR,24,24,0.0,-1.0,True
+const_f1_v3,S8,CF + SR + DCE,24,24,0.0,-2.5,True
+const_f1_v3,S9,CF + COP + CP + DCE,24,1,95.8333,91.5833,True
+const_f1_v3,S10,CF + SR + COP + CSE + CP + DCE,24,1,95.8333,90.0833,True
+const_f2_v1,S1,CF,10,10,0.0,-0.5,True
+const_f2_v1,S2,CF + CP,10,10,0.0,-2.0,True
+const_f2_v1,S3,CF + DCE,10,10,0.0,-2.0,True
+const_f2_v1,S4,CF + CP + DCE,10,2,80.0,76.5,True
+const_f2_v1,S5,CF + CSE + CP,10,10,0.0,-3.0,True
+const_f2_v1,S6,CF + CSE + CP + DCE,10,2,80.0,75.5,True
+const_f2_v1,S7,CF + SR,10,10,0.0,-1.0,True
+const_f2_v1,S8,CF + SR + DCE,10,10,0.0,-2.5,True
+const_f2_v1,S9,CF + COP + CP + DCE,10,2,80.0,75.75,True
+const_f2_v1,S10,CF + SR + COP + CSE + CP + DCE,10,2,80.0,74.25,True
+const_f2_v2,S1,CF,10,10,0.0,-0.5,True
+const_f2_v2,S2,CF + CP,10,10,0.0,-2.0,True
+const_f2_v2,S3,CF + DCE,10,10,0.0,-2.0,True
+const_f2_v2,S4,CF + CP + DCE,10,2,80.0,76.5,True
+const_f2_v2,S5,CF + CSE + CP,10,10,0.0,-3.0,True
+const_f2_v2,S6,CF + CSE + CP + DCE,10,2,80.0,75.5,True
+const_f2_v2,S7,CF + SR,10,10,0.0,-1.0,True
+const_f2_v2,S8,CF + SR + DCE,10,10,0.0,-2.5,True
+const_f2_v2,S9,CF + COP + CP + DCE,10,2,80.0,75.75,True
+const_f2_v2,S10,CF + SR + COP + CSE + CP + DCE,10,2,80.0,74.25,True
+const_f2_v3,S1,CF,10,10,0.0,-0.5,True
+const_f2_v3,S2,CF + CP,10,10,0.0,-2.0,True
+const_f2_v3,S3,CF + DCE,10,10,0.0,-2.0,True
+const_f2_v3,S4,CF + CP + DCE,10,2,80.0,76.5,True
+const_f2_v3,S5,CF + CSE + CP,10,10,0.0,-3.0,True
+const_f2_v3,S6,CF + CSE + CP + DCE,10,2,80.0,75.5,True
+const_f2_v3,S7,CF + SR,10,10,0.0,-1.0,True
+const_f2_v3,S8,CF + SR + DCE,10,10,0.0,-2.5,True
+const_f2_v3,S9,CF + COP + CP + DCE,10,2,80.0,75.75,True
+const_f2_v3,S10,CF + SR + COP + CSE + CP + DCE,10,2,80.0,74.25,True
+const_f3_v1,S1,CF,20,20,0.0,-0.5,True
+const_f3_v1,S2,CF + CP,20,20,0.0,-2.0,True
+const_f3_v1,S3,CF + DCE,20,20,0.0,-2.0,True
+const_f3_v1,S4,CF + CP + DCE,20,2,90.0,86.5,True
+const_f3_v1,S5,CF + CSE + CP,20,20,0.0,-3.0,True
+const_f3_v1,S6,CF + CSE + CP + DCE,20,2,90.0,85.5,True
+const_f3_v1,S7,CF + SR,20,20,0.0,-1.0,True
+const_f3_v1,S8,CF + SR + DCE,20,20,0.0,-2.5,True
+const_f3_v1,S9,CF + COP + CP + DCE,20,2,90.0,85.75,True
+const_f3_v1,S10,CF + SR + COP + CSE + CP + DCE,20,2,90.0,84.25,True
+const_f3_v2,S1,CF,20,20,0.0,-0.5,True
+const_f3_v2,S2,CF + CP,20,20,0.0,-2.0,True
+const_f3_v2,S3,CF + DCE,20,20,0.0,-2.0,True
+const_f3_v2,S4,CF + CP + DCE,20,2,90.0,86.5,True
+const_f3_v2,S5,CF + CSE + CP,20,20,0.0,-3.0,True
+const_f3_v2,S6,CF + CSE + CP + DCE,20,2,90.0,85.5,True
+const_f3_v2,S7,CF + SR,20,20,0.0,-1.0,True
+const_f3_v2,S8,CF + SR + DCE,20,20,0.0,-2.5,True
+const_f3_v2,S9,CF + COP + CP + DCE,20,2,90.0,85.75,True
+const_f3_v2,S10,CF + SR + COP + CSE + CP + DCE,20,2,90.0,84.25,True
+const_f3_v3,S1,CF,20,20,0.0,-0.5,True
+const_f3_v3,S2,CF + CP,20,20,0.0,-2.0,True
+const_f3_v3,S3,CF + DCE,20,20,0.0,-2.0,True
+const_f3_v3,S4,CF + CP + DCE,20,2,90.0,86.5,True
+const_f3_v3,S5,CF + CSE + CP,20,20,0.0,-3.0,True
+const_f3_v3,S6,CF + CSE + CP + DCE,20,2,90.0,85.5,True
+const_f3_v3,S7,CF + SR,20,20,0.0,-1.0,True
+const_f3_v3,S8,CF + SR + DCE,20,20,0.0,-2.5,True
+const_f3_v3,S9,CF + COP + CP + DCE,20,2,90.0,85.75,True
+const_f3_v3,S10,CF + SR + COP + CSE + CP + DCE,20,2,90.0,84.25,True
+const_f4_v1,S1,CF,16,16,0.0,-0.5,True
+const_f4_v1,S2,CF + CP,16,16,0.0,-2.0,True
+const_f4_v1,S3,CF + DCE,16,16,0.0,-2.0,True
+const_f4_v1,S4,CF + CP + DCE,16,1,93.75,90.25,True
+const_f4_v1,S5,CF + CSE + CP,16,16,0.0,-3.0,True
+const_f4_v1,S6,CF + CSE + CP + DCE,16,1,93.75,89.25,True
+const_f4_v1,S7,CF + SR,16,16,0.0,-1.0,True
+const_f4_v1,S8,CF + SR + DCE,16,16,0.0,-2.5,True
+const_f4_v1,S9,CF + COP + CP + DCE,16,1,93.75,89.5,True
+const_f4_v1,S10,CF + SR + COP + CSE + CP + DCE,16,1,93.75,88.0,True
+const_f4_v2,S1,CF,8,8,0.0,-0.5,True
+const_f4_v2,S2,CF + CP,8,8,0.0,-2.0,True
+const_f4_v2,S3,CF + DCE,8,8,0.0,-2.0,True
+const_f4_v2,S4,CF + CP + DCE,8,1,87.5,84.0,True
+const_f4_v2,S5,CF + CSE + CP,8,8,0.0,-3.0,True
+const_f4_v2,S6,CF + CSE + CP + DCE,8,1,87.5,83.0,True
+const_f4_v2,S7,CF + SR,8,8,0.0,-1.0,True
+const_f4_v2,S8,CF + SR + DCE,8,8,0.0,-2.5,True
+const_f4_v2,S9,CF + COP + CP + DCE,8,1,87.5,83.25,True
+const_f4_v2,S10,CF + SR + COP + CSE + CP + DCE,8,1,87.5,81.75,True
+const_f4_v3,S1,CF,10,10,0.0,-0.5,True
+const_f4_v3,S2,CF + CP,10,10,0.0,-2.0,True
+const_f4_v3,S3,CF + DCE,10,10,0.0,-2.0,True
+const_f4_v3,S4,CF + CP + DCE,10,1,90.0,86.5,True
+const_f4_v3,S5,CF + CSE + CP,10,10,0.0,-3.0,True
+const_f4_v3,S6,CF + CSE + CP + DCE,10,1,90.0,85.5,True
+const_f4_v3,S7,CF + SR,10,10,0.0,-1.0,True
+const_f4_v3,S8,CF + SR + DCE,10,10,0.0,-2.5,True
+const_f4_v3,S9,CF + COP + CP + DCE,10,1,90.0,85.75,True
+const_f4_v3,S10,CF + SR + COP + CSE + CP + DCE,10,1,90.0,84.25,True
+const_f5_v1,S1,CF,12,12,0.0,-0.5,True
+const_f5_v1,S2,CF + CP,12,12,0.0,-2.0,True
+const_f5_v1,S3,CF + DCE,12,12,0.0,-2.0,True
+const_f5_v1,S4,CF + CP + DCE,12,11,8.3333,4.8333,True
+const_f5_v1,S5,CF + CSE + CP,12,12,0.0,-3.0,True
+const_f5_v1,S6,CF + CSE + CP + DCE,12,11,8.3333,3.8333,True
+const_f5_v1,S7,CF + SR,12,12,0.0,-1.0,True
+const_f5_v1,S8,CF + SR + DCE,12,12,0.0,-2.5,True
+const_f5_v1,S9,CF + COP + CP + DCE,12,11,8.3333,4.0833,True
+const_f5_v1,S10,CF + SR + COP + CSE + CP + DCE,12,11,8.3333,2.5833,True
+const_f5_v2,S1,CF,12,12,0.0,-0.5,True
+const_f5_v2,S2,CF + CP,12,12,0.0,-2.0,True
+const_f5_v2,S3,CF + DCE,12,12,0.0,-2.0,True
+const_f5_v2,S4,CF + CP + DCE,12,11,8.3333,4.8333,True
+const_f5_v2,S5,CF + CSE + CP,12,12,0.0,-3.0,True
+const_f5_v2,S6,CF + CSE + CP + DCE,12,11,8.3333,3.8333,True
+const_f5_v2,S7,CF + SR,12,12,0.0,-1.0,True
+const_f5_v2,S8,CF + SR + DCE,12,12,0.0,-2.5,True
+const_f5_v2,S9,CF + COP + CP + DCE,12,11,8.3333,4.0833,True
+const_f5_v2,S10,CF + SR + COP + CSE + CP + DCE,12,11,8.3333,2.5833,True
+const_f5_v3,S1,CF,12,12,0.0,-0.5,True
+const_f5_v3,S2,CF + CP,12,12,0.0,-2.0,True
+const_f5_v3,S3,CF + DCE,12,12,0.0,-2.0,True
+const_f5_v3,S4,CF + CP + DCE,12,11,8.3333,4.8333,True
+const_f5_v3,S5,CF + CSE + CP,12,12,0.0,-3.0,True
+const_f5_v3,S6,CF + CSE + CP + DCE,12,11,8.3333,3.8333,True
+const_f5_v3,S7,CF + SR,12,12,0.0,-1.0,True
+const_f5_v3,S8,CF + SR + DCE,12,12,0.0,-2.5,True
+const_f5_v3,S9,CF + COP + CP + DCE,12,11,8.3333,4.0833,True
+const_f5_v3,S10,CF + SR + COP + CSE + CP + DCE,12,11,8.3333,2.5833,True
+redundant_f1_v1,S1,CF,24,24,0.0,-0.5,True
+redundant_f1_v1,S2,CF + CP,24,24,0.0,-2.0,True
+redundant_f1_v1,S3,CF + DCE,24,24,0.0,-2.0,True
+redundant_f1_v1,S4,CF + CP + DCE,24,24,0.0,-3.5,True
+redundant_f1_v1,S5,CF + CSE + CP,24,22,8.3333,5.3333,True
+redundant_f1_v1,S6,CF + CSE + CP + DCE,24,22,8.3333,3.8333,True
+redundant_f1_v1,S7,CF + SR,24,24,0.0,-1.0,True
+redundant_f1_v1,S8,CF + SR + DCE,24,24,0.0,-2.5,True
+redundant_f1_v1,S9,CF + COP + CP + DCE,24,22,8.3333,4.0833,True
+redundant_f1_v1,S10,CF + SR + COP + CSE + CP + DCE,24,20,16.6667,10.9167,True
+redundant_f1_v2,S1,CF,24,24,0.0,-0.5,True
+redundant_f1_v2,S2,CF + CP,24,24,0.0,-2.0,True
+redundant_f1_v2,S3,CF + DCE,24,24,0.0,-2.0,True
+redundant_f1_v2,S4,CF + CP + DCE,24,24,0.0,-3.5,True
+redundant_f1_v2,S5,CF + CSE + CP,24,22,8.3333,5.3333,True
+redundant_f1_v2,S6,CF + CSE + CP + DCE,24,22,8.3333,3.8333,True
+redundant_f1_v2,S7,CF + SR,24,24,0.0,-1.0,True
+redundant_f1_v2,S8,CF + SR + DCE,24,24,0.0,-2.5,True
+redundant_f1_v2,S9,CF + COP + CP + DCE,24,22,8.3333,4.0833,True
+redundant_f1_v2,S10,CF + SR + COP + CSE + CP + DCE,24,20,16.6667,10.9167,True
+redundant_f1_v3,S1,CF,24,24,0.0,-0.5,True
+redundant_f1_v3,S2,CF + CP,24,24,0.0,-2.0,True
+redundant_f1_v3,S3,CF + DCE,24,24,0.0,-2.0,True
+redundant_f1_v3,S4,CF + CP + DCE,24,24,0.0,-3.5,True
+redundant_f1_v3,S5,CF + CSE + CP,24,22,8.3333,5.3333,True
+redundant_f1_v3,S6,CF + CSE + CP + DCE,24,22,8.3333,3.8333,True
+redundant_f1_v3,S7,CF + SR,24,24,0.0,-1.0,True
+redundant_f1_v3,S8,CF + SR + DCE,24,24,0.0,-2.5,True
+redundant_f1_v3,S9,CF + COP + CP + DCE,24,22,8.3333,4.0833,True
+redundant_f1_v3,S10,CF + SR + COP + CSE + CP + DCE,24,20,16.6667,10.9167,True
+redundant_f2_v1,S1,CF,19,19,0.0,-0.5,True
+redundant_f2_v1,S2,CF + CP,19,19,0.0,-2.0,True
+redundant_f2_v1,S3,CF + DCE,19,19,0.0,-2.0,True
+redundant_f2_v1,S4,CF + CP + DCE,19,17,10.5263,7.0263,True
+redundant_f2_v1,S5,CF + CSE + CP,19,18,5.2632,2.2632,True
+redundant_f2_v1,S6,CF + CSE + CP + DCE,19,16,15.7895,11.2895,True
+redundant_f2_v1,S7,CF + SR,19,19,0.0,-1.0,True
+redundant_f2_v1,S8,CF + SR + DCE,19,19,0.0,-2.5,True
+redundant_f2_v1,S9,CF + COP + CP + DCE,19,15,21.0526,16.8026,True
+redundant_f2_v1,S10,CF + SR + COP + CSE + CP + DCE,19,14,26.3158,20.5658,True
+redundant_f2_v2,S1,CF,19,19,0.0,-0.5,True
+redundant_f2_v2,S2,CF + CP,19,19,0.0,-2.0,True
+redundant_f2_v2,S3,CF + DCE,19,19,0.0,-2.0,True
+redundant_f2_v2,S4,CF + CP + DCE,19,17,10.5263,7.0263,True
+redundant_f2_v2,S5,CF + CSE + CP,19,18,5.2632,2.2632,True
+redundant_f2_v2,S6,CF + CSE + CP + DCE,19,16,15.7895,11.2895,True
+redundant_f2_v2,S7,CF + SR,19,19,0.0,-1.0,True
+redundant_f2_v2,S8,CF + SR + DCE,19,19,0.0,-2.5,True
+redundant_f2_v2,S9,CF + COP + CP + DCE,19,15,21.0526,16.8026,True
+redundant_f2_v2,S10,CF + SR + COP + CSE + CP + DCE,19,14,26.3158,20.5658,True
+redundant_f2_v3,S1,CF,19,19,0.0,-0.5,True
+redundant_f2_v3,S2,CF + CP,19,19,0.0,-2.0,True
+redundant_f2_v3,S3,CF + DCE,19,19,0.0,-2.0,True
+redundant_f2_v3,S4,CF + CP + DCE,19,17,10.5263,7.0263,True
+redundant_f2_v3,S5,CF + CSE + CP,19,18,5.2632,2.2632,True
+redundant_f2_v3,S6,CF + CSE + CP + DCE,19,16,15.7895,11.2895,True
+redundant_f2_v3,S7,CF + SR,19,19,0.0,-1.0,True
+redundant_f2_v3,S8,CF + SR + DCE,19,19,0.0,-2.5,True
+redundant_f2_v3,S9,CF + COP + CP + DCE,19,15,21.0526,16.8026,True
+redundant_f2_v3,S10,CF + SR + COP + CSE + CP + DCE,19,14,26.3158,20.5658,True
+redundant_f3_v1,S1,CF,22,22,0.0,-0.5,True
+redundant_f3_v1,S2,CF + CP,22,22,0.0,-2.0,True
+redundant_f3_v1,S3,CF + DCE,22,22,0.0,-2.0,True
+redundant_f3_v1,S4,CF + CP + DCE,22,21,4.5455,1.0455,True
+redundant_f3_v1,S5,CF + CSE + CP,22,21,4.5455,1.5455,True
+redundant_f3_v1,S6,CF + CSE + CP + DCE,22,20,9.0909,4.5909,True
+redundant_f3_v1,S7,CF + SR,22,22,0.0,-1.0,True
+redundant_f3_v1,S8,CF + SR + DCE,22,22,0.0,-2.5,True
+redundant_f3_v1,S9,CF + COP + CP + DCE,22,18,18.1818,13.9318,True
+redundant_f3_v1,S10,CF + SR + COP + CSE + CP + DCE,22,17,22.7273,16.9773,True
+redundant_f3_v2,S1,CF,22,22,0.0,-0.5,True
+redundant_f3_v2,S2,CF + CP,22,22,0.0,-2.0,True
+redundant_f3_v2,S3,CF + DCE,22,22,0.0,-2.0,True
+redundant_f3_v2,S4,CF + CP + DCE,22,21,4.5455,1.0455,True
+redundant_f3_v2,S5,CF + CSE + CP,22,21,4.5455,1.5455,True
+redundant_f3_v2,S6,CF + CSE + CP + DCE,22,20,9.0909,4.5909,True
+redundant_f3_v2,S7,CF + SR,22,22,0.0,-1.0,True
+redundant_f3_v2,S8,CF + SR + DCE,22,22,0.0,-2.5,True
+redundant_f3_v2,S9,CF + COP + CP + DCE,22,18,18.1818,13.9318,True
+redundant_f3_v2,S10,CF + SR + COP + CSE + CP + DCE,22,17,22.7273,16.9773,True
+redundant_f3_v3,S1,CF,22,22,0.0,-0.5,True
+redundant_f3_v3,S2,CF + CP,22,22,0.0,-2.0,True
+redundant_f3_v3,S3,CF + DCE,22,22,0.0,-2.0,True
+redundant_f3_v3,S4,CF + CP + DCE,22,21,4.5455,1.0455,True
+redundant_f3_v3,S5,CF + CSE + CP,22,21,4.5455,1.5455,True
+redundant_f3_v3,S6,CF + CSE + CP + DCE,22,20,9.0909,4.5909,True
+redundant_f3_v3,S7,CF + SR,22,22,0.0,-1.0,True
+redundant_f3_v3,S8,CF + SR + DCE,22,22,0.0,-2.5,True
+redundant_f3_v3,S9,CF + COP + CP + DCE,22,18,18.1818,13.9318,True
+redundant_f3_v3,S10,CF + SR + COP + CSE + CP + DCE,22,17,22.7273,16.9773,True
+redundant_f4_v1,S1,CF,22,22,0.0,-0.5,True
+redundant_f4_v1,S2,CF + CP,22,22,0.0,-2.0,True
+redundant_f4_v1,S3,CF + DCE,22,22,0.0,-2.0,True
+redundant_f4_v1,S4,CF + CP + DCE,22,21,4.5455,1.0455,True
+redundant_f4_v1,S5,CF + CSE + CP,22,20,9.0909,6.0909,True
+redundant_f4_v1,S6,CF + CSE + CP + DCE,22,19,13.6364,9.1364,True
+redundant_f4_v1,S7,CF + SR,22,22,0.0,-1.0,True
+redundant_f4_v1,S8,CF + SR + DCE,22,22,0.0,-2.5,True
+redundant_f4_v1,S9,CF + COP + CP + DCE,22,19,13.6364,9.3864,True
+redundant_f4_v1,S10,CF + SR + COP + CSE + CP + DCE,22,17,22.7273,16.9773,True
+redundant_f4_v2,S1,CF,22,22,0.0,-0.5,True
+redundant_f4_v2,S2,CF + CP,22,22,0.0,-2.0,True
+redundant_f4_v2,S3,CF + DCE,22,22,0.0,-2.0,True
+redundant_f4_v2,S4,CF + CP + DCE,22,21,4.5455,1.0455,True
+redundant_f4_v2,S5,CF + CSE + CP,22,20,9.0909,6.0909,True
+redundant_f4_v2,S6,CF + CSE + CP + DCE,22,19,13.6364,9.1364,True
+redundant_f4_v2,S7,CF + SR,22,22,0.0,-1.0,True
+redundant_f4_v2,S8,CF + SR + DCE,22,22,0.0,-2.5,True
+redundant_f4_v2,S9,CF + COP + CP + DCE,22,19,13.6364,9.3864,True
+redundant_f4_v2,S10,CF + SR + COP + CSE + CP + DCE,22,17,22.7273,16.9773,True
+redundant_f4_v3,S1,CF,22,22,0.0,-0.5,True
+redundant_f4_v3,S2,CF + CP,22,22,0.0,-2.0,True
+redundant_f4_v3,S3,CF + DCE,22,22,0.0,-2.0,True
+redundant_f4_v3,S4,CF + CP + DCE,22,21,4.5455,1.0455,True
+redundant_f4_v3,S5,CF + CSE + CP,22,20,9.0909,6.0909,True
+redundant_f4_v3,S6,CF + CSE + CP + DCE,22,19,13.6364,9.1364,True
+redundant_f4_v3,S7,CF + SR,22,22,0.0,-1.0,True
+redundant_f4_v3,S8,CF + SR + DCE,22,22,0.0,-2.5,True
+redundant_f4_v3,S9,CF + COP + CP + DCE,22,19,13.6364,9.3864,True
+redundant_f4_v3,S10,CF + SR + COP + CSE + CP + DCE,22,17,22.7273,16.9773,True
+redundant_f5_v1,S1,CF,20,20,0.0,-0.5,True
+redundant_f5_v1,S2,CF + CP,20,20,0.0,-2.0,True
+redundant_f5_v1,S3,CF + DCE,20,20,0.0,-2.0,True
+redundant_f5_v1,S4,CF + CP + DCE,20,20,0.0,-3.5,True
+redundant_f5_v1,S5,CF + CSE + CP,20,20,0.0,-3.0,True
+redundant_f5_v1,S6,CF + CSE + CP + DCE,20,20,0.0,-4.5,True
+redundant_f5_v1,S7,CF + SR,20,20,0.0,-1.0,True
+redundant_f5_v1,S8,CF + SR + DCE,20,20,0.0,-2.5,True
+redundant_f5_v1,S9,CF + COP + CP + DCE,20,20,0.0,-4.25,True
+redundant_f5_v1,S10,CF + SR + COP + CSE + CP + DCE,20,20,0.0,-5.75,True
+redundant_f5_v2,S1,CF,20,20,0.0,-0.5,True
+redundant_f5_v2,S2,CF + CP,20,20,0.0,-2.0,True
+redundant_f5_v2,S3,CF + DCE,20,20,0.0,-2.0,True
+redundant_f5_v2,S4,CF + CP + DCE,20,20,0.0,-3.5,True
+redundant_f5_v2,S5,CF + CSE + CP,20,20,0.0,-3.0,True
+redundant_f5_v2,S6,CF + CSE + CP + DCE,20,20,0.0,-4.5,True
+redundant_f5_v2,S7,CF + SR,20,20,0.0,-1.0,True
+redundant_f5_v2,S8,CF + SR + DCE,20,20,0.0,-2.5,True
+redundant_f5_v2,S9,CF + COP + CP + DCE,20,20,0.0,-4.25,True
+redundant_f5_v2,S10,CF + SR + COP + CSE + CP + DCE,20,20,0.0,-5.75,True
+redundant_f5_v3,S1,CF,20,20,0.0,-0.5,True
+redundant_f5_v3,S2,CF + CP,20,20,0.0,-2.0,True
+redundant_f5_v3,S3,CF + DCE,20,20,0.0,-2.0,True
+redundant_f5_v3,S4,CF + CP + DCE,20,20,0.0,-3.5,True
+redundant_f5_v3,S5,CF + CSE + CP,20,20,0.0,-3.0,True
+redundant_f5_v3,S6,CF + CSE + CP + DCE,20,20,0.0,-4.5,True
+redundant_f5_v3,S7,CF + SR,20,20,0.0,-1.0,True
+redundant_f5_v3,S8,CF + SR + DCE,20,20,0.0,-2.5,True
+redundant_f5_v3,S9,CF + COP + CP + DCE,20,20,0.0,-4.25,True
+redundant_f5_v3,S10,CF + SR + COP + CSE + CP + DCE,20,20,0.0,-5.75,True
+mixed_f1_v1,S1,CF,26,26,0.0,-0.5,True
+mixed_f1_v1,S2,CF + CP,26,26,0.0,-2.0,True
+mixed_f1_v1,S3,CF + DCE,26,24,7.6923,5.6923,True
+mixed_f1_v1,S4,CF + CP + DCE,26,23,11.5385,8.0385,True
+mixed_f1_v1,S5,CF + CSE + CP,26,24,7.6923,4.6923,True
+mixed_f1_v1,S6,CF + CSE + CP + DCE,26,21,19.2308,14.7308,True
+mixed_f1_v1,S7,CF + SR,26,26,0.0,-1.0,True
+mixed_f1_v1,S8,CF + SR + DCE,26,24,7.6923,5.1923,True
+mixed_f1_v1,S9,CF + COP + CP + DCE,26,23,11.5385,7.2885,True
+mixed_f1_v1,S10,CF + SR + COP + CSE + CP + DCE,26,21,19.2308,13.4808,True
+mixed_f1_v2,S1,CF,26,26,0.0,-0.5,True
+mixed_f1_v2,S2,CF + CP,26,26,0.0,-2.0,True
+mixed_f1_v2,S3,CF + DCE,26,24,7.6923,5.6923,True
+mixed_f1_v2,S4,CF + CP + DCE,26,23,11.5385,8.0385,True
+mixed_f1_v2,S5,CF + CSE + CP,26,24,7.6923,4.6923,True
+mixed_f1_v2,S6,CF + CSE + CP + DCE,26,21,19.2308,14.7308,True
+mixed_f1_v2,S7,CF + SR,26,26,0.0,-1.0,True
+mixed_f1_v2,S8,CF + SR + DCE,26,24,7.6923,5.1923,True
+mixed_f1_v2,S9,CF + COP + CP + DCE,26,23,11.5385,7.2885,True
+mixed_f1_v2,S10,CF + SR + COP + CSE + CP + DCE,26,21,19.2308,13.4808,True
+mixed_f1_v3,S1,CF,26,26,0.0,-0.5,True
+mixed_f1_v3,S2,CF + CP,26,26,0.0,-2.0,True
+mixed_f1_v3,S3,CF + DCE,26,24,7.6923,5.6923,True
+mixed_f1_v3,S4,CF + CP + DCE,26,23,11.5385,8.0385,True
+mixed_f1_v3,S5,CF + CSE + CP,26,24,7.6923,4.6923,True
+mixed_f1_v3,S6,CF + CSE + CP + DCE,26,21,19.2308,14.7308,True
+mixed_f1_v3,S7,CF + SR,26,26,0.0,-1.0,True
+mixed_f1_v3,S8,CF + SR + DCE,26,24,7.6923,5.1923,True
+mixed_f1_v3,S9,CF + COP + CP + DCE,26,23,11.5385,7.2885,True
+mixed_f1_v3,S10,CF + SR + COP + CSE + CP + DCE,26,21,19.2308,13.4808,True
+mixed_f2_v1,S1,CF,19,19,0.0,-0.5,True
+mixed_f2_v1,S2,CF + CP,19,19,0.0,-2.0,True
+mixed_f2_v1,S3,CF + DCE,19,19,0.0,-2.0,True
+mixed_f2_v1,S4,CF + CP + DCE,19,19,0.0,-3.5,True
+mixed_f2_v1,S5,CF + CSE + CP,19,19,0.0,-3.0,True
+mixed_f2_v1,S6,CF + CSE + CP + DCE,19,19,0.0,-4.5,True
+mixed_f2_v1,S7,CF + SR,19,19,0.0,-1.0,True
+mixed_f2_v1,S8,CF + SR + DCE,19,19,0.0,-2.5,True
+mixed_f2_v1,S9,CF + COP + CP + DCE,19,19,0.0,-4.25,True
+mixed_f2_v1,S10,CF + SR + COP + CSE + CP + DCE,19,19,0.0,-5.75,True
+mixed_f2_v2,S1,CF,19,19,0.0,-0.5,True
+mixed_f2_v2,S2,CF + CP,19,19,0.0,-2.0,True
+mixed_f2_v2,S3,CF + DCE,19,19,0.0,-2.0,True
+mixed_f2_v2,S4,CF + CP + DCE,19,19,0.0,-3.5,True
+mixed_f2_v2,S5,CF + CSE + CP,19,19,0.0,-3.0,True
+mixed_f2_v2,S6,CF + CSE + CP + DCE,19,19,0.0,-4.5,True
+mixed_f2_v2,S7,CF + SR,19,19,0.0,-1.0,True
+mixed_f2_v2,S8,CF + SR + DCE,19,19,0.0,-2.5,True
+mixed_f2_v2,S9,CF + COP + CP + DCE,19,19,0.0,-4.25,True
+mixed_f2_v2,S10,CF + SR + COP + CSE + CP + DCE,19,19,0.0,-5.75,True
+mixed_f2_v3,S1,CF,19,19,0.0,-0.5,True
+mixed_f2_v3,S2,CF + CP,19,19,0.0,-2.0,True
+mixed_f2_v3,S3,CF + DCE,19,19,0.0,-2.0,True
+mixed_f2_v3,S4,CF + CP + DCE,19,19,0.0,-3.5,True
+mixed_f2_v3,S5,CF + CSE + CP,19,19,0.0,-3.0,True
+mixed_f2_v3,S6,CF + CSE + CP + DCE,19,19,0.0,-4.5,True
+mixed_f2_v3,S7,CF + SR,19,19,0.0,-1.0,True
+mixed_f2_v3,S8,CF + SR + DCE,19,19,0.0,-2.5,True
+mixed_f2_v3,S9,CF + COP + CP + DCE,19,19,0.0,-4.25,True
+mixed_f2_v3,S10,CF + SR + COP + CSE + CP + DCE,19,19,0.0,-5.75,True
+mixed_f3_v1,S1,CF,23,23,0.0,-0.5,True
+mixed_f3_v1,S2,CF + CP,23,23,0.0,-2.0,True
+mixed_f3_v1,S3,CF + DCE,23,23,0.0,-2.0,True
+mixed_f3_v1,S4,CF + CP + DCE,23,23,0.0,-3.5,True
+mixed_f3_v1,S5,CF + CSE + CP,23,23,0.0,-3.0,True
+mixed_f3_v1,S6,CF + CSE + CP + DCE,23,23,0.0,-4.5,True
+mixed_f3_v1,S7,CF + SR,23,23,0.0,-1.0,True
+mixed_f3_v1,S8,CF + SR + DCE,23,23,0.0,-2.5,True
+mixed_f3_v1,S9,CF + COP + CP + DCE,23,23,0.0,-4.25,True
+mixed_f3_v1,S10,CF + SR + COP + CSE + CP + DCE,23,23,0.0,-5.75,True
+mixed_f3_v2,S1,CF,23,23,0.0,-0.5,True
+mixed_f3_v2,S2,CF + CP,23,23,0.0,-2.0,True
+mixed_f3_v2,S3,CF + DCE,23,23,0.0,-2.0,True
+mixed_f3_v2,S4,CF + CP + DCE,23,23,0.0,-3.5,True
+mixed_f3_v2,S5,CF + CSE + CP,23,23,0.0,-3.0,True
+mixed_f3_v2,S6,CF + CSE + CP + DCE,23,23,0.0,-4.5,True
+mixed_f3_v2,S7,CF + SR,23,23,0.0,-1.0,True
+mixed_f3_v2,S8,CF + SR + DCE,23,23,0.0,-2.5,True
+mixed_f3_v2,S9,CF + COP + CP + DCE,23,23,0.0,-4.25,True
+mixed_f3_v2,S10,CF + SR + COP + CSE + CP + DCE,23,23,0.0,-5.75,True
+mixed_f3_v3,S1,CF,23,23,0.0,-0.5,True
+mixed_f3_v3,S2,CF + CP,23,23,0.0,-2.0,True
+mixed_f3_v3,S3,CF + DCE,23,23,0.0,-2.0,True
+mixed_f3_v3,S4,CF + CP + DCE,23,23,0.0,-3.5,True
+mixed_f3_v3,S5,CF + CSE + CP,23,23,0.0,-3.0,True
+mixed_f3_v3,S6,CF + CSE + CP + DCE,23,23,0.0,-4.5,True
+mixed_f3_v3,S7,CF + SR,23,23,0.0,-1.0,True
+mixed_f3_v3,S8,CF + SR + DCE,23,23,0.0,-2.5,True
+mixed_f3_v3,S9,CF + COP + CP + DCE,23,23,0.0,-4.25,True
+mixed_f3_v3,S10,CF + SR + COP + CSE + CP + DCE,23,23,0.0,-5.75,True
+mixed_f4_v1,S1,CF,21,21,0.0,-0.5,True
+mixed_f4_v1,S2,CF + CP,21,21,0.0,-2.0,True
+mixed_f4_v1,S3,CF + DCE,21,21,0.0,-2.0,True
+mixed_f4_v1,S4,CF + CP + DCE,21,21,0.0,-3.5,True
+mixed_f4_v1,S5,CF + CSE + CP,21,21,0.0,-3.0,True
+mixed_f4_v1,S6,CF + CSE + CP + DCE,21,21,0.0,-4.5,True
+mixed_f4_v1,S7,CF + SR,21,21,0.0,-1.0,True
+mixed_f4_v1,S8,CF + SR + DCE,21,21,0.0,-2.5,True
+mixed_f4_v1,S9,CF + COP + CP + DCE,21,21,0.0,-4.25,True
+mixed_f4_v1,S10,CF + SR + COP + CSE + CP + DCE,21,21,0.0,-5.75,True
+mixed_f4_v2,S1,CF,21,21,0.0,-0.5,True
+mixed_f4_v2,S2,CF + CP,21,21,0.0,-2.0,True
+mixed_f4_v2,S3,CF + DCE,21,21,0.0,-2.0,True
+mixed_f4_v2,S4,CF + CP + DCE,21,21,0.0,-3.5,True
+mixed_f4_v2,S5,CF + CSE + CP,21,21,0.0,-3.0,True
+mixed_f4_v2,S6,CF + CSE + CP + DCE,21,21,0.0,-4.5,True
+mixed_f4_v2,S7,CF + SR,21,21,0.0,-1.0,True
+mixed_f4_v2,S8,CF + SR + DCE,21,21,0.0,-2.5,True
+mixed_f4_v2,S9,CF + COP + CP + DCE,21,21,0.0,-4.25,True
+mixed_f4_v2,S10,CF + SR + COP + CSE + CP + DCE,21,21,0.0,-5.75,True
+mixed_f4_v3,S1,CF,21,21,0.0,-0.5,True
+mixed_f4_v3,S2,CF + CP,21,21,0.0,-2.0,True
+mixed_f4_v3,S3,CF + DCE,21,21,0.0,-2.0,True
+mixed_f4_v3,S4,CF + CP + DCE,21,21,0.0,-3.5,True
+mixed_f4_v3,S5,CF + CSE + CP,21,21,0.0,-3.0,True
+mixed_f4_v3,S6,CF + CSE + CP + DCE,21,21,0.0,-4.5,True
+mixed_f4_v3,S7,CF + SR,21,21,0.0,-1.0,True
+mixed_f4_v3,S8,CF + SR + DCE,21,21,0.0,-2.5,True
+mixed_f4_v3,S9,CF + COP + CP + DCE,21,21,0.0,-4.25,True
+mixed_f4_v3,S10,CF + SR + COP + CSE + CP + DCE,21,21,0.0,-5.75,True
+mixed_f5_v1,S1,CF,20,20,0.0,-0.5,True
+mixed_f5_v1,S2,CF + CP,20,20,0.0,-2.0,True
+mixed_f5_v1,S3,CF + DCE,20,20,0.0,-2.0,True
+mixed_f5_v1,S4,CF + CP + DCE,20,19,5.0,1.5,True
+mixed_f5_v1,S5,CF + CSE + CP,20,20,0.0,-3.0,True
+mixed_f5_v1,S6,CF + CSE + CP + DCE,20,19,5.0,0.5,True
+mixed_f5_v1,S7,CF + SR,20,20,0.0,-1.0,True
+mixed_f5_v1,S8,CF + SR + DCE,20,20,0.0,-2.5,True
+mixed_f5_v1,S9,CF + COP + CP + DCE,20,19,5.0,0.75,True
+mixed_f5_v1,S10,CF + SR + COP + CSE + CP + DCE,20,19,5.0,-0.75,True
+mixed_f5_v2,S1,CF,20,20,0.0,-0.5,True
+mixed_f5_v2,S2,CF + CP,20,20,0.0,-2.0,True
+mixed_f5_v2,S3,CF + DCE,20,20,0.0,-2.0,True
+mixed_f5_v2,S4,CF + CP + DCE,20,19,5.0,1.5,True
+mixed_f5_v2,S5,CF + CSE + CP,20,20,0.0,-3.0,True
+mixed_f5_v2,S6,CF + CSE + CP + DCE,20,19,5.0,0.5,True
+mixed_f5_v2,S7,CF + SR,20,20,0.0,-1.0,True
+mixed_f5_v2,S8,CF + SR + DCE,20,20,0.0,-2.5,True
+mixed_f5_v2,S9,CF + COP + CP + DCE,20,19,5.0,0.75,True
+mixed_f5_v2,S10,CF + SR + COP + CSE + CP + DCE,20,19,5.0,-0.75,True
+mixed_f5_v3,S1,CF,20,20,0.0,-0.5,True
+mixed_f5_v3,S2,CF + CP,20,20,0.0,-2.0,True
+mixed_f5_v3,S3,CF + DCE,20,20,0.0,-2.0,True
+mixed_f5_v3,S4,CF + CP + DCE,20,19,5.0,1.5,True
+mixed_f5_v3,S5,CF + CSE + CP,20,20,0.0,-3.0,True
+mixed_f5_v3,S6,CF + CSE + CP + DCE,20,19,5.0,0.5,True
+mixed_f5_v3,S7,CF + SR,20,20,0.0,-1.0,True
+mixed_f5_v3,S8,CF + SR + DCE,20,20,0.0,-2.5,True
+mixed_f5_v3,S9,CF + COP + CP + DCE,20,19,5.0,0.75,True
+mixed_f5_v3,S10,CF + SR + COP + CSE + CP + DCE,20,19,5.0,-0.75,True
+alg_f1_v1,S1,CF,16,16,0.0,-0.5,True
+alg_f1_v1,S2,CF + CP,16,16,0.0,-2.0,True
+alg_f1_v1,S3,CF + DCE,16,16,0.0,-2.0,True
+alg_f1_v1,S4,CF + CP + DCE,16,16,0.0,-3.5,True
+alg_f1_v1,S5,CF + CSE + CP,16,16,0.0,-3.0,True
+alg_f1_v1,S6,CF + CSE + CP + DCE,16,16,0.0,-4.5,True
+alg_f1_v1,S7,CF + SR,16,16,0.0,-1.0,True
+alg_f1_v1,S8,CF + SR + DCE,16,16,0.0,-2.5,True
+alg_f1_v1,S9,CF + COP + CP + DCE,16,13,18.75,14.5,True
+alg_f1_v1,S10,CF + SR + COP + CSE + CP + DCE,16,11,31.25,25.5,True
+alg_f1_v2,S1,CF,16,16,0.0,-0.5,True
+alg_f1_v2,S2,CF + CP,16,16,0.0,-2.0,True
+alg_f1_v2,S3,CF + DCE,16,16,0.0,-2.0,True
+alg_f1_v2,S4,CF + CP + DCE,16,16,0.0,-3.5,True
+alg_f1_v2,S5,CF + CSE + CP,16,16,0.0,-3.0,True
+alg_f1_v2,S6,CF + CSE + CP + DCE,16,16,0.0,-4.5,True
+alg_f1_v2,S7,CF + SR,16,16,0.0,-1.0,True
+alg_f1_v2,S8,CF + SR + DCE,16,16,0.0,-2.5,True
+alg_f1_v2,S9,CF + COP + CP + DCE,16,13,18.75,14.5,True
+alg_f1_v2,S10,CF + SR + COP + CSE + CP + DCE,16,11,31.25,25.5,True
+alg_f1_v3,S1,CF,16,16,0.0,-0.5,True
+alg_f1_v3,S2,CF + CP,16,16,0.0,-2.0,True
+alg_f1_v3,S3,CF + DCE,16,16,0.0,-2.0,True
+alg_f1_v3,S4,CF + CP + DCE,16,16,0.0,-3.5,True
+alg_f1_v3,S5,CF + CSE + CP,16,16,0.0,-3.0,True
+alg_f1_v3,S6,CF + CSE + CP + DCE,16,16,0.0,-4.5,True
+alg_f1_v3,S7,CF + SR,16,16,0.0,-1.0,True
+alg_f1_v3,S8,CF + SR + DCE,16,16,0.0,-2.5,True
+alg_f1_v3,S9,CF + COP + CP + DCE,16,13,18.75,14.5,True
+alg_f1_v3,S10,CF + SR + COP + CSE + CP + DCE,16,11,31.25,25.5,True
+alg_f2_v1,S1,CF,12,12,0.0,-0.5,True
+alg_f2_v1,S2,CF + CP,12,12,0.0,-2.0,True
+alg_f2_v1,S3,CF + DCE,12,12,0.0,-2.0,True
+alg_f2_v1,S4,CF + CP + DCE,12,3,75.0,71.5,True
+alg_f2_v1,S5,CF + CSE + CP,12,12,0.0,-3.0,True
+alg_f2_v1,S6,CF + CSE + CP + DCE,12,3,75.0,70.5,True
+alg_f2_v1,S7,CF + SR,12,12,0.0,-1.0,True
+alg_f2_v1,S8,CF + SR + DCE,12,11,8.3333,5.8333,True
+alg_f2_v1,S9,CF + COP + CP + DCE,12,3,75.0,70.75,True
+alg_f2_v1,S10,CF + SR + COP + CSE + CP + DCE,12,3,75.0,69.25,True
+alg_f2_v2,S1,CF,12,12,0.0,-0.5,True
+alg_f2_v2,S2,CF + CP,12,12,0.0,-2.0,True
+alg_f2_v2,S3,CF + DCE,12,12,0.0,-2.0,True
+alg_f2_v2,S4,CF + CP + DCE,12,3,75.0,71.5,True
+alg_f2_v2,S5,CF + CSE + CP,12,12,0.0,-3.0,True
+alg_f2_v2,S6,CF + CSE + CP + DCE,12,3,75.0,70.5,True
+alg_f2_v2,S7,CF + SR,12,12,0.0,-1.0,True
+alg_f2_v2,S8,CF + SR + DCE,12,11,8.3333,5.8333,True
+alg_f2_v2,S9,CF + COP + CP + DCE,12,3,75.0,70.75,True
+alg_f2_v2,S10,CF + SR + COP + CSE + CP + DCE,12,3,75.0,69.25,True
+alg_f2_v3,S1,CF,12,12,0.0,-0.5,True
+alg_f2_v3,S2,CF + CP,12,12,0.0,-2.0,True
+alg_f2_v3,S3,CF + DCE,12,12,0.0,-2.0,True
+alg_f2_v3,S4,CF + CP + DCE,12,3,75.0,71.5,True
+alg_f2_v3,S5,CF + CSE + CP,12,12,0.0,-3.0,True
+alg_f2_v3,S6,CF + CSE + CP + DCE,12,3,75.0,70.5,True
+alg_f2_v3,S7,CF + SR,12,12,0.0,-1.0,True
+alg_f2_v3,S8,CF + SR + DCE,12,11,8.3333,5.8333,True
+alg_f2_v3,S9,CF + COP + CP + DCE,12,3,75.0,70.75,True
+alg_f2_v3,S10,CF + SR + COP + CSE + CP + DCE,12,3,75.0,69.25,True
+alg_f3_v1,S1,CF,12,12,0.0,-0.5,True
+alg_f3_v1,S2,CF + CP,12,12,0.0,-2.0,True
+alg_f3_v1,S3,CF + DCE,12,12,0.0,-2.0,True
+alg_f3_v1,S4,CF + CP + DCE,12,1,91.6667,88.1667,True
+alg_f3_v1,S5,CF + CSE + CP,12,12,0.0,-3.0,True
+alg_f3_v1,S6,CF + CSE + CP + DCE,12,1,91.6667,87.1667,True
+alg_f3_v1,S7,CF + SR,12,12,0.0,-1.0,True
+alg_f3_v1,S8,CF + SR + DCE,12,12,0.0,-2.5,True
+alg_f3_v1,S9,CF + COP + CP + DCE,12,1,91.6667,87.4167,True
+alg_f3_v1,S10,CF + SR + COP + CSE + CP + DCE,12,1,91.6667,85.9167,True
+alg_f3_v2,S1,CF,14,14,0.0,-0.5,True
+alg_f3_v2,S2,CF + CP,14,14,0.0,-2.0,True
+alg_f3_v2,S3,CF + DCE,14,14,0.0,-2.0,True
+alg_f3_v2,S4,CF + CP + DCE,14,1,92.8571,89.3571,True
+alg_f3_v2,S5,CF + CSE + CP,14,14,0.0,-3.0,True
+alg_f3_v2,S6,CF + CSE + CP + DCE,14,1,92.8571,88.3571,True
+alg_f3_v2,S7,CF + SR,14,14,0.0,-1.0,True
+alg_f3_v2,S8,CF + SR + DCE,14,14,0.0,-2.5,True
+alg_f3_v2,S9,CF + COP + CP + DCE,14,1,92.8571,88.6071,True
+alg_f3_v2,S10,CF + SR + COP + CSE + CP + DCE,14,1,92.8571,87.1071,True
+alg_f3_v3,S1,CF,10,10,0.0,-0.5,True
+alg_f3_v3,S2,CF + CP,10,10,0.0,-2.0,True
+alg_f3_v3,S3,CF + DCE,10,10,0.0,-2.0,True
+alg_f3_v3,S4,CF + CP + DCE,10,1,90.0,86.5,True
+alg_f3_v3,S5,CF + CSE + CP,10,10,0.0,-3.0,True
+alg_f3_v3,S6,CF + CSE + CP + DCE,10,1,90.0,85.5,True
+alg_f3_v3,S7,CF + SR,10,10,0.0,-1.0,True
+alg_f3_v3,S8,CF + SR + DCE,10,10,0.0,-2.5,True
+alg_f3_v3,S9,CF + COP + CP + DCE,10,1,90.0,85.75,True
+alg_f3_v3,S10,CF + SR + COP + CSE + CP + DCE,10,1,90.0,84.25,True
+alg_f4_v1,S1,CF,15,15,0.0,-0.5,True
+alg_f4_v1,S2,CF + CP,15,15,0.0,-2.0,True
+alg_f4_v1,S3,CF + DCE,15,15,0.0,-2.0,True
+alg_f4_v1,S4,CF + CP + DCE,15,15,0.0,-3.5,True
+alg_f4_v1,S5,CF + CSE + CP,15,15,0.0,-3.0,True
+alg_f4_v1,S6,CF + CSE + CP + DCE,15,15,0.0,-4.5,True
+alg_f4_v1,S7,CF + SR,15,15,0.0,-1.0,True
+alg_f4_v1,S8,CF + SR + DCE,15,15,0.0,-2.5,True
+alg_f4_v1,S9,CF + COP + CP + DCE,15,13,13.3333,9.0833,True
+alg_f4_v1,S10,CF + SR + COP + CSE + CP + DCE,15,13,13.3333,7.5833,True
+alg_f4_v2,S1,CF,15,15,0.0,-0.5,True
+alg_f4_v2,S2,CF + CP,15,15,0.0,-2.0,True
+alg_f4_v2,S3,CF + DCE,15,15,0.0,-2.0,True
+alg_f4_v2,S4,CF + CP + DCE,15,15,0.0,-3.5,True
+alg_f4_v2,S5,CF + CSE + CP,15,15,0.0,-3.0,True
+alg_f4_v2,S6,CF + CSE + CP + DCE,15,15,0.0,-4.5,True
+alg_f4_v2,S7,CF + SR,15,15,0.0,-1.0,True
+alg_f4_v2,S8,CF + SR + DCE,15,15,0.0,-2.5,True
+alg_f4_v2,S9,CF + COP + CP + DCE,15,13,13.3333,9.0833,True
+alg_f4_v2,S10,CF + SR + COP + CSE + CP + DCE,15,13,13.3333,7.5833,True
+alg_f4_v3,S1,CF,15,15,0.0,-0.5,True
+alg_f4_v3,S2,CF + CP,15,15,0.0,-2.0,True
+alg_f4_v3,S3,CF + DCE,15,15,0.0,-2.0,True
+alg_f4_v3,S4,CF + CP + DCE,15,15,0.0,-3.5,True
+alg_f4_v3,S5,CF + CSE + CP,15,15,0.0,-3.0,True
+alg_f4_v3,S6,CF + CSE + CP + DCE,15,15,0.0,-4.5,True
+alg_f4_v3,S7,CF + SR,15,15,0.0,-1.0,True
+alg_f4_v3,S8,CF + SR + DCE,15,15,0.0,-2.5,True
+alg_f4_v3,S9,CF + COP + CP + DCE,15,13,13.3333,9.0833,True
+alg_f4_v3,S10,CF + SR + COP + CSE + CP + DCE,15,13,13.3333,7.5833,True
+alg_f5_v1,S1,CF,17,17,0.0,-0.5,True
+alg_f5_v1,S2,CF + CP,17,17,0.0,-2.0,True
+alg_f5_v1,S3,CF + DCE,17,17,0.0,-2.0,True
+alg_f5_v1,S4,CF + CP + DCE,17,5,70.5882,67.0882,True
+alg_f5_v1,S5,CF + CSE + CP,17,17,0.0,-3.0,True
+alg_f5_v1,S6,CF + CSE + CP + DCE,17,5,70.5882,66.0882,True
+alg_f5_v1,S7,CF + SR,17,17,0.0,-1.0,True
+alg_f5_v1,S8,CF + SR + DCE,17,17,0.0,-2.5,True
+alg_f5_v1,S9,CF + COP + CP + DCE,17,5,70.5882,66.3382,True
+alg_f5_v1,S10,CF + SR + COP + CSE + CP + DCE,17,5,70.5882,64.8382,True
+alg_f5_v2,S1,CF,17,17,0.0,-0.5,True
+alg_f5_v2,S2,CF + CP,17,17,0.0,-2.0,True
+alg_f5_v2,S3,CF + DCE,17,17,0.0,-2.0,True
+alg_f5_v2,S4,CF + CP + DCE,17,5,70.5882,67.0882,True
+alg_f5_v2,S5,CF + CSE + CP,17,17,0.0,-3.0,True
+alg_f5_v2,S6,CF + CSE + CP + DCE,17,5,70.5882,66.0882,True
+alg_f5_v2,S7,CF + SR,17,17,0.0,-1.0,True
+alg_f5_v2,S8,CF + SR + DCE,17,17,0.0,-2.5,True
+alg_f5_v2,S9,CF + COP + CP + DCE,17,5,70.5882,66.3382,True
+alg_f5_v2,S10,CF + SR + COP + CSE + CP + DCE,17,5,70.5882,64.8382,True
+alg_f5_v3,S1,CF,17,17,0.0,-0.5,True
+alg_f5_v3,S2,CF + CP,17,17,0.0,-2.0,True
+alg_f5_v3,S3,CF + DCE,17,17,0.0,-2.0,True
+alg_f5_v3,S4,CF + CP + DCE,17,5,70.5882,67.0882,True
+alg_f5_v3,S5,CF + CSE + CP,17,17,0.0,-3.0,True
+alg_f5_v3,S6,CF + CSE + CP + DCE,17,5,70.5882,66.0882,True
+alg_f5_v3,S7,CF + SR,17,17,0.0,-1.0,True
+alg_f5_v3,S8,CF + SR + DCE,17,17,0.0,-2.5,True
+alg_f5_v3,S9,CF + COP + CP + DCE,17,5,70.5882,66.3382,True
+alg_f5_v3,S10,CF + SR + COP + CSE + CP + DCE,17,5,70.5882,64.8382,True
+copy_f1_v1,S1,CF,7,7,0.0,-0.5,True
+copy_f1_v1,S2,CF + CP,7,7,0.0,-2.0,True
+copy_f1_v1,S3,CF + DCE,7,7,0.0,-2.0,True
+copy_f1_v1,S4,CF + CP + DCE,7,2,71.4286,67.9286,True
+copy_f1_v1,S5,CF + CSE + CP,7,7,0.0,-3.0,True
+copy_f1_v1,S6,CF + CSE + CP + DCE,7,2,71.4286,66.9286,True
+copy_f1_v1,S7,CF + SR,7,7,0.0,-1.0,True
+copy_f1_v1,S8,CF + SR + DCE,7,7,0.0,-2.5,True
+copy_f1_v1,S9,CF + COP + CP + DCE,7,2,71.4286,67.1786,True
+copy_f1_v1,S10,CF + SR + COP + CSE + CP + DCE,7,2,71.4286,65.6786,True
+copy_f1_v2,S1,CF,6,6,0.0,-0.5,True
+copy_f1_v2,S2,CF + CP,6,6,0.0,-2.0,True
+copy_f1_v2,S3,CF + DCE,6,6,0.0,-2.0,True
+copy_f1_v2,S4,CF + CP + DCE,6,2,66.6667,63.1667,True
+copy_f1_v2,S5,CF + CSE + CP,6,6,0.0,-3.0,True
+copy_f1_v2,S6,CF + CSE + CP + DCE,6,2,66.6667,62.1667,True
+copy_f1_v2,S7,CF + SR,6,6,0.0,-1.0,True
+copy_f1_v2,S8,CF + SR + DCE,6,6,0.0,-2.5,True
+copy_f1_v2,S9,CF + COP + CP + DCE,6,2,66.6667,62.4167,True
+copy_f1_v2,S10,CF + SR + COP + CSE + CP + DCE,6,2,66.6667,60.9167,True
+copy_f1_v3,S1,CF,9,9,0.0,-0.5,True
+copy_f1_v3,S2,CF + CP,9,9,0.0,-2.0,True
+copy_f1_v3,S3,CF + DCE,9,9,0.0,-2.0,True
+copy_f1_v3,S4,CF + CP + DCE,9,2,77.7778,74.2778,True
+copy_f1_v3,S5,CF + CSE + CP,9,9,0.0,-3.0,True
+copy_f1_v3,S6,CF + CSE + CP + DCE,9,2,77.7778,73.2778,True
+copy_f1_v3,S7,CF + SR,9,9,0.0,-1.0,True
+copy_f1_v3,S8,CF + SR + DCE,9,9,0.0,-2.5,True
+copy_f1_v3,S9,CF + COP + CP + DCE,9,2,77.7778,73.5278,True
+copy_f1_v3,S10,CF + SR + COP + CSE + CP + DCE,9,2,77.7778,72.0278,True
+copy_f2_v1,S1,CF,12,12,0.0,-0.5,True
+copy_f2_v1,S2,CF + CP,12,12,0.0,-2.0,True
+copy_f2_v1,S3,CF + DCE,12,12,0.0,-2.0,True
+copy_f2_v1,S4,CF + CP + DCE,12,10,16.6667,13.1667,True
+copy_f2_v1,S5,CF + CSE + CP,12,12,0.0,-3.0,True
+copy_f2_v1,S6,CF + CSE + CP + DCE,12,10,16.6667,12.1667,True
+copy_f2_v1,S7,CF + SR,12,12,0.0,-1.0,True
+copy_f2_v1,S8,CF + SR + DCE,12,12,0.0,-2.5,True
+copy_f2_v1,S9,CF + COP + CP + DCE,12,10,16.6667,12.4167,True
+copy_f2_v1,S10,CF + SR + COP + CSE + CP + DCE,12,10,16.6667,10.9167,True
+copy_f2_v2,S1,CF,12,12,0.0,-0.5,True
+copy_f2_v2,S2,CF + CP,12,12,0.0,-2.0,True
+copy_f2_v2,S3,CF + DCE,12,12,0.0,-2.0,True
+copy_f2_v2,S4,CF + CP + DCE,12,10,16.6667,13.1667,True
+copy_f2_v2,S5,CF + CSE + CP,12,12,0.0,-3.0,True
+copy_f2_v2,S6,CF + CSE + CP + DCE,12,10,16.6667,12.1667,True
+copy_f2_v2,S7,CF + SR,12,12,0.0,-1.0,True
+copy_f2_v2,S8,CF + SR + DCE,12,12,0.0,-2.5,True
+copy_f2_v2,S9,CF + COP + CP + DCE,12,10,16.6667,12.4167,True
+copy_f2_v2,S10,CF + SR + COP + CSE + CP + DCE,12,10,16.6667,10.9167,True
+copy_f2_v3,S1,CF,12,12,0.0,-0.5,True
+copy_f2_v3,S2,CF + CP,12,12,0.0,-2.0,True
+copy_f2_v3,S3,CF + DCE,12,12,0.0,-2.0,True
+copy_f2_v3,S4,CF + CP + DCE,12,10,16.6667,13.1667,True
+copy_f2_v3,S5,CF + CSE + CP,12,12,0.0,-3.0,True
+copy_f2_v3,S6,CF + CSE + CP + DCE,12,10,16.6667,12.1667,True
+copy_f2_v3,S7,CF + SR,12,12,0.0,-1.0,True
+copy_f2_v3,S8,CF + SR + DCE,12,12,0.0,-2.5,True
+copy_f2_v3,S9,CF + COP + CP + DCE,12,10,16.6667,12.4167,True
+copy_f2_v3,S10,CF + SR + COP + CSE + CP + DCE,12,10,16.6667,10.9167,True
+copy_f3_v1,S1,CF,12,12,0.0,-0.5,True
+copy_f3_v1,S2,CF + CP,12,12,0.0,-2.0,True
+copy_f3_v1,S3,CF + DCE,12,12,0.0,-2.0,True
+copy_f3_v1,S4,CF + CP + DCE,12,2,83.3333,79.8333,True
+copy_f3_v1,S5,CF + CSE + CP,12,12,0.0,-3.0,True
+copy_f3_v1,S6,CF + CSE + CP + DCE,12,2,83.3333,78.8333,True
+copy_f3_v1,S7,CF + SR,12,12,0.0,-1.0,True
+copy_f3_v1,S8,CF + SR + DCE,12,12,0.0,-2.5,True
+copy_f3_v1,S9,CF + COP + CP + DCE,12,2,83.3333,79.0833,True
+copy_f3_v1,S10,CF + SR + COP + CSE + CP + DCE,12,2,83.3333,77.5833,True
+copy_f3_v2,S1,CF,12,12,0.0,-0.5,True
+copy_f3_v2,S2,CF + CP,12,12,0.0,-2.0,True
+copy_f3_v2,S3,CF + DCE,12,12,0.0,-2.0,True
+copy_f3_v2,S4,CF + CP + DCE,12,2,83.3333,79.8333,True
+copy_f3_v2,S5,CF + CSE + CP,12,12,0.0,-3.0,True
+copy_f3_v2,S6,CF + CSE + CP + DCE,12,2,83.3333,78.8333,True
+copy_f3_v2,S7,CF + SR,12,12,0.0,-1.0,True
+copy_f3_v2,S8,CF + SR + DCE,12,12,0.0,-2.5,True
+copy_f3_v2,S9,CF + COP + CP + DCE,12,2,83.3333,79.0833,True
+copy_f3_v2,S10,CF + SR + COP + CSE + CP + DCE,12,2,83.3333,77.5833,True
+copy_f3_v3,S1,CF,12,12,0.0,-0.5,True
+copy_f3_v3,S2,CF + CP,12,12,0.0,-2.0,True
+copy_f3_v3,S3,CF + DCE,12,12,0.0,-2.0,True
+copy_f3_v3,S4,CF + CP + DCE,12,2,83.3333,79.8333,True
+copy_f3_v3,S5,CF + CSE + CP,12,12,0.0,-3.0,True
+copy_f3_v3,S6,CF + CSE + CP + DCE,12,2,83.3333,78.8333,True
+copy_f3_v3,S7,CF + SR,12,12,0.0,-1.0,True
+copy_f3_v3,S8,CF + SR + DCE,12,12,0.0,-2.5,True
+copy_f3_v3,S9,CF + COP + CP + DCE,12,2,83.3333,79.0833,True
+copy_f3_v3,S10,CF + SR + COP + CSE + CP + DCE,12,2,83.3333,77.5833,True
+copy_f4_v1,S1,CF,9,9,0.0,-0.5,True
+copy_f4_v1,S2,CF + CP,9,9,0.0,-2.0,True
+copy_f4_v1,S3,CF + DCE,9,9,0.0,-2.0,True
+copy_f4_v1,S4,CF + CP + DCE,9,1,88.8889,85.3889,True
+copy_f4_v1,S5,CF + CSE + CP,9,9,0.0,-3.0,True
+copy_f4_v1,S6,CF + CSE + CP + DCE,9,1,88.8889,84.3889,True
+copy_f4_v1,S7,CF + SR,9,9,0.0,-1.0,True
+copy_f4_v1,S8,CF + SR + DCE,9,9,0.0,-2.5,True
+copy_f4_v1,S9,CF + COP + CP + DCE,9,1,88.8889,84.6389,True
+copy_f4_v1,S10,CF + SR + COP + CSE + CP + DCE,9,1,88.8889,83.1389,True
+copy_f4_v2,S1,CF,9,9,0.0,-0.5,True
+copy_f4_v2,S2,CF + CP,9,9,0.0,-2.0,True
+copy_f4_v2,S3,CF + DCE,9,9,0.0,-2.0,True
+copy_f4_v2,S4,CF + CP + DCE,9,1,88.8889,85.3889,True
+copy_f4_v2,S5,CF + CSE + CP,9,9,0.0,-3.0,True
+copy_f4_v2,S6,CF + CSE + CP + DCE,9,1,88.8889,84.3889,True
+copy_f4_v2,S7,CF + SR,9,9,0.0,-1.0,True
+copy_f4_v2,S8,CF + SR + DCE,9,9,0.0,-2.5,True
+copy_f4_v2,S9,CF + COP + CP + DCE,9,1,88.8889,84.6389,True
+copy_f4_v2,S10,CF + SR + COP + CSE + CP + DCE,9,1,88.8889,83.1389,True
+copy_f4_v3,S1,CF,9,9,0.0,-0.5,True
+copy_f4_v3,S2,CF + CP,9,9,0.0,-2.0,True
+copy_f4_v3,S3,CF + DCE,9,9,0.0,-2.0,True
+copy_f4_v3,S4,CF + CP + DCE,9,1,88.8889,85.3889,True
+copy_f4_v3,S5,CF + CSE + CP,9,9,0.0,-3.0,True
+copy_f4_v3,S6,CF + CSE + CP + DCE,9,1,88.8889,84.3889,True
+copy_f4_v3,S7,CF + SR,9,9,0.0,-1.0,True
+copy_f4_v3,S8,CF + SR + DCE,9,9,0.0,-2.5,True
+copy_f4_v3,S9,CF + COP + CP + DCE,9,1,88.8889,84.6389,True
+copy_f4_v3,S10,CF + SR + COP + CSE + CP + DCE,9,1,88.8889,83.1389,True
+copy_f5_v1,S1,CF,19,19,0.0,-0.5,True
+copy_f5_v1,S2,CF + CP,19,19,0.0,-2.0,True
+copy_f5_v1,S3,CF + DCE,19,19,0.0,-2.0,True
+copy_f5_v1,S4,CF + CP + DCE,19,16,15.7895,12.2895,True
+copy_f5_v1,S5,CF + CSE + CP,19,19,0.0,-3.0,True
+copy_f5_v1,S6,CF + CSE + CP + DCE,19,16,15.7895,11.2895,True
+copy_f5_v1,S7,CF + SR,19,19,0.0,-1.0,True
+copy_f5_v1,S8,CF + SR + DCE,19,19,0.0,-2.5,True
+copy_f5_v1,S9,CF + COP + CP + DCE,19,16,15.7895,11.5395,True
+copy_f5_v1,S10,CF + SR + COP + CSE + CP + DCE,19,16,15.7895,10.0395,True
+copy_f5_v2,S1,CF,19,19,0.0,-0.5,True
+copy_f5_v2,S2,CF + CP,19,19,0.0,-2.0,True
+copy_f5_v2,S3,CF + DCE,19,19,0.0,-2.0,True
+copy_f5_v2,S4,CF + CP + DCE,19,16,15.7895,12.2895,True
+copy_f5_v2,S5,CF + CSE + CP,19,19,0.0,-3.0,True
+copy_f5_v2,S6,CF + CSE + CP + DCE,19,16,15.7895,11.2895,True
+copy_f5_v2,S7,CF + SR,19,19,0.0,-1.0,True
+copy_f5_v2,S8,CF + SR + DCE,19,19,0.0,-2.5,True
+copy_f5_v2,S9,CF + COP + CP + DCE,19,16,15.7895,11.5395,True
+copy_f5_v2,S10,CF + SR + COP + CSE + CP + DCE,19,16,15.7895,10.0395,True
+copy_f5_v3,S1,CF,19,19,0.0,-0.5,True
+copy_f5_v3,S2,CF + CP,19,19,0.0,-2.0,True
+copy_f5_v3,S3,CF + DCE,19,19,0.0,-2.0,True
+copy_f5_v3,S4,CF + CP + DCE,19,16,15.7895,12.2895,True
+copy_f5_v3,S5,CF + CSE + CP,19,19,0.0,-3.0,True
+copy_f5_v3,S6,CF + CSE + CP + DCE,19,16,15.7895,11.2895,True
+copy_f5_v3,S7,CF + SR,19,19,0.0,-1.0,True
+copy_f5_v3,S8,CF + SR + DCE,19,19,0.0,-2.5,True
+copy_f5_v3,S9,CF + COP + CP + DCE,19,16,15.7895,11.5395,True
+copy_f5_v3,S10,CF + SR + COP + CSE + CP + DCE,19,16,15.7895,10.0395,True
+prop_f1_v1,S1,CF,11,11,0.0,-0.5,True
+prop_f1_v1,S2,CF + CP,11,11,0.0,-2.0,True
+prop_f1_v1,S3,CF + DCE,11,11,0.0,-2.0,True
+prop_f1_v1,S4,CF + CP + DCE,11,4,63.6364,60.1364,True
+prop_f1_v1,S5,CF + CSE + CP,11,11,0.0,-3.0,True
+prop_f1_v1,S6,CF + CSE + CP + DCE,11,4,63.6364,59.1364,True
+prop_f1_v1,S7,CF + SR,11,11,0.0,-1.0,True
+prop_f1_v1,S8,CF + SR + DCE,11,11,0.0,-2.5,True
+prop_f1_v1,S9,CF + COP + CP + DCE,11,4,63.6364,59.3864,True
+prop_f1_v1,S10,CF + SR + COP + CSE + CP + DCE,11,4,63.6364,57.8864,True
+prop_f1_v2,S1,CF,11,11,0.0,-0.5,True
+prop_f1_v2,S2,CF + CP,11,11,0.0,-2.0,True
+prop_f1_v2,S3,CF + DCE,11,11,0.0,-2.0,True
+prop_f1_v2,S4,CF + CP + DCE,11,4,63.6364,60.1364,True
+prop_f1_v2,S5,CF + CSE + CP,11,11,0.0,-3.0,True
+prop_f1_v2,S6,CF + CSE + CP + DCE,11,4,63.6364,59.1364,True
+prop_f1_v2,S7,CF + SR,11,11,0.0,-1.0,True
+prop_f1_v2,S8,CF + SR + DCE,11,11,0.0,-2.5,True
+prop_f1_v2,S9,CF + COP + CP + DCE,11,4,63.6364,59.3864,True
+prop_f1_v2,S10,CF + SR + COP + CSE + CP + DCE,11,4,63.6364,57.8864,True
+prop_f1_v3,S1,CF,11,11,0.0,-0.5,True
+prop_f1_v3,S2,CF + CP,11,11,0.0,-2.0,True
+prop_f1_v3,S3,CF + DCE,11,11,0.0,-2.0,True
+prop_f1_v3,S4,CF + CP + DCE,11,4,63.6364,60.1364,True
+prop_f1_v3,S5,CF + CSE + CP,11,11,0.0,-3.0,True
+prop_f1_v3,S6,CF + CSE + CP + DCE,11,4,63.6364,59.1364,True
+prop_f1_v3,S7,CF + SR,11,11,0.0,-1.0,True
+prop_f1_v3,S8,CF + SR + DCE,11,11,0.0,-2.5,True
+prop_f1_v3,S9,CF + COP + CP + DCE,11,4,63.6364,59.3864,True
+prop_f1_v3,S10,CF + SR + COP + CSE + CP + DCE,11,4,63.6364,57.8864,True
+prop_f2_v1,S1,CF,11,11,0.0,-0.5,True
+prop_f2_v1,S2,CF + CP,11,11,0.0,-2.0,True
+prop_f2_v1,S3,CF + DCE,11,11,0.0,-2.0,True
+prop_f2_v1,S4,CF + CP + DCE,11,4,63.6364,60.1364,True
+prop_f2_v1,S5,CF + CSE + CP,11,11,0.0,-3.0,True
+prop_f2_v1,S6,CF + CSE + CP + DCE,11,4,63.6364,59.1364,True
+prop_f2_v1,S7,CF + SR,11,11,0.0,-1.0,True
+prop_f2_v1,S8,CF + SR + DCE,11,11,0.0,-2.5,True
+prop_f2_v1,S9,CF + COP + CP + DCE,11,4,63.6364,59.3864,True
+prop_f2_v1,S10,CF + SR + COP + CSE + CP + DCE,11,4,63.6364,57.8864,True
+prop_f2_v2,S1,CF,11,11,0.0,-0.5,True
+prop_f2_v2,S2,CF + CP,11,11,0.0,-2.0,True
+prop_f2_v2,S3,CF + DCE,11,11,0.0,-2.0,True
+prop_f2_v2,S4,CF + CP + DCE,11,4,63.6364,60.1364,True
+prop_f2_v2,S5,CF + CSE + CP,11,11,0.0,-3.0,True
+prop_f2_v2,S6,CF + CSE + CP + DCE,11,4,63.6364,59.1364,True
+prop_f2_v2,S7,CF + SR,11,11,0.0,-1.0,True
+prop_f2_v2,S8,CF + SR + DCE,11,11,0.0,-2.5,True
+prop_f2_v2,S9,CF + COP + CP + DCE,11,4,63.6364,59.3864,True
+prop_f2_v2,S10,CF + SR + COP + CSE + CP + DCE,11,4,63.6364,57.8864,True
+prop_f2_v3,S1,CF,11,11,0.0,-0.5,True
+prop_f2_v3,S2,CF + CP,11,11,0.0,-2.0,True
+prop_f2_v3,S3,CF + DCE,11,11,0.0,-2.0,True
+prop_f2_v3,S4,CF + CP + DCE,11,4,63.6364,60.1364,True
+prop_f2_v3,S5,CF + CSE + CP,11,11,0.0,-3.0,True
+prop_f2_v3,S6,CF + CSE + CP + DCE,11,4,63.6364,59.1364,True
+prop_f2_v3,S7,CF + SR,11,11,0.0,-1.0,True
+prop_f2_v3,S8,CF + SR + DCE,11,11,0.0,-2.5,True
+prop_f2_v3,S9,CF + COP + CP + DCE,11,4,63.6364,59.3864,True
+prop_f2_v3,S10,CF + SR + COP + CSE + CP + DCE,11,4,63.6364,57.8864,True
+prop_f3_v1,S1,CF,11,11,0.0,-0.5,True
+prop_f3_v1,S2,CF + CP,11,11,0.0,-2.0,True
+prop_f3_v1,S3,CF + DCE,11,11,0.0,-2.0,True
+prop_f3_v1,S4,CF + CP + DCE,11,2,81.8182,78.3182,True
+prop_f3_v1,S5,CF + CSE + CP,11,11,0.0,-3.0,True
+prop_f3_v1,S6,CF + CSE + CP + DCE,11,2,81.8182,77.3182,True
+prop_f3_v1,S7,CF + SR,11,11,0.0,-1.0,True
+prop_f3_v1,S8,CF + SR + DCE,11,11,0.0,-2.5,True
+prop_f3_v1,S9,CF + COP + CP + DCE,11,2,81.8182,77.5682,True
+prop_f3_v1,S10,CF + SR + COP + CSE + CP + DCE,11,2,81.8182,76.0682,True
+prop_f3_v2,S1,CF,11,11,0.0,-0.5,True
+prop_f3_v2,S2,CF + CP,11,11,0.0,-2.0,True
+prop_f3_v2,S3,CF + DCE,11,11,0.0,-2.0,True
+prop_f3_v2,S4,CF + CP + DCE,11,2,81.8182,78.3182,True
+prop_f3_v2,S5,CF + CSE + CP,11,11,0.0,-3.0,True
+prop_f3_v2,S6,CF + CSE + CP + DCE,11,2,81.8182,77.3182,True
+prop_f3_v2,S7,CF + SR,11,11,0.0,-1.0,True
+prop_f3_v2,S8,CF + SR + DCE,11,11,0.0,-2.5,True
+prop_f3_v2,S9,CF + COP + CP + DCE,11,2,81.8182,77.5682,True
+prop_f3_v2,S10,CF + SR + COP + CSE + CP + DCE,11,2,81.8182,76.0682,True
+prop_f3_v3,S1,CF,11,11,0.0,-0.5,True
+prop_f3_v3,S2,CF + CP,11,11,0.0,-2.0,True
+prop_f3_v3,S3,CF + DCE,11,11,0.0,-2.0,True
+prop_f3_v3,S4,CF + CP + DCE,11,2,81.8182,78.3182,True
+prop_f3_v3,S5,CF + CSE + CP,11,11,0.0,-3.0,True
+prop_f3_v3,S6,CF + CSE + CP + DCE,11,2,81.8182,77.3182,True
+prop_f3_v3,S7,CF + SR,11,11,0.0,-1.0,True
+prop_f3_v3,S8,CF + SR + DCE,11,11,0.0,-2.5,True
+prop_f3_v3,S9,CF + COP + CP + DCE,11,2,81.8182,77.5682,True
+prop_f3_v3,S10,CF + SR + COP + CSE + CP + DCE,11,2,81.8182,76.0682,True
+prop_f4_v1,S1,CF,29,29,0.0,-0.5,True
+prop_f4_v1,S2,CF + CP,29,29,0.0,-2.0,True
+prop_f4_v1,S3,CF + DCE,29,29,0.0,-2.0,True
+prop_f4_v1,S4,CF + CP + DCE,29,10,65.5172,62.0172,True
+prop_f4_v1,S5,CF + CSE + CP,29,29,0.0,-3.0,True
+prop_f4_v1,S6,CF + CSE + CP + DCE,29,10,65.5172,61.0172,True
+prop_f4_v1,S7,CF + SR,29,29,0.0,-1.0,True
+prop_f4_v1,S8,CF + SR + DCE,29,29,0.0,-2.5,True
+prop_f4_v1,S9,CF + COP + CP + DCE,29,10,65.5172,61.2672,True
+prop_f4_v1,S10,CF + SR + COP + CSE + CP + DCE,29,10,65.5172,59.7672,True
+prop_f4_v2,S1,CF,26,26,0.0,-0.5,True
+prop_f4_v2,S2,CF + CP,26,26,0.0,-2.0,True
+prop_f4_v2,S3,CF + DCE,26,26,0.0,-2.0,True
+prop_f4_v2,S4,CF + CP + DCE,26,9,65.3846,61.8846,True
+prop_f4_v2,S5,CF + CSE + CP,26,26,0.0,-3.0,True
+prop_f4_v2,S6,CF + CSE + CP + DCE,26,9,65.3846,60.8846,True
+prop_f4_v2,S7,CF + SR,26,26,0.0,-1.0,True
+prop_f4_v2,S8,CF + SR + DCE,26,26,0.0,-2.5,True
+prop_f4_v2,S9,CF + COP + CP + DCE,26,9,65.3846,61.1346,True
+prop_f4_v2,S10,CF + SR + COP + CSE + CP + DCE,26,9,65.3846,59.6346,True
+prop_f4_v3,S1,CF,23,23,0.0,-0.5,True
+prop_f4_v3,S2,CF + CP,23,23,0.0,-2.0,True
+prop_f4_v3,S3,CF + DCE,23,23,0.0,-2.0,True
+prop_f4_v3,S4,CF + CP + DCE,23,8,65.2174,61.7174,True
+prop_f4_v3,S5,CF + CSE + CP,23,23,0.0,-3.0,True
+prop_f4_v3,S6,CF + CSE + CP + DCE,23,8,65.2174,60.7174,True
+prop_f4_v3,S7,CF + SR,23,23,0.0,-1.0,True
+prop_f4_v3,S8,CF + SR + DCE,23,23,0.0,-2.5,True
+prop_f4_v3,S9,CF + COP + CP + DCE,23,8,65.2174,60.9674,True
+prop_f4_v3,S10,CF + SR + COP + CSE + CP + DCE,23,8,65.2174,59.4674,True
+prop_f5_v1,S1,CF,18,18,0.0,-0.5,True
+prop_f5_v1,S2,CF + CP,18,18,0.0,-2.0,True
+prop_f5_v1,S3,CF + DCE,18,18,0.0,-2.0,True
+prop_f5_v1,S4,CF + CP + DCE,18,3,83.3333,79.8333,True
+prop_f5_v1,S5,CF + CSE + CP,18,18,0.0,-3.0,True
+prop_f5_v1,S6,CF + CSE + CP + DCE,18,3,83.3333,78.8333,True
+prop_f5_v1,S7,CF + SR,18,18,0.0,-1.0,True
+prop_f5_v1,S8,CF + SR + DCE,18,18,0.0,-2.5,True
+prop_f5_v1,S9,CF + COP + CP + DCE,18,3,83.3333,79.0833,True
+prop_f5_v1,S10,CF + SR + COP + CSE + CP + DCE,18,3,83.3333,77.5833,True
+prop_f5_v2,S1,CF,18,18,0.0,-0.5,True
+prop_f5_v2,S2,CF + CP,18,18,0.0,-2.0,True
+prop_f5_v2,S3,CF + DCE,18,18,0.0,-2.0,True
+prop_f5_v2,S4,CF + CP + DCE,18,3,83.3333,79.8333,True
+prop_f5_v2,S5,CF + CSE + CP,18,18,0.0,-3.0,True
+prop_f5_v2,S6,CF + CSE + CP + DCE,18,3,83.3333,78.8333,True
+prop_f5_v2,S7,CF + SR,18,18,0.0,-1.0,True
+prop_f5_v2,S8,CF + SR + DCE,18,18,0.0,-2.5,True
+prop_f5_v2,S9,CF + COP + CP + DCE,18,3,83.3333,79.0833,True
+prop_f5_v2,S10,CF + SR + COP + CSE + CP + DCE,18,3,83.3333,77.5833,True
+prop_f5_v3,S1,CF,18,18,0.0,-0.5,True
+prop_f5_v3,S2,CF + CP,18,18,0.0,-2.0,True
+prop_f5_v3,S3,CF + DCE,18,18,0.0,-2.0,True
+prop_f5_v3,S4,CF + CP + DCE,18,3,83.3333,79.8333,True
+prop_f5_v3,S5,CF + CSE + CP,18,18,0.0,-3.0,True
+prop_f5_v3,S6,CF + CSE + CP + DCE,18,3,83.3333,78.8333,True
+prop_f5_v3,S7,CF + SR,18,18,0.0,-1.0,True
+prop_f5_v3,S8,CF + SR + DCE,18,18,0.0,-2.5,True
+prop_f5_v3,S9,CF + COP + CP + DCE,18,3,83.3333,79.0833,True
+prop_f5_v3,S10,CF + SR + COP + CSE + CP + DCE,18,3,83.3333,77.5833,True

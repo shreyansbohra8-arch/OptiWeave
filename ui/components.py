@@ -26,8 +26,8 @@ code, pre {font-family: 'JetBrains Mono','Consolas','Menlo',monospace !important
 PIPELINE_DOT = """
 digraph P { rankdir=LR; node [shape=box, style="rounded,filled", fillcolor="#eef3ff", fontname="Helvetica", fontsize=10];
  src [label=".ow source"]; lex [label="Lexer"]; par [label="Parser\\n(AST)"]; sem [label="Semantic\\nAnalyzer"];
- ir [label="3AC IR"]; cfg [label="Basic blocks\\n+ CFG"]; feat [label="10 features"]; rf [label="Random Forest\\nstrategy S1-S6"];
- opt [label="Optimizer\\nCF/CSE/CP/DCE"]; cg [label="C codegen"]; gcc [label="GCC -O0"]; bm [label="Benchmark\\n+ reports"];
+ ir [label="3AC IR"]; cfg [label="Basic blocks\\n+ CFG"]; feat [label="14 features"]; rf [label="Random Forest\\nstrategy S1-S10"];
+ opt [label="Optimizer\\nCF/SR/COP/CSE/CP/DCE"]; cg [label="C codegen"]; gcc [label="GCC -O0"]; bm [label="Benchmark\\n+ reports"];
  src->lex->par->sem->ir->cfg->feat->rf->opt->cg->gcc->bm; }
 """
 

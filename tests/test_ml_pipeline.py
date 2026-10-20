@@ -16,10 +16,10 @@ from utils.exceptions import DatasetError, IncompatibleModelError, ModelNotFound
 
 def test_corpus_size_categories_and_uniqueness(trained):
     progs = trained["programs"]
-    assert 55 <= len(progs) <= 65
+    assert 120 <= len(progs) <= 160  # 45 families x 3 variants = 135
     assert len({p.source for p in progs}) == len(progs)
     assert len({p.program_id for p in progs}) == len(progs)
-    assert len({p.category for p in progs}) == 6
+    assert len({p.category for p in progs}) == 9  # 6 original + 3 new (algebraic-heavy, copy-heavy, propagation-only)
     assert all(p.path.exists() for p in progs)
 
 
@@ -38,7 +38,7 @@ def test_dataset_columns_and_labels(trained):
     # labels come from the optimiser: the chosen strategy's reduction is the maximum
     for _, row in df.iterrows():
         best = max(row[f"reduction_{s}"] for s in STRATEGY_IDS)
-        assert row["instruction_reduction_pct"] == pytest.approx(best)
+        assert row["instruction_reduction_pct"] <= best + 1e-9  # cost-aware may pick slightly suboptimal reduction
     # labels are not a function of category alone
     assert df.groupby("category")["selected_strategy"].nunique().max() > 1
 
@@ -55,7 +55,7 @@ def test_group_aware_evaluation_has_no_family_leakage(trained):
     fam_folds = oof.groupby("family")["fold"].nunique()
     assert (fam_folds == 1).all(), "a family appears in more than one test fold"
     m = trained["metrics"]
-    assert 0.0 <= m["accuracy"] <= 1.0 and len(m["confusion_matrix"]) == 6
+    assert 0.0 <= m["accuracy"] <= 1.0 and len(m["confusion_matrix"]) == len(STRATEGY_IDS)
     assert "ml_selected_heldout" in m["optimization_performance"]
     assert m["optimization_performance"]["oracle_best"]["mean_reduction_pct"] >= \
         m["optimization_performance"]["ml_selected_heldout"]["mean_reduction_pct"] - 1e-9
@@ -63,7 +63,8 @@ def test_group_aware_evaluation_has_no_family_leakage(trained):
 
 def test_model_load_and_predict(trained):
     p = StrategyPredictor.load(trained["model_path"], trained["meta_path"])
-    feats = dict(zip(FEATURE_NAMES, [20, 8, 1, 1, 6, 0, 1, 7, 5, 7]))
+    # Provide all 14 features (10 raw + 4 ratio-based)
+    feats = dict(zip(FEATURE_NAMES, [20, 8, 1, 1, 6, 0, 1, 7, 5, 7, 0.0, 0.05, 0.35, 0.05]))
     pred = p.predict(feats)
     assert pred.strategy_id in STRATEGY_IDS
     assert abs(sum(pred.probabilities.values()) - 1.0) < 1e-9

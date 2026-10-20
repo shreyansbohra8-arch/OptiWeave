@@ -1,0 +1,10 @@
+// copy_f4_v2 | category: copy-heavy | family: copy_f4
+int x = 3;
+int c = x;
+if (c > 14) {
+    int d = c;
+    print(d);
+} else {
+    int e = c;
+    print(e);
+}

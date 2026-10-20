@@ -1,0 +1,13 @@
+// prop_f5_v1 | category: propagation-only | family: prop_f5
+int a = 4;
+int b = 9;
+bool p = a < b + 4;
+bool q = a + 3 > b;
+bool r1 = p && q;
+if (r1) {
+    print(1);
+} else {
+    print(0);
+}
+print(a);
+print(b);

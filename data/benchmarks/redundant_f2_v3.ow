@@ -1,0 +1,12 @@
+// redundant_f2_v3 | category: redundant-expression-heavy | family: redundant_f2
+int i = 0;
+int j = 3;
+int k = 5;
+int total = 0;
+while (i < 17) {
+    int p = i * i + j;
+    int q = i * i + k;
+    total = total + p + q;
+    i = i + 1;
+}
+print(total);

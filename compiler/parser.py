@@ -1,4 +1,10 @@
-"""Recursive-descent parser for OptiWeave (grammar in docs/LANGUAGE_GRAMMAR.md)."""
+"""Recursive-descent parser for OptiWeave (grammar in docs/LANGUAGE_GRAMMAR.md).
+
+Supports **panic-mode error recovery**: when a parse error is encountered,
+the parser records the error, advances to the next synchronisation point
+(typically a semicolon or closing brace), and continues parsing.  This
+allows reporting multiple errors in a single pass.
+"""
 from __future__ import annotations
 
 from compiler import ast_nodes as ast
@@ -11,6 +17,7 @@ class Parser:
     def __init__(self, tokens: list[Token]) -> None:
         self.tokens = tokens
         self.i = 0
+        self.errors: list[ParseError] = []
 
     # -- helpers -------------------------------------------------------------
     @property
@@ -32,11 +39,34 @@ class Parser:
             raise ParseError(f"Expected {what}, found {found}", self.cur.line, self.cur.column)
         return self._advance()
 
+    def _synchronize(self) -> None:
+        """Panic-mode recovery: advance past the next semicolon or closing brace."""
+        while not self._check(T.EOF):
+            if self._check(T.SEMI):
+                self._advance()
+                return
+            if self._check(T.RBRACE):
+                self._advance()
+                return
+            # Statement-starting tokens are also sync points (don't consume them)
+            if self.cur.type in (*TYPE_KEYWORDS, T.KW_IF, T.KW_WHILE, T.KW_PRINT):
+                return
+            self._advance()
+
     # -- program / statements --------------------------------------------------
     def parse(self) -> ast.Program:
         prog = ast.Program(line=1, column=1)
         while not self._check(T.EOF):
-            prog.statements.append(self._statement())
+            try:
+                prog.statements.append(self._statement())
+            except ParseError as err:
+                self.errors.append(err)
+                self._synchronize()
+        # If errors were collected, raise the first one but attach all errors
+        if self.errors:
+            first = self.errors[0]
+            first.all_errors = self.errors  # type: ignore[attr-defined]
+            raise first
         return prog
 
     def _statement(self) -> ast.Stmt:
@@ -89,7 +119,11 @@ class Parser:
         while not self._check(T.RBRACE):
             if self._check(T.EOF):
                 raise ParseError("Missing '}' before end of input", lbrace.line, lbrace.column)
-            block.statements.append(self._statement())
+            try:
+                block.statements.append(self._statement())
+            except ParseError as err:
+                self.errors.append(err)
+                self._synchronize()
         self._advance()
         return block
 

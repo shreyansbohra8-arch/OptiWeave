@@ -1,0 +1,6 @@
+// const_f2_v3 | category: constant-heavy | family: const_f2
+float p = 5.5 * 2.0;
+float q = p + 1.25 - 1.0;
+float z = q * p;
+print(z);
+print(p / 3.0);

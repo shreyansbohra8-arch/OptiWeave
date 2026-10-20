@@ -1,0 +1,10 @@
+// branch_f4_v3 | category: branch-heavy | family: branch_f4
+int i = 0;
+int hits = 0;
+while (i < 42) {
+    if (i > 4 && i < 23 || i == 9) {
+        hits = hits + 1;
+    }
+    i = i + 1;
+}
+print(hits);

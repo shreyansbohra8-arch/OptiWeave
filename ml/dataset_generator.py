@@ -1,9 +1,10 @@
 """Benchmark-corpus and labelled-dataset generation.
 
-Labels come from *running the optimiser*: every program is optimised with all six
-strategies, and the best strategy is chosen by instruction-count reduction. Ties go to the
-pipeline with fewer passes, then to the lower strategy number. Category is never used
-to choose a label.
+Labels come from *running the optimiser*: every program is optimised with all ten
+strategies, and the best strategy is chosen by a **cost-aware score** that balances
+instruction-count reduction against the compile-time cost of the pipeline.  Ties go
+to the pipeline with fewer passes, then to the lower strategy number.  Category is
+never used to choose a label.
 """
 from __future__ import annotations
 
@@ -20,7 +21,7 @@ from config import settings
 from ml.feature_extractor import FEATURE_NAMES, extract_features
 from ml.program_templates import CATEGORIES, VARIANTS_PER_FAMILY
 from optimizer.optimization_pipeline import instruction_reduction_pct, run_strategy
-from optimizer.strategies import STRATEGIES, STRATEGY_IDS
+from optimizer.strategies import STRATEGIES, STRATEGY_IDS, cost_aware_score
 from utils.exceptions import DatasetError
 from utils.file_utils import atomic_write_text
 from utils.logging_config import get_logger
@@ -37,15 +38,22 @@ class BenchmarkProgram:
     source: str
 
 
-def choose_best_strategy(optimized_counts: dict[str, int]) -> str:
-    """Fewest optimised instructions wins; ties -> fewer passes -> lower strategy number."""
-    return min(optimized_counts,
-               key=lambda sid: (optimized_counts[sid], len(STRATEGIES[sid].passes), STRATEGIES[sid].number))
+def choose_best_strategy(optimized_counts: dict[str, int],
+                         original_count: int) -> str:
+    """Best strategy by cost-aware score: reduction% minus cost penalty.
+
+    Ties are broken by fewer passes, then lower strategy number.
+    """
+    def _key(sid: str):
+        reduction = instruction_reduction_pct(original_count, optimized_counts[sid])
+        score = cost_aware_score(reduction, sid)
+        return (score, -len(STRATEGIES[sid].passes), -STRATEGIES[sid].number)
+    return max(optimized_counts, key=_key)
 
 
 def generate_programs(out_dir: Path = settings.BENCHMARK_DIR,
                       seed: int = settings.RANDOM_SEED, write: bool = True) -> list[BenchmarkProgram]:
-    """Generate the (approximately 60-program) benchmark corpus deterministically."""
+    """Generate the benchmark corpus deterministically."""
     programs: list[BenchmarkProgram] = []
     seen_sources: set[str] = set()
     for category, (short, families) in CATEGORIES.items():
@@ -88,7 +96,7 @@ def load_programs(directory: Path = settings.BENCHMARK_DIR) -> list[BenchmarkPro
 
 
 def evaluate_program(program: BenchmarkProgram) -> tuple[dict, list[dict]]:
-    """Run all six strategies on a program; returns (dataset row, long-format result rows)."""
+    """Run all ten strategies on a program; returns (dataset row, long-format result rows)."""
     fe = compile_front_end(program.source)
     if not fe.ok:
         raise DatasetError(f"{program.program_id} failed to compile: {fe.errors}")
@@ -104,17 +112,22 @@ def evaluate_program(program: BenchmarkProgram) -> tuple[dict, list[dict]]:
         if not eq.equivalent:
             raise DatasetError(f"{program.program_id}/{sid} changed behaviour: {eq.detail}")
         counts[sid] = res.optimized_count
+        reduction = round(instruction_reduction_pct(orig, res.optimized_count), 4)
         long_rows.append({
             "program_id": program.program_id, "strategy": sid,
             "passes": STRATEGIES[sid].label, "original_instructions": orig,
             "optimized_instructions": res.optimized_count,
-            "instruction_reduction_pct": round(instruction_reduction_pct(orig, res.optimized_count), 4),
+            "instruction_reduction_pct": reduction,
+            "cost_aware_score": round(cost_aware_score(reduction, sid), 4),
             "equivalent": eq.equivalent,
         })
-    best = choose_best_strategy(counts)
+    best = choose_best_strategy(counts, orig)
     row = {"program_id": program.program_id, "category": program.category, "family": program.family}
     row.update(feats)
     row.update({f"reduction_{sid}": round(instruction_reduction_pct(orig, counts[sid]), 4)
+                for sid in STRATEGY_IDS})
+    row.update({f"score_{sid}": round(cost_aware_score(
+                    instruction_reduction_pct(orig, counts[sid]), sid), 4)
                 for sid in STRATEGY_IDS})
     row.update({
         "selected_strategy": best,
@@ -149,7 +162,7 @@ def load_dataset(path: Path = settings.DATASET_CSV) -> pd.DataFrame:
     if missing:
         raise DatasetError(f"Dataset is missing columns: {sorted(missing)}")
     if df["selected_strategy"].isin(STRATEGY_IDS).sum() != len(df):
-        raise DatasetError("Dataset contains labels outside S1..S6")
+        raise DatasetError("Dataset contains labels outside S1..S10")
     return df
 
 

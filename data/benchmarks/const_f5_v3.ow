@@ -1,0 +1,8 @@
+// const_f5_v3 | category: constant-heavy | family: const_f5
+int i = 0;
+int acc = 0;
+while (i < 35) {
+    acc = acc + 3 * 2 + 6;
+    i = i + 1;
+}
+print(acc);

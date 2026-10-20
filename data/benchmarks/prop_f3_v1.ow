@@ -1,0 +1,10 @@
+// prop_f3_v1 | category: propagation-only | family: prop_f3
+int a = 14;
+int b = a * 4;
+int c = b + 9;
+if (c > 19) {
+    print(c);
+} else {
+    print(b);
+}
+print(a);

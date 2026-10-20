@@ -1,4 +1,4 @@
-"""Benchmark: unoptimized vs fixed S6 vs ML-selected strategy.
+"""Benchmark: unoptimized vs fixed S10 vs ML-selected strategy.
 
 Usage: python -m benchmarking.benchmark_runner [--repeats 5] [--no-gcc] [--final-model]
 """
@@ -26,7 +26,7 @@ from utils.exceptions import OptiWeaveError
 from utils.logging_config import get_logger
 
 log = get_logger(__name__)
-VARIANTS = ("unoptimized", "fixed_s6", "ml_selected")
+VARIANTS = ("unoptimized", "fixed_s10", "ml_selected")
 
 
 @dataclass
@@ -100,13 +100,13 @@ def benchmark_program(program: BenchmarkProgram, predictor: StrategyPredictor,
     rec.prediction_source = prediction_source
 
     n0 = fe.ir.instruction_count
-    s6 = run_strategy(fe.ir, FIXED_STRATEGY)
+    s10 = run_strategy(fe.ir, FIXED_STRATEGY)
     ml = run_strategy(fe.ir, rec.ml_strategy)
-    irs = {"unoptimized": ("none", fe.ir), "fixed_s6": (FIXED_STRATEGY, s6.optimized),
+    irs = {"unoptimized": ("none", fe.ir), "fixed_s10": (FIXED_STRATEGY, s10.optimized),
            "ml_selected": (rec.ml_strategy, ml.optimized)}
 
     eq_details = []
-    for name in ("fixed_s6", "ml_selected"):
+    for name in ("fixed_s10", "ml_selected"):
         eq = check_equivalence(fe.ir, irs[name][1])
         rec.equivalence_checked = rec.equivalence_checked or eq.checked
         if eq.checked and not eq.equivalent:
@@ -165,12 +165,23 @@ def records_to_dataframe(records: list[BenchmarkRecord]) -> pd.DataFrame:
 
 
 def load_timing_workloads() -> list[BenchmarkProgram]:
-    """Optional heavy programs from examples/ used to obtain measurable run times."""
+    """Heavy programs from examples/ used to obtain measurable run times."""
     out = []
-    path = settings.EXAMPLES_DIR / "heavy_loop.ow"
-    if path.exists():
-        out.append(BenchmarkProgram("timing_heavy_loop", "timing-workload", "timing_heavy_loop", path,
-                                    path.read_text(encoding="utf-8")))
+    timing_files = [
+        "heavy_loop.ow",
+        "nested_heavy.ow",
+        "iterative_power.ow",
+        "large_accumulator.ow",
+        "redundant_heavy.ow",
+        "strength_heavy.ow",
+    ]
+    for filename in timing_files:
+        path = settings.EXAMPLES_DIR / filename
+        if path.exists():
+            stem = path.stem
+            out.append(BenchmarkProgram(f"timing_{stem}", "timing-workload",
+                                        f"timing_{stem}", path,
+                                        path.read_text(encoding="utf-8")))
     return out
 
 
@@ -202,7 +213,7 @@ def main() -> None:
     summary = write_reports(records)
     print(f"Benchmarked {summary['programs_ok']}/{summary['programs_total']} programs")
     print("Mean reduction %:", {k: round(v, 2) for k, v in summary["mean_reduction_pct"].items()})
-    print("ML vs S6:", summary["ml_vs_s6"])
+    print("ML vs S10:", summary["ml_vs_s10"])
     print("Timing:", summary["timing"]["programs_with_reliable_timing"], "programs with reliable timing")
     print(f"Reports written to {settings.RESULTS_DIR} and {settings.REPORTS_DIR}")
 

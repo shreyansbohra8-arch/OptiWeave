@@ -1,0 +1,9 @@
+// alg_f2_v3 | category: algebraic-heavy | family: alg_f2
+int x = 19;
+int y = 21;
+int zero = x - x;
+int also_zero = y * 0;
+int keep = x * 1 + 8;
+print(zero);
+print(also_zero);
+print(keep);

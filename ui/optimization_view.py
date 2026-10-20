@@ -9,19 +9,25 @@ from ml.feature_extractor import extract_features
 from optimizer.optimization_pipeline import describe_passes, run_strategy
 from optimizer.strategies import PASS_FULL_NAMES, STRATEGIES, STRATEGY_IDS
 from ui.components import code_panel, features_table, get_predictor, show_badge
-from ui.compiler_view import current_frontend, init_state
+from ui.compiler_view import (current_frontend, current_opt_result, init_state,
+                              render_active_program_banner, store_opt_result)
 from utils.exceptions import IncompatibleModelError, ModelNotFoundError
 
 
 def render_optimization_lab() -> None:
     st.header("Optimization Lab")
     init_state()
+    render_active_program_banner()
     fe = current_frontend()
     if fe is None or not fe.ok:
         st.info("Compile a valid program in **Source Editor** first.")
         return
     features = extract_features(fe.ir, fe.cfg)
-    mode = st.radio("Strategy selection", ["Automatic (ML Random Forest)", "Manual"], horizontal=True)
+    if "_lab_mode" not in st.session_state:
+        st.session_state["_lab_mode"] = st.session_state.get("lab_mode", "Automatic (ML Random Forest)")
+    mode = st.radio("Strategy selection", ["Automatic (ML Random Forest)", "Manual"],
+                    horizontal=True, key="_lab_mode")
+    st.session_state["lab_mode"] = mode
     strategy_id = None
     if mode.startswith("Automatic"):
         try:
@@ -37,10 +43,19 @@ def render_optimization_lab() -> None:
         c2.metric("Confidence", f"{pred.confidence * 100:.1f}%")
         st.bar_chart(pd.Series(pred.probabilities, name="probability"))
     else:
-        strategy_id = st.selectbox("Strategy", STRATEGY_IDS,
-                                   format_func=lambda s: f"{s}: {STRATEGIES[s].label}", index=5)
+        if "_lab_strategy" not in st.session_state:
+            opt = current_opt_result()
+            default = st.session_state.get("lab_manual_strategy")
+            if opt is not None:
+                default = opt.strategy_id
+            if default not in STRATEGY_IDS:
+                default = "S6"
+            st.session_state["_lab_strategy"] = default
+        strategy_id = st.selectbox("Strategy", STRATEGY_IDS, key="_lab_strategy",
+                                   format_func=lambda s: f"{s}: {STRATEGIES[s].label}")
+        st.session_state["lab_manual_strategy"] = strategy_id
     res = run_strategy(fe.ir, strategy_id)
-    st.session_state["opt_result"] = res
+    store_opt_result(res, fe.source)
     st.markdown(f"**Pipeline:** {describe_passes(strategy_id)}  \n"
                 f"**Passes that changed the IR:** {', '.join(res.passes_applied) or 'none'}  \n"
                 f"**Fixed-point rounds:** {res.iterations}")

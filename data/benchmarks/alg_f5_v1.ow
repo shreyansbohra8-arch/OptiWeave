@@ -1,0 +1,13 @@
+// alg_f5_v1 | category: algebraic-heavy | family: alg_f5
+int a = 13;
+int b = 5;
+int p = a * 2;
+int q = b * 1;
+int r1 = p + 0;
+int s = r1 - 0;
+int t = q / 1;
+print(p);
+print(q);
+print(r1);
+print(s);
+print(t);

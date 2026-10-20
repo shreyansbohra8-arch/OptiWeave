@@ -1,0 +1,10 @@
+// copy_f2_v3 | category: copy-heavy | family: copy_f2
+int i = 0;
+int val = 5;
+int acc = 0;
+while (i < 36) {
+    int tmp = val;
+    acc = acc + tmp;
+    i = i + 1;
+}
+print(acc);

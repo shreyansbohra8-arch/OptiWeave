@@ -12,8 +12,8 @@ from optimizer.strategies import PASS_FULL_NAMES, STRATEGIES
 from ui.analytics_view import render_analytics
 from ui.benchmark_view import render_benchmark
 from ui.components import PIPELINE_DOT, benchmark_program_count, inject_css, read_json, show_badge
-from ui.compiler_view import (init_state, render_compiler_explorer, render_generated_code,
-                              render_source_editor)
+from ui.compiler_view import (current_opt_result, init_state, render_active_program_banner,
+                              render_compiler_explorer, render_generated_code, render_source_editor)
 from ui.optimization_view import render_optimization_lab
 
 st.set_page_config(page_title="OptiWeave", page_icon="\U0001F9F5", layout="wide")
@@ -31,40 +31,68 @@ def render_dashboard() -> None:
     c1.metric("Benchmark programs", benchmark_program_count())
     c2.metric("Model status", "Ready" if ok else "Not trained")
     summary = read_json(settings.BENCHMARK_SUMMARY_JSON)
-    c3.metric("Latest S6 mean reduction", f"{summary['mean_reduction_pct']['fixed_s6']:.2f}%" if summary else "n/a")
+    c3.metric("Latest S10 mean reduction", f"{summary['mean_reduction_pct'].get('fixed_s10', summary['mean_reduction_pct'].get('fixed_s6', 0.0)):.2f}%" if summary else "n/a")
     show_badge(msg, "ok" if ok else "warn")
     if not ok:
         st.code("python -m ml.train_model")
     if summary:
-        m, v = summary["mean_reduction_pct"], summary["ml_vs_s6"]
+        m = summary["mean_reduction_pct"]
+        s_fixed = m.get("fixed_s10", m.get("fixed_s6", 0.0))
+        fixed_name = "S10" if "fixed_s10" in m else "S6"
+        v = summary.get("ml_vs_s10", summary.get("ml_vs_s6", {}))
+        b = v.get("ml_better_score", v.get("ml_better", 0))
+        eq = v.get("equal_score", v.get("equal", 0))
+        w = v.get("ml_worse_score", v.get("ml_worse", 0))
         st.markdown(f"**Latest benchmark:** {summary['programs_ok']} programs - mean reduction: "
-                    f"S6 {m['fixed_s6']:.2f}%, ML {m['ml_selected']:.2f}% "
-                    f"(ML better/equal/worse than S6: {v['ml_better']}/{v['equal']}/{v['ml_worse']}).")
+                    f"{fixed_name} {s_fixed:.2f}%, ML {m['ml_selected']:.2f}% "
+                    f"(ML better/equal/worse: {b}/{eq}/{w}).")
 
 
 def render_about() -> None:
     st.header("Documentation / About")
+    init_state()
+    render_active_program_banner()
+    opt = current_opt_result()
+    if opt is not None:
+        st.info(f"The file compiled in Source Editor is using **{opt.strategy_id}** "
+                f"({STRATEGIES[opt.strategy_id].label}). **S10** is the all-passes baseline, "
+                "not the default for every program.")
+    else:
+        st.caption("This page is reference documentation. Compile a program in Source Editor "
+                   "to see which strategy that file is using.")
     st.markdown("""
-**Architecture.** `.ow` source -> lexer -> recursive-descent parser (AST) -> semantic analyzer (symbol table,
-types) -> three-address code -> basic blocks / CFG -> 10 features -> Random Forest -> optimizer pipeline ->
-C code generator -> GCC `-O0` -> benchmark and reports. See `docs/ARCHITECTURE.md`.
+**Architecture.** `.ow` source -> lexer -> recursive-descent parser (AST with panic-mode error recovery) ->
+semantic analyzer (symbol table, types) -> three-address code -> basic blocks / CFG -> 14 features ->
+Random Forest -> optimizer pipeline -> C code generator -> GCC `-O0` -> benchmark and reports. See `docs/ARCHITECTURE.md`.
 
-**Optimization passes.** CF folds constants (and constant branches). CP is a global data-flow analysis.
-DCE uses backward liveness plus unreachable-code and redundant-jump removal. CSE is local value numbering
-with copy forwarding. Execution order is always CF -> CSE -> CP -> DCE, repeated to a fixed point
-(max 10 rounds).
+**Optimization passes.** CF folds constants (and constant branches). SR performs strength reduction.
+COP propagates copies. CP is a global data-flow analysis. DCE uses backward liveness plus unreachable-code
+and redundant-jump removal. CSE is local value numbering with copy forwarding. Execution order follows
+the strategy pipeline, repeated to a fixed point (max 10 rounds).
 
-**Dataset and ML.** 60 generated programs in 6 categories (30 families x 2 variants). Every program is run
-through all six strategies; the label is the strategy with the fewest instructions (ties: fewer passes).
-Evaluation is GroupKFold by family, with majority, fixed-S6 and oracle comparisons.
+**Dataset and ML.** 135 generated programs in 9 categories (45 families x 3 variants). Every program is run
+through all ten strategies; the label is the strategy with the best cost-aware objective score (ties: fewer passes).
+Evaluation is GroupKFold by family, with majority, fixed-S10 and oracle comparisons.
 
-**Benchmark limitations.** Instruction count is the primary metric; most programs are too short for
-reliable timing; the corpus is small and synthetic; S6 is a superset of all strategies, so ML can at best tie
-it on instruction count.
+**Benchmark methodology.** Cost-aware score combines deterministic IR instruction-count reduction with
+pass-execution cost penalties, enabling lighter targeted strategies to outscore heavy pipelines. Timing is
+measured over dedicated compute-heavy workloads when runtime exceeds reliability thresholds.
 """)
-    st.subheader("The six strategies")
-    st.table([{"Strategy": s.id, "Passes": s.label,
-               "Meaning": ", ".join(PASS_FULL_NAMES[p] for p in s.ordered_passes)} for s in STRATEGIES.values()])
+    st.subheader("The ten strategies")
+    active = opt.strategy_id if opt is not None else None
+    st.dataframe([
+        {
+            "Strategy": s.id,
+            "Passes": s.label,
+            "Meaning": ", ".join(PASS_FULL_NAMES[p] for p in s.ordered_passes),
+            "Role": (
+                "Selected for the active program"
+                if s.id == active
+                else ("All-passes baseline (not auto-applied)" if s.id == "S10" else "")
+            ),
+        }
+        for s in STRATEGIES.values()
+    ], hide_index=True)
 
 
 PAGES = {

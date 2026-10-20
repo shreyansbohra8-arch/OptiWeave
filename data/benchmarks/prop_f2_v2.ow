@@ -1,0 +1,9 @@
+// prop_f2_v2 | category: propagation-only | family: prop_f2
+float x = 3.5;
+float y = x + 3.25;
+float z = y * x;
+float w = z - y;
+print(x);
+print(y);
+print(z);
+print(w);

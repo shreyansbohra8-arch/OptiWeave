@@ -39,7 +39,7 @@ def test_median_helpers():
 def test_benchmark_program_without_gcc(predictor, trained):
     prog = trained["programs"][0]
     rec = benchmark_program(prog, predictor, use_gcc=False)
-    assert rec.status == "ok" and set(rec.variants) == {"unoptimized", "fixed_s6", "ml_selected"}
+    assert rec.status == "ok" and set(rec.variants) == {"unoptimized", "fixed_s10", "ml_selected"}
     assert rec.variants["unoptimized"].reduction_pct == 0.0
     assert rec.ir_equivalent and rec.ml_strategy.startswith("S")
 
@@ -51,18 +51,18 @@ def test_benchmark_program_with_gcc_and_summary(predictor, trained):
     assert all(r.status == "ok" and r.gcc_outputs_match for r in recs)
     s = summarize(recs)
     assert s["gcc_compiled_programs"] == 4 and not s["gcc_output_mismatches"]
-    assert s["mean_reduction_pct"]["fixed_s6"] >= s["mean_reduction_pct"]["ml_selected"] - 1e-9
+    assert s["mean_reduction_pct"]["fixed_s10"] >= s["mean_reduction_pct"]["ml_selected"] - 1e-9
     assert len(records_to_dataframe(recs)) == 4
 
 
 def test_benchmark_reports_compile_failures(predictor):
     bad = BenchmarkProgram("bad", "mixed", "bad", Path("bad.ow"), "int x = ;")
     rec = benchmark_program(bad, predictor, use_gcc=False)
-    assert rec.status == "error" and "parser" in rec.error
+    assert rec.status == "error" and "parser" in rec.error.lower()
     assert summarize([rec])["programs_failed"][0]["program_id"] == "bad"
 
 
 def test_zero_instruction_program_does_not_divide_by_zero(predictor):
     prog = BenchmarkProgram("empty", "mixed", "empty", Path("e.ow"), "// nothing\n")
     rec = benchmark_program(prog, predictor, use_gcc=False)
-    assert rec.status == "ok" and rec.variants["fixed_s6"].reduction_pct == 0.0
+    assert rec.status == "ok" and rec.variants["fixed_s10"].reduction_pct == 0.0

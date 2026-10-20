@@ -1,0 +1,12 @@
+// branch_f3_v3 | category: branch-heavy | family: branch_f3
+int a = 55;
+int b = 3;
+int c = 9;
+int m = a;
+if (b > m) {
+    m = b;
+}
+if (c > m) {
+    m = c;
+}
+print(m);

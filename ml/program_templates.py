@@ -4,6 +4,12 @@ Each category has five *families* (distinct program shapes). A family function t
 seeded ``random.Random`` and returns source text, so the two variants of a family share
 structure but differ in constants, sizes and statement counts. Families are the unit of
 grouping for leakage-free evaluation.
+
+Categories added for strategy diversity:
+  - algebraic-heavy: programs with strength-reduction / algebraic simplification
+    opportunities (favour S7/S8)
+  - copy-heavy: programs with copy propagation opportunities (favour S9)
+  - propagation-only: programs where CF+CP suffice and DCE/CSE add nothing (favour S2)
 """
 from __future__ import annotations
 
@@ -263,6 +269,178 @@ def mixed_f5(r: random.Random) -> str:
     return _j(L)
 
 
+# ------------------------------------------------------------------ algebraic-heavy (favour S7/S8)
+def alg_f1(r: random.Random) -> str:
+    """Multiply-by-2, add-0, multiply-by-1 patterns in a loop."""
+    n = r.randint(15, 50)
+    L = ["int i = 0;", "int acc = 0;", f"while (i < {n}) {{",
+         "    int a = i * 2;",           # SR: i + i
+         "    int b = a + 0;",           # SR: b = a
+         "    int c = b * 1;",           # SR: c = b
+         "    acc = acc + c;",
+         "    i = i + 1;", "}", "print(acc);"]
+    return _j(L)
+
+
+def alg_f2(r: random.Random) -> str:
+    """Self-cancellation and multiply-by-zero."""
+    L = [f"int x = {r.randint(10, 99)};", f"int y = {r.randint(10, 99)};",
+         "int zero = x - x;",            # SR: zero = 0
+         "int also_zero = y * 0;",        # SR: also_zero = 0
+         f"int keep = x * 1 + {r.randint(1, 9)};",  # SR: keep = x + ...
+         "print(zero);", "print(also_zero);", "print(keep);"]
+    return _j(L)
+
+
+def alg_f3(r: random.Random) -> str:
+    """Division by 1 and subtract-zero chains."""
+    n = r.randint(3, 7)
+    L = [f"int v0 = {r.randint(5, 30)};"]
+    for k in range(1, n + 1):
+        op = r.choice(["/ 1", "- 0", "* 1", "+ 0"])
+        L.append(f"int v{k} = v{k - 1} {op};")
+    L.append(f"print(v{n});")
+    return _j(L)
+
+
+def alg_f4(r: random.Random) -> str:
+    """Mix of multiply-by-2 and real arithmetic in a loop."""
+    n = r.randint(10, 40)
+    L = ["int i = 0;", "int s = 0;", f"while (i < {n}) {{",
+         f"    int doubled = i * 2;",
+         f"    int tripled = i * {r.randint(3, 7)};",
+         "    s = s + doubled + tripled;",
+         "    i = i + 1;", "}", "print(s);"]
+    return _j(L)
+
+
+def alg_f5(r: random.Random) -> str:
+    """Nested algebraic identities with all used variables."""
+    a, b = r.randint(2, 20), r.randint(2, 20)
+    L = [f"int a = {a};", f"int b = {b};",
+         "int p = a * 2;",                 # SR: a + a
+         "int q = b * 1;",                 # SR: q = b
+         "int r1 = p + 0;",                # SR: r1 = p
+         "int s = r1 - 0;",                # SR: s = r1
+         "int t = q / 1;",                 # SR: t = q
+         "print(p);", "print(q);", "print(r1);", "print(s);", "print(t);"]
+    return _j(L)
+
+
+# ------------------------------------------------------------------ copy-heavy (favour S9)
+def copy_f1(r: random.Random) -> str:
+    """Chains of variable copies, all eventually used."""
+    n = r.randint(3, 6)
+    L = [f"int src = {r.randint(10, 99)};"]
+    for k in range(n):
+        L.append(f"int c{k} = {'src' if k == 0 else f'c{k - 1}'};")
+    L.append(f"print(c{n - 1});")
+    L.append("print(src);")
+    return _j(L)
+
+
+def copy_f2(r: random.Random) -> str:
+    """Copy inside a loop with accumulation."""
+    n = r.randint(10, 40)
+    L = ["int i = 0;", "int val = 5;", "int acc = 0;", f"while (i < {n}) {{",
+         "    int tmp = val;",
+         "    acc = acc + tmp;",
+         "    i = i + 1;", "}", "print(acc);"]
+    return _j(L)
+
+
+def copy_f3(r: random.Random) -> str:
+    """Multiple copies from different sources."""
+    a, b = r.randint(1, 50), r.randint(1, 50)
+    L = [f"int x = {a};", f"int y = {b};",
+         "int cx = x;", "int cy = y;",
+         "int sum1 = cx + cy;",
+         "int dx = cx;", "int dy = cy;",
+         "int sum2 = dx + dy;",
+         "print(sum1);", "print(sum2);"]
+    return _j(L)
+
+
+def copy_f4(r: random.Random) -> str:
+    """Copies with branching."""
+    v = r.randint(1, 50)
+    L = [f"int x = {v};", "int c = x;",
+         f"if (c > {r.randint(10, 30)}) {{",
+         "    int d = c;", "    print(d);",
+         "} else {", "    int e = c;", "    print(e);", "}"]
+    return _j(L)
+
+
+def copy_f5(r: random.Random) -> str:
+    """Copy chain in a loop with conditional use."""
+    n = r.randint(10, 30)
+    L = ["int i = 0;", "int base = 7;", "int total = 0;", f"while (i < {n}) {{",
+         "    int a = base;", "    int b = a;",
+         "    if (i % 2 == 0) {", "        total = total + b;",
+         "    } else {", "        total = total + a;", "    }",
+         "    i = i + 1;", "}", "print(total);"]
+    return _j(L)
+
+
+# ------------------------------------------------------------------ propagation-only (favour S2)
+def prop_f1(r: random.Random) -> str:
+    """Constant chains: CP helps, DCE/CSE do nothing because all vars are used."""
+    a = r.randint(2, 9)
+    L = [f"int a = {a};",
+         f"int b = a + {r.randint(1, 5)};",
+         f"int c = b * {r.randint(2, 4)};",
+         f"int d = c - a;",
+         "print(a);", "print(b);", "print(c);", "print(d);"]
+    return _j(L)
+
+
+def prop_f2(r: random.Random) -> str:
+    """Float constant chain, all used."""
+    L = [f"float x = {r.randint(1, 5)}.5;",
+         f"float y = x + {r.randint(1, 3)}.25;",
+         "float z = y * x;",
+         "float w = z - y;",
+         "print(x);", "print(y);", "print(z);", "print(w);"]
+    return _j(L)
+
+
+def prop_f3(r: random.Random) -> str:
+    """Int chain with branching, all branches print."""
+    a = r.randint(1, 20)
+    L = [f"int a = {a};",
+         f"int b = a * {r.randint(2, 5)};",
+         f"int c = b + {r.randint(1, 9)};",
+         f"if (c > {r.randint(10, 50)}) {{",
+         "    print(c);",
+         "} else {", "    print(b);", "}",
+         "print(a);"]
+    return _j(L)
+
+
+def prop_f4(r: random.Random) -> str:
+    """Long linear constant chain, every intermediate used."""
+    n = r.randint(5, 10)
+    L = [f"int v0 = {r.randint(1, 9)};"]
+    for k in range(1, n + 1):
+        op = r.choice(["+", "*"])
+        L.append(f"int v{k} = v{k - 1} {op} {r.randint(1, 4)};")
+    for k in range(n + 1):
+        L.append(f"print(v{k});")
+    return _j(L)
+
+
+def prop_f5(r: random.Random) -> str:
+    """Boolean constant propagation chain."""
+    a, b = r.randint(1, 20), r.randint(1, 20)
+    L = [f"int a = {a};", f"int b = {b};",
+         f"bool p = a < b + {r.randint(1, 5)};",
+         f"bool q = a + {r.randint(1, 3)} > b;",
+         "bool r1 = p && q;",
+         "if (r1) {", "    print(1);", "} else {", "    print(0);", "}",
+         "print(a);", "print(b);"]
+    return _j(L)
+
+
 Family = Callable[[random.Random], str]
 
 CATEGORIES: dict[str, tuple[str, list[Family]]] = {
@@ -272,5 +450,8 @@ CATEGORIES: dict[str, tuple[str, list[Family]]] = {
     "constant-heavy": ("const", [const_f1, const_f2, const_f3, const_f4, const_f5]),
     "redundant-expression-heavy": ("redundant", [red_f1, red_f2, red_f3, red_f4, red_f5]),
     "mixed": ("mixed", [mixed_f1, mixed_f2, mixed_f3, mixed_f4, mixed_f5]),
+    "algebraic-heavy": ("alg", [alg_f1, alg_f2, alg_f3, alg_f4, alg_f5]),
+    "copy-heavy": ("copy", [copy_f1, copy_f2, copy_f3, copy_f4, copy_f5]),
+    "propagation-only": ("prop", [prop_f1, prop_f2, prop_f3, prop_f4, prop_f5]),
 }
-VARIANTS_PER_FAMILY = 2
+VARIANTS_PER_FAMILY = 3

@@ -11,20 +11,25 @@
     "duplicate_expression_count",
     "assignment_count",
     "distinct_variable_count",
-    "cfg_edge_count"
+    "cfg_edge_count",
+    "constant_expression_ratio",
+    "duplicate_expression_ratio",
+    "assignment_ratio",
+    "branch_ratio"
   ],
   "classes": [
     "S1",
+    "S10",
     "S3",
     "S4",
-    "S5",
-    "S6"
+    "S6",
+    "S9"
   ],
-  "trained_at": "2026-10-16T17:42:01+00:00",
-  "n_samples": 60,
-  "n_families": 30,
+  "trained_at": "2026-10-20T20:00:28+00:00",
+  "n_samples": 135,
+  "n_families": 45,
   "random_seed": 42,
-  "dataset_sha256": "c616b4b8da484a82dc90523a1714f5fcf21a2f5a3c7475c08775cec34324cb1a",
+  "dataset_sha256": "0fc5e3d1387cfdb196b692c2b9e449f5f1a7229f7bdb50918b7b341423d40b80",
   "hyperparameters": {
     "n_estimators": 200,
     "random_state": 42,

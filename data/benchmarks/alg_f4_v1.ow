@@ -1,0 +1,10 @@
+// alg_f4_v1 | category: algebraic-heavy | family: alg_f4
+int i = 0;
+int s = 0;
+while (i < 36) {
+    int doubled = i * 2;
+    int tripled = i * 6;
+    s = s + doubled + tripled;
+    i = i + 1;
+}
+print(s);

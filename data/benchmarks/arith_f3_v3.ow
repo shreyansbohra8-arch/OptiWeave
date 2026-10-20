@@ -1,0 +1,8 @@
+// arith_f3_v3 | category: arithmetic-heavy | family: arith_f3
+float x = 4.5;
+int i = 0;
+while (i < 25) {
+    x = x * 1.25 + i - 1.5;
+    i = i + 1;
+}
+print(x);

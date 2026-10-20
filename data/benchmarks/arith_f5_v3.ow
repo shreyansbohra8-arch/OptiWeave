@@ -1,0 +1,9 @@
+// arith_f5_v3 | category: arithmetic-heavy | family: arith_f5
+int n = 394286;
+int s = 0;
+while (n > 0) {
+    s = s + n % 10;
+    n = n / 10;
+}
+print(s);
+print(s * 2 + 3);

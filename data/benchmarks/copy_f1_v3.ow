@@ -1,0 +1,10 @@
+// copy_f1_v3 | category: copy-heavy | family: copy_f1
+int src = 57;
+int c0 = src;
+int c1 = c0;
+int c2 = c1;
+int c3 = c2;
+int c4 = c3;
+int c5 = c4;
+print(c5);
+print(src);
